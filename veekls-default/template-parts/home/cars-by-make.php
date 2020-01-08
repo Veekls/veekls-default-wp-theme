@@ -6,16 +6,34 @@
  */
 
 $listings_archive_link = get_post_type_archive_link( 'auto-listing' );
-$section_title         = get_theme_mod( 'allcar_title', __( 'Browse Cars By Make', 'veekls-default-theme' ) );
-$description           = get_theme_mod( 'allcar_description', __( 'Available in different categories', 'veekls-default-theme' ) );
-$button_url            = get_theme_mod( 'allcar_button_url', esc_url( $listings_archive_link ) );
-$button_text           = get_theme_mod( 'allcar_button_text', __( 'See all cars', 'veekls-default-theme' ) );
+
+$section_title = get_theme_mod(
+	'allcar_title',
+	__( 'Browse Cars By Make', 'veekls-default-theme' )
+);
+
+$description = get_theme_mod(
+	'allcar_description',
+	__( 'Available in different categories', 'veekls-default-theme' )
+);
+
+$button_url = get_theme_mod(
+	'allcar_button_url',
+	esc_url( $listings_archive_link )
+);
+
+$button_text = get_theme_mod(
+	'allcar_button_text',
+	__( 'See all cars', 'veekls-default-theme' )
+);
 
 $image    = get_theme_mod( 'allcar_image' );
 $image_id = attachment_url_to_postid( $image );
-$alt      = ( ! empty( $image_id ) ) ? get_post_meta( $image_id, '_wp_attachment_image_alt', true ) : '';
+$alt      = ( ! empty( $image_id ) )
+			? get_post_meta( $image_id, '_wp_attachment_image_alt', true )
+			: '';
 
-$cars = carlistings_get_car_ids();
+$cars = veekls_get_car_ids();
 
 if ( ! $cars ) {
 	return;
@@ -28,10 +46,12 @@ if ( ! $cars ) {
 			<h3 class="all-car__title"><?php echo esc_html( $section_title ); ?></h3>
 			<p class="all-car__description"><?php echo wp_kses_post( $description ); ?></p>
 
-			<?php carlistings_get_car_lists(); ?>
+			<?php veekls_get_car_lists(); ?>
 
 			<?php if ( ! empty( $button_url ) && ! empty( $button_text ) ) : ?>
-				<a href="<?php echo esc_url( $button_url ); ?>" class="all-car__button"><?php echo esc_html( $button_text ); ?></a>
+				<a href="<?php echo esc_url( $button_url ); ?>" class="all-car__button">
+					<?php echo esc_html( $button_text ); ?>
+				</a>
 			<?php endif; ?>
 		</div>
 

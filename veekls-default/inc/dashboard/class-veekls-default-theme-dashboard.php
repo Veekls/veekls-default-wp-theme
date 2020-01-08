@@ -129,7 +129,7 @@ class Carlistings_Dashboard {
 	 * Recommended Plugin Action.
 	 */
 	public function recommended_plugins_action() {
-		$plugins        = carlistings_required_plugins();
+		$plugins        = veekls_required_plugins();
 		$plugins_number = count( $plugins );
 		$installer      = TGM_Plugin_Activation::get_instance();
 		$action         = array();
@@ -165,7 +165,7 @@ class Carlistings_Dashboard {
 	 * Check if Jetpack is recommended
 	 */
 	public function jetpack_is_recommended() {
-		$plugins = carlistings_required_plugins();
+		$plugins = veekls_required_plugins();
 		foreach ( $plugins as $plugin ) {
 			if ( 'jetpack' === $plugin['slug'] ) {
 				return true;

@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! carlistings_is_plugin_active() ) {
+if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
@@ -29,7 +29,9 @@ if ( ! carlistings_is_plugin_active() ) {
 				</td>
 				<td>
 					<?php if ( function_exists( 'auto_listings_transmission' ) && auto_listings_transmission() ) { ?>
-						<span class="transmission"><i class="icofont icofont-ui-settings"></i> <?php echo esc_html( auto_listings_transmission() ); ?></span>
+						<span class="transmission"><i class="icofont icofont-ui-settings"></i>
+							<?php echo esc_html( auto_listings_transmission() ); ?>
+						</span>
 					<?php } ?>
 				</td>
 			</tr>

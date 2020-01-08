@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! carlistings_is_plugin_active() ) {
+if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
@@ -24,6 +24,7 @@ if ( empty( $dealer_id ) ) {
 $website = '';
 $phone   = '';
 $address = '';
+
 if ( function_exists( 'auto_listings_dealer_meta' ) ) {
 	$website = auto_listings_dealer_meta( 'website', $dealer_id );
 	$phone   = auto_listings_dealer_meta( 'phone', $dealer_id );

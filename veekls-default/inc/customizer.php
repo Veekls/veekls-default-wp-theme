@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function carlistings_customize_register( $wp_customize ) {
+function veekls_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -20,14 +20,14 @@ function carlistings_customize_register( $wp_customize ) {
 			'blogname',
 			array(
 				'selector'        => '.site-title a',
-				'render_callback' => 'carlistings_customize_partial_blogname',
+				'render_callback' => 'veekls_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
 				'selector'        => '.site-description',
-				'render_callback' => 'carlistings_customize_partial_blogdescription',
+				'render_callback' => 'veekls_customize_partial_blogdescription',
 			)
 		);
 	}
@@ -50,7 +50,7 @@ function carlistings_customize_register( $wp_customize ) {
 		array(
 			'title'           => esc_html__( 'Homepage', 'veekls-default-theme' ),
 			'panel'           => 'veekls-default-theme',
-			'active_callback' => 'carlistings_is_plugin_active',
+			'active_callback' => 'veekls_is_plugin_active',
 		)
 	);
 
@@ -95,7 +95,7 @@ function carlistings_customize_register( $wp_customize ) {
 		array(
 			'selector'            => '.section--search',
 			'container_inclusive' => true,
-			'render_callback'     => 'carlistings_refresh_search_section',
+			'render_callback'     => 'veekls_refresh_search_section',
 		)
 	);
 
@@ -173,7 +173,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'allcar_image',
 		array(
-			'sanitize_callback' => 'carlistings_sanitize_image',
+			'sanitize_callback' => 'veekls_sanitize_image',
 		)
 	);
 	$wp_customize->add_control(
@@ -296,7 +296,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'cta_background',
 		array(
-			'sanitize_callback' => 'carlistings_sanitize_image',
+			'sanitize_callback' => 'veekls_sanitize_image',
 			'default'           => get_template_directory_uri() . '/images/cta.png',
 		)
 	);
@@ -312,14 +312,14 @@ function carlistings_customize_register( $wp_customize ) {
 		)
 	);
 }
-add_action( 'customize_register', 'carlistings_customize_register' );
+add_action( 'customize_register', 'veekls_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function carlistings_customize_partial_blogname() {
+function veekls_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -328,17 +328,17 @@ function carlistings_customize_partial_blogname() {
  *
  * @return void
  */
-function carlistings_customize_partial_blogdescription() {
+function veekls_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function carlistings_customize_preview_js() {
+function veekls_customize_preview_js() {
 	wp_enqueue_script( 'veekls-default-theme-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20180702', true );
 }
-add_action( 'customize_preview_init', 'carlistings_customize_preview_js' );
+add_action( 'customize_preview_init', 'veekls_customize_preview_js' );
 
 /**
  * Sanitizes Image Upload.
@@ -347,7 +347,7 @@ add_action( 'customize_preview_init', 'carlistings_customize_preview_js' );
  *
  * @return string
  */
-function carlistings_sanitize_image( $input ) {
+function veekls_sanitize_image( $input ) {
 	$filetype = wp_check_filetype( $input );
 	if ( $filetype['ext'] && wp_ext2type( $filetype['ext'] ) === 'image' ) {
 		return esc_url( $input );
@@ -359,6 +359,6 @@ function carlistings_sanitize_image( $input ) {
 /**
  * Live refresh search section.
  */
-function carlistings_refresh_search_section() {
+function veekls_refresh_search_section() {
 	get_template_part( 'template-parts/home/search-form' );
 }

@@ -7,7 +7,7 @@
  * @package VeeklsDefaultTheme
  */
 
-if ( ! function_exists( 'carlistings_setup' ) ) :
+if ( ! function_exists( 'veekls_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,7 +15,7 @@ if ( ! function_exists( 'carlistings_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function carlistings_setup() {
+	function veekls_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -87,7 +87,7 @@ if ( ! function_exists( 'carlistings_setup' ) ) :
 		add_post_type_support( 'page', 'excerpt' );
 	}
 endif;
-add_action( 'after_setup_theme', 'carlistings_setup' );
+add_action( 'after_setup_theme', 'veekls_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -96,17 +96,17 @@ add_action( 'after_setup_theme', 'carlistings_setup' );
  *
  * @global int $content_width
  */
-function carlistings_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'carlistings_content_width', 770 );
+function veekls_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'veekls_content_width', 770 );
 }
-add_action( 'after_setup_theme', 'carlistings_content_width', 0 );
+add_action( 'after_setup_theme', 'veekls_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function carlistings_widgets_init() {
+function veekls_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'veekls-default-theme' ),
@@ -142,26 +142,26 @@ function carlistings_widgets_init() {
 	);
 	register_widget( 'Carlistings_Contact_Widget' );
 }
-add_action( 'widgets_init', 'carlistings_widgets_init' );
+add_action( 'widgets_init', 'veekls_widgets_init' );
 
 /**
  * Enqueue plugins scripts and styles first.
  */
-function carlistings_plugin_scripts() {
+function veekls_plugin_scripts() {
 	if ( is_front_page() ) {
 		wp_enqueue_style( 'car-listings-listing-css', get_template_directory_uri() . '/css/auto-listings.css', array(), '1.0.0' );
 		wp_enqueue_script( 'sumoselect', get_template_directory_uri() . '/js/sumoselect.js', array(), '3.0.3', true );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'carlistings_plugin_scripts', 0 );
+add_action( 'wp_enqueue_scripts', 'veekls_plugin_scripts', 0 );
 
 /**
  * Enqueue scripts and styles.
  */
-function carlistings_scripts() {
+function veekls_scripts() {
 	wp_enqueue_style( 'icofont', get_template_directory_uri() . '/css/icofont.css', array(), '1.0.0' );
 
-	wp_enqueue_style( 'veekls-default-theme-fonts', carlistings_fonts_url(), array(), '1.0.0' );
+	wp_enqueue_style( 'veekls-default-theme-fonts', veekls_fonts_url(), array(), '1.0.0' );
 	wp_enqueue_style( 'veekls-default-theme-style', get_stylesheet_uri(), array(), '1.0.0' );
 
 	wp_enqueue_script( 'veekls-default-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -183,14 +183,14 @@ function carlistings_scripts() {
 		}
 	}
 }
-add_action( 'wp_enqueue_scripts', 'carlistings_scripts', 99 );
+add_action( 'wp_enqueue_scripts', 'veekls_scripts', 99 );
 
 /**
  * Get Google fonts URL for the theme.
  *
  * @return string Google fonts URL for the theme.
  */
-function carlistings_fonts_url() {
+function veekls_fonts_url() {
 	$fonts   = array();
 	$subsets = 'latin,latin-ext';
 
@@ -228,16 +228,16 @@ function carlistings_fonts_url() {
 /**
  * Add editor style.
  */
-function carlistings_add_editor_styles() {
+function veekls_add_editor_styles() {
 	add_editor_style(
 		array(
 			'css/editor-style.css',
-			carlistings_fonts_url(),
+			veekls_fonts_url(),
 			get_template_directory_uri() . '/css/icofont.css',
 		)
 	);
 }
-add_action( 'init', 'carlistings_add_editor_styles' );
+add_action( 'init', 'veekls_add_editor_styles' );
 
 /**
  * Implement the Custom Header feature.

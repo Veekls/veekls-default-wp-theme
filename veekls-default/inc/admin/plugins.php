@@ -5,15 +5,15 @@
  * @package VeeklsDefaultTheme
  */
 
-add_action( 'tgmpa_register', 'carlistings_register_required_plugins', 11 );
+add_action( 'tgmpa_register', 'veekls_register_required_plugins', 11 );
 
 /**
  * Register required plugins
  *
  * @since  1.0
  */
-function carlistings_register_required_plugins() {
-	$plugins = carlistings_required_plugins();
+function veekls_register_required_plugins() {
+	$plugins = veekls_required_plugins();
 
 	$config = array(
 		'id'          => 'veekls-default-theme',
@@ -27,7 +27,7 @@ function carlistings_register_required_plugins() {
 /**
  * List of required plugins
  */
-function carlistings_required_plugins() {
+function veekls_required_plugins() {
 	return array(
 		array(
 			'name' => esc_html__( 'Jetpack', 'veekls-default-theme' ),

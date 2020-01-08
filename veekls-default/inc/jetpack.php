@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function carlistings_jetpack_setup() {
+function veekls_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'carlistings_infinite_scroll_render',
+			'render'    => 'veekls_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -35,7 +35,7 @@ function carlistings_jetpack_setup() {
 	add_theme_support(
 		'featured-content',
 		array(
-			'filter'     => 'carlistings_get_featured_posts',
+			'filter'     => 'veekls_get_featured_posts',
 			'max_posts'  => 3,
 			'post_types' => array( 'post', 'page' ),
 		)
@@ -66,12 +66,12 @@ function carlistings_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'carlistings_jetpack_setup' );
+add_action( 'after_setup_theme', 'veekls_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function carlistings_infinite_scroll_render() {
+function veekls_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :
@@ -87,17 +87,17 @@ function carlistings_infinite_scroll_render() {
  *
  * @return array An array of WP_Post objects.
  */
-function carlistings_get_featured_posts() {
-	return apply_filters( 'carlistings_get_featured_posts', array() );
+function veekls_get_featured_posts() {
+	return apply_filters( 'veekls_get_featured_posts', array() );
 }
 
 /**
  * Deregister jetpack style.
  */
-function carlistings_deregister_jetpack_style() {
+function veekls_deregister_jetpack_style() {
 	wp_deregister_style( 'jetpack-social-menu' );
 }
-add_action( 'wp_enqueue_scripts', 'carlistings_deregister_jetpack_style', 999 );
+add_action( 'wp_enqueue_scripts', 'veekls_deregister_jetpack_style', 999 );
 
 /**
  * Remove Jetpack css
@@ -107,8 +107,8 @@ add_filter( 'jetpack_implode_frontend_css', '__return_false' );
 /**
  * Move Jetpack share.
  */
-function carlistings_remove_share() {
+function veekls_remove_share() {
 	remove_filter( 'the_content', 'sharing_display', 19 );
 	remove_filter( 'the_excerpt', 'sharing_display', 19 );
 }
-add_action( 'loop_start', 'carlistings_remove_share' );
+add_action( 'loop_start', 'veekls_remove_share' );

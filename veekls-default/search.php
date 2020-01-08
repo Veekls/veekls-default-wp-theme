@@ -13,16 +13,13 @@ get_header();
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
-
-			<?php
+		<?php
+		if ( have_posts() ) {
 			/* Start the Loop */
-			while ( have_posts() ) :
+			while ( have_posts() ) {
 				the_post();
-
 				get_template_part( 'template-parts/content', 'blog' );
-
-			endwhile;
+			};
 
 			the_posts_pagination(
 				array(
@@ -30,12 +27,9 @@ get_header();
 					'next_text' => '<span class="screen-reader-text">' . esc_html_e( 'Next', 'veekls-default-theme' ) . '</span><i class="icofont icofont-rounded-right"></i>',
 				)
 			);
-
-		else :
-
+		} else {
 			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
+		}
 		?>
 
 		</main><!-- #main -->

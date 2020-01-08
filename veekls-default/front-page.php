@@ -16,5 +16,4 @@ get_header();
 	get_template_part( 'template-parts/home/cars-by-make' );
 	get_template_part( 'template-parts/home/listings' );
 
-
 get_footer();

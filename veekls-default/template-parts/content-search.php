@@ -8,14 +8,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 	<?php get_template_part( 'template-parts/content', 'media' ); ?>
 
 	<div class="article__content">
 		<header class="entry-header">
-			<?php carlistings_get_category(); ?>
+			<?php veekls_get_category(); ?>
 			<div class="entry-meta">
-				<?php carlistings_posted_on(); ?>
+				<?php veekls_posted_on(); ?>
 			</div>
 		</header><!-- .entry-header -->
 

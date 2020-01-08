@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! carlistings_is_plugin_active() ) {
+if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 ?>
@@ -19,11 +19,8 @@ if ( ! carlistings_is_plugin_active() ) {
 <?php do_action( 'auto_listings_before_single_listing' ); ?>
 
 <div id="listing-<?php the_ID(); ?>" class="auto-listings-single listing">
-
 	<div class="has-sidebar">
-
 		<div class="image-gallery">
-
 			<?php
 			/**
 			 * Slider
@@ -32,11 +29,9 @@ if ( ! carlistings_is_plugin_active() ) {
 			 */
 			do_action( 'auto_listings_single_gallery' );
 			?>
-
 		</div>
 
 		<div class="full-width upper">
-
 			<?php
 			/**
 			 * Title
@@ -45,14 +40,13 @@ if ( ! carlistings_is_plugin_active() ) {
 			 */
 			do_action( 'auto_listings_single_upper_full_width' );
 			?>
+
 			<?php if ( function_exists( 'auto_listings_price' ) ) : ?>
 				<h4><?php echo wp_kses_post( auto_listings_price() ); ?></h4>
 			<?php endif; ?>
-
 		</div>
 
 		<div class="content">
-
 			<?php
 			/**
 			 * Info single listing
@@ -63,13 +57,10 @@ if ( ! carlistings_is_plugin_active() ) {
 			 */
 			do_action( 'auto_listings_single_content' );
 			?>
-
 		</div>
-
 	</div>
 
 	<div class="sidebar">
-
 		<?php
 		/**
 		 * Sidebar
@@ -82,15 +73,11 @@ if ( ! carlistings_is_plugin_active() ) {
 		 */
 		do_action( 'auto_listings_single_sidebar' );
 		?>
-
 	</div>
 
 	<div class="full-width lower">
-
 		<?php do_action( 'auto_listings_single_lower_full_width' ); ?>
-
 	</div>
-
 </div>
 
 <?php do_action( 'auto_listings_after_single_listing' ); ?>

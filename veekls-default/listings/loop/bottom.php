@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! carlistings_is_plugin_active() ) {
+if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 ?>

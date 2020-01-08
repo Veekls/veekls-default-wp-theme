@@ -6,12 +6,14 @@
  */
 
 $search_page = get_theme_mod( 'search_section' );
+
 if ( ! $search_page ) {
 	return;
 }
 
-$post = get_post( $search_page );
-setup_postdata( $post );
+$post_data = get_post( $search_page );
+
+setup_postdata( $post_data );
 ?>
 
 <section class="section--search container">

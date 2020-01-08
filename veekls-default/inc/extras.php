@@ -12,7 +12,7 @@
  *
  * @param string $more More Link.
  */
-function carlistings_read_more_link( $more ) {
+function veekls_read_more_link( $more ) {
 	if ( is_admin() ) {
 		return $more;
 	}
@@ -22,8 +22,8 @@ function carlistings_read_more_link( $more ) {
 
 	return $more;
 }
-add_filter( 'the_content_more_link', 'carlistings_read_more_link' );
-add_filter( 'excerpt_more', 'carlistings_read_more_link' );
+add_filter( 'the_content_more_link', 'veekls_read_more_link' );
+add_filter( 'excerpt_more', 'veekls_read_more_link' );
 
 /**
  * Change excerpt length.
@@ -31,10 +31,10 @@ add_filter( 'excerpt_more', 'carlistings_read_more_link' );
  * @param int $length Excerpt length.
  * @return int
  */
-function carlistings_custom_excerpt_length( $length ) {
+function veekls_custom_excerpt_length( $length ) {
 	return is_admin() ? $length : 50;
 }
-add_filter( 'excerpt_length', 'carlistings_custom_excerpt_length' );
+add_filter( 'excerpt_length', 'veekls_custom_excerpt_length' );
 
 /**
  * Add at a glance to left section
@@ -46,13 +46,13 @@ add_action( 'auto_listings_before_listings_loop_item_summary', 'auto_listings_te
  */
 remove_action( 'auto_listings_listings_loop_item', 'auto_listings_template_loop_description', 50 );
 
-add_filter( 'comment_form_default_fields', 'carlistings_modify_comment_form_default' );
+add_filter( 'comment_form_default_fields', 'veekls_modify_comment_form_default' );
 /**
  * Modify default comment form.
  *
  * @param array $fields default field.
  */
-function carlistings_modify_comment_form_default( $fields ) {
+function veekls_modify_comment_form_default( $fields ) {
 	$commenter = wp_get_current_commenter();
 	$req       = get_option( 'require_name_email' );
 	$aria_req  = ( $req ? " aria-required='true'" : '' );
@@ -68,14 +68,14 @@ function carlistings_modify_comment_form_default( $fields ) {
 	return $fields;
 }
 
-add_filter( 'comment_form_defaults', 'carlistings_modify_comment_form_args' );
+add_filter( 'comment_form_defaults', 'veekls_modify_comment_form_args' );
 
 /**
  * Modify default comment form args.
  *
  * @param array $defaults default args.
  */
-function carlistings_modify_comment_form_args( $defaults ) {
+function veekls_modify_comment_form_args( $defaults ) {
 	$defaults['label_submit']         = esc_html__( 'Submit Comment', 'veekls-default-theme' );
 	$defaults['title_reply_before']   = '';
 	$submit_button                    = sprintf(
@@ -105,7 +105,7 @@ function carlistings_modify_comment_form_args( $defaults ) {
  *
  * @return array.
  */
-function carlistings_tag_cloud_font_size( $args ) {
+function veekls_tag_cloud_font_size( $args ) {
 	$args['largest']  = 0.8125;
 	$args['smallest'] = 0.8125;
 	$args['unit']     = 'rem';
@@ -113,11 +113,11 @@ function carlistings_tag_cloud_font_size( $args ) {
 	return $args;
 }
 
-add_filter( 'widget_tag_cloud_args', 'carlistings_tag_cloud_font_size' );
+add_filter( 'widget_tag_cloud_args', 'veekls_tag_cloud_font_size' );
 
 /**
  * Check Plugins Activation
  */
-function carlistings_is_plugin_active() {
-	return defined( 'AUTO_LISTINGS_VERSION' );
+function veekls_is_plugin_active() {
+	return defined( 'VEEKLS_API_CLIENT_VERSION' );
 }

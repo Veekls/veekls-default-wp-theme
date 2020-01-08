@@ -7,7 +7,7 @@
  * @package VeeklsDefaultTheme
  */
 
-if ( ! carlistings_is_plugin_active() ) {
+if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
@@ -15,7 +15,9 @@ $args  = array(
 	'post_type' => 'auto-listing',
 	'order'     => 'DESC',
 );
+
 $query = new WP_Query( $args );
+
 if ( ! $query->have_posts() ) {
 	return;
 }
@@ -23,7 +25,6 @@ if ( ! $query->have_posts() ) {
 
 <div id="container" class="container">
 	<div id="content" class="content" role="main">
-
 		<?php if ( is_active_sidebar( 'auto-listings' ) ) : ?>
 			<div class="has-sidebar">
 		<?php else : ?>
@@ -34,10 +35,11 @@ if ( ! $query->have_posts() ) {
 			if ( function_exists( 'auto_listings_view_switcher' ) ) {
 				auto_listings_view_switcher();
 			}
+
 			$cols  = get_theme_mod( 'front_page_listings_column', 2 );
 			$count = 1;
 
-			while ( $query->have_posts() ) :
+			while ( $query->have_posts() ) {
 				$query->the_post();
 
 				if ( 1 === $count % $cols ) {
@@ -51,12 +53,14 @@ if ( ! $query->have_posts() ) {
 				if ( 0 === $count % $cols ) {
 					echo '</ul>';
 				}
+
 				$count++;
-			endwhile;
+			};
 
 			if ( 1 !== $count % $cols ) {
 				echo '</ul>';
 			}
+
 			wp_reset_postdata();
 			?>
 

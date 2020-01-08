@@ -16,7 +16,6 @@
 <?php get_template_part( 'template-parts/cta' ); ?>
 
 <footer id="colophon" class="site-footer">
-
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="footer-copyright">
@@ -26,7 +25,9 @@
 					printf( esc_html__( 'Proudly powered by %s', 'veekls-default-theme' ), 'WordPress' );
 					?>
 				</a>
+
 				<span class="sep"> | </span>
+
 				<?php
 				/* translators: placeholder replaced with string */
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'veekls-default-theme' ), 'Veekls Default', '<a href="' . esc_url( __( 'https://about.veekls.com/', 'veekls-default-theme' ) ) . '" rel="designer">Veekls</a>' );
@@ -65,6 +66,11 @@
 </nav>
 
 <?php wp_footer(); ?>
-<a href="#" class="scroll-to-top hidden"><i class="icofont icofont-rounded-up"></i></a>
+
+<a href="#" class="scroll-to-top hidden">
+	<i class="icofont icofont-rounded-up"></i>
+</a>
+
+<!-- Close document -->
 </body>
 </html>
