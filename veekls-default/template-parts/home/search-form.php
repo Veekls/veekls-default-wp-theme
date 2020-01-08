@@ -22,6 +22,6 @@ setup_postdata( $post );
 		<div class="search-form__title">
 			<p><?php the_excerpt(); ?></p>
 		</div>
-		<?php the_content(); ?>
+		<?php get_template_part( 'template-parts/search-box' ); ?>
 	</div>
 </section>

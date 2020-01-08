@@ -11,8 +11,8 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function veekls_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
@@ -23,6 +23,7 @@ function veekls_customize_register( $wp_customize ) {
 				'render_callback' => 'veekls_customize_partial_blogname',
 			)
 		);
+
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
@@ -61,6 +62,7 @@ function veekls_customize_register( $wp_customize ) {
 			'default'           => 3000,
 		)
 	);
+
 	$wp_customize->add_control(
 		'slider_speed',
 		array(
@@ -81,6 +83,7 @@ function veekls_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'absint',
 		)
 	);
+
 	$wp_customize->add_control(
 		'search_section',
 		array(
@@ -90,6 +93,7 @@ function veekls_customize_register( $wp_customize ) {
 			'description' => wp_kses_post( __( 'The content of this page will be displayed below the featured slider on your static front page.', 'veekls-default-theme' ) ),
 		)
 	);
+
 	$wp_customize->selective_refresh->add_partial(
 		'search_section',
 		array(
@@ -110,6 +114,7 @@ function veekls_customize_register( $wp_customize ) {
 			'transport'         => 'postMessage',
 		)
 	);
+
 	$wp_customize->add_control(
 		'allcar_title',
 		array(
@@ -127,6 +132,7 @@ function veekls_customize_register( $wp_customize ) {
 			'transport'         => 'postMessage',
 		)
 	);
+
 	$wp_customize->add_control(
 		'allcar_description',
 		array(
@@ -144,6 +150,7 @@ function veekls_customize_register( $wp_customize ) {
 			'transport'         => 'postMessage',
 		)
 	);
+
 	$wp_customize->add_control(
 		'allcar_button_text',
 		array(
@@ -161,6 +168,7 @@ function veekls_customize_register( $wp_customize ) {
 			'transport'         => 'postMessage',
 		)
 	);
+
 	$wp_customize->add_control(
 		'allcar_button_url',
 		array(
@@ -176,6 +184,7 @@ function veekls_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'veekls_sanitize_image',
 		)
 	);
+
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
 			$wp_customize,
@@ -195,6 +204,7 @@ function veekls_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'absint',
 		)
 	);
+
 	$wp_customize->add_control(
 		'front_page_listings_column',
 		array(
@@ -232,6 +242,7 @@ function veekls_customize_register( $wp_customize ) {
 			'transport'         => 'postMessage',
 		)
 	);
+
 	$wp_customize->add_control(
 		'cta_title',
 		array(
@@ -249,6 +260,7 @@ function veekls_customize_register( $wp_customize ) {
 			'transport'         => 'postMessage',
 		)
 	);
+
 	$wp_customize->add_control(
 		'cta_description',
 		array(
@@ -300,6 +312,7 @@ function veekls_customize_register( $wp_customize ) {
 			'default'           => get_template_directory_uri() . '/images/cta.png',
 		)
 	);
+
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
 			$wp_customize,
@@ -312,6 +325,7 @@ function veekls_customize_register( $wp_customize ) {
 		)
 	);
 }
+
 add_action( 'customize_register', 'veekls_customize_register' );
 
 /**
@@ -336,8 +350,15 @@ function veekls_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function veekls_customize_preview_js() {
-	wp_enqueue_script( 'veekls-default-theme-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20180702', true );
+	wp_enqueue_script(
+		'veekls-default-theme-customizer',
+		get_template_directory_uri() . '/js/customizer.js',
+		array( 'customize-preview' ),
+		'20180702',
+		true
+	);
 }
+
 add_action( 'customize_preview_init', 'veekls_customize_preview_js' );
 
 /**
@@ -349,6 +370,7 @@ add_action( 'customize_preview_init', 'veekls_customize_preview_js' );
  */
 function veekls_sanitize_image( $input ) {
 	$filetype = wp_check_filetype( $input );
+
 	if ( $filetype['ext'] && wp_ext2type( $filetype['ext'] ) === 'image' ) {
 		return esc_url( $input );
 	}

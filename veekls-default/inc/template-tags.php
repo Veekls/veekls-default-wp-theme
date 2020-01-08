@@ -134,10 +134,12 @@ function veekls_get_car_lists() {
 			$makes[] = get_post_meta( $id, '_al_listing_make_display', true );
 		}
 	}
+
 	$makes        = array_count_values( $makes );
 	$archive_link = get_post_type_archive_link( 'auto-listing' );
 
 	echo '<ul>';
+
 	foreach ( $makes as $make => $value ) {
 		$make_link = add_query_arg(
 			array(
@@ -146,12 +148,22 @@ function veekls_get_car_lists() {
 			),
 			$archive_link
 		);
+
 		?>
 		<li>
 			<a href="<?php echo esc_url( $make_link ); ?>">
 				<?php
-				// translators: %1$s - make, %2$s number of cars.
-				echo wp_kses_post( sprintf( __( '%1$s <span>(%2$s)</span>', 'veekls-default-theme' ), $make, $value ) );
+				echo wp_kses_post(
+					sprintf(
+						// translators: %1$s - make, %2$s number of cars.
+						__(
+							'%1$s <span>(%2$s)</span>',
+							'veekls-default-theme'
+						),
+						$make,
+						$value
+					)
+				);
 				?>
 			</a>
 		</li>

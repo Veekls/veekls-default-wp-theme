@@ -17,7 +17,8 @@
  * @uses veekls_header_style()
  */
 function veekls_custom_header_setup() {
-	add_theme_support( 'custom-header',
+	add_theme_support(
+		'custom-header',
 		apply_filters(
 			'veekls_custom_header_args',
 			array(
@@ -31,6 +32,7 @@ function veekls_custom_header_setup() {
 		)
 	);
 }
+
 add_action( 'after_setup_theme', 'veekls_custom_header_setup' );
 
 if ( ! function_exists( 'veekls_header_style' ) ) :

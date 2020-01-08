@@ -16,12 +16,14 @@ function veekls_read_more_link( $more ) {
 	if ( is_admin() ) {
 		return $more;
 	}
+
 	// Translators: %s - post title.
 	$text = wp_kses_post( sprintf( __( 'Read More%s', 'veekls-default-theme' ), '<span class="screen-reader-text">' . get_the_title() . '</span>' ) );
 	$more = sprintf( '&hellip; <p class="link-more"><a href="%s" class="more-link">%s</a></p>', esc_url( get_permalink() ), $text );
 
 	return $more;
 }
+
 add_filter( 'the_content_more_link', 'veekls_read_more_link' );
 add_filter( 'excerpt_more', 'veekls_read_more_link' );
 
@@ -34,6 +36,7 @@ add_filter( 'excerpt_more', 'veekls_read_more_link' );
 function veekls_custom_excerpt_length( $length ) {
 	return is_admin() ? $length : 50;
 }
+
 add_filter( 'excerpt_length', 'veekls_custom_excerpt_length' );
 
 /**
@@ -47,6 +50,7 @@ add_action( 'auto_listings_before_listings_loop_item_summary', 'auto_listings_te
 remove_action( 'auto_listings_listings_loop_item', 'auto_listings_template_loop_description', 50 );
 
 add_filter( 'comment_form_default_fields', 'veekls_modify_comment_form_default' );
+
 /**
  * Modify default comment form.
  *
@@ -85,11 +89,13 @@ function veekls_modify_comment_form_args( $defaults ) {
 		esc_attr( $defaults['class_submit'] ),
 		esc_attr( $defaults['label_submit'] )
 	);
+
 	$submit_field                     = sprintf(
 		$defaults['submit_field'],
 		$submit_button,
 		get_comment_id_fields( get_the_ID() )
 	);
+
 	$defaults['submit_field']         = '';
 	$defaults['comment_field']        = '<div class="comment-form-comment"><textarea id="comment" placeholder="' . esc_attr__( 'Write Your Comments Here...', 'veekls-default-theme' ) . '" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea>' . $submit_field . '</div>';
 	$defaults['title_reply']          = '';

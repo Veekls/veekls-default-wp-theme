@@ -34,9 +34,21 @@ if ( is_front_page() ) {
 	do_action( 'auto_listings_before_listings_loop_item_summary' );
 	?>
 
+	<div class="at-a-glance">
+		<ul>
+			<li class="odomoter"><i class="auto-icon-odometer"></i> <?php echo esc_html( auto_listings_odometer() ); ?></li>
+		<?php if ( auto_listings_transmission() ) { ?>
+			<li class="transmission"><i class="auto-icon-transmission"></i> <?php echo esc_html( auto_listings_transmission() ); ?></li>
+		<?php } ?>
+		<?php if ( auto_listings_body_type() ) { ?>
+			<li class="body"><i class="auto-icon-trunk"></i> <?php echo auto_listings_body_type(); // wpcs xss: ok. ?></li>
+		<?php } ?>
+		</ul>
+	</div>
+
 	<div class="summary">
 		<?php
-		do_action( 'auto_listings_before_listings_loop_item' );
+		// do_action( 'auto_listings_before_listings_loop_item' );
 
 		/**
 		 * Info single listings
@@ -48,9 +60,9 @@ if ( is_front_page() ) {
 		 * @hooked auto_listings_template_loop_description
 		 * @hooked auto_listings_template_loop_bottom
 		 */
-		do_action( 'auto_listings_listings_loop_item' );
+		// do_action( 'auto_listings_listings_loop_item' );
 
-		do_action( 'auto_listings_after_listings_loop_item' );
+		// do_action( 'auto_listings_after_listings_loop_item' );
 		?>
 
 	</div>

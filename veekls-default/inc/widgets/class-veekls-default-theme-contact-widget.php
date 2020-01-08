@@ -16,11 +16,18 @@ class Carlistings_Contact_Widget extends WP_Widget {
 	public function __construct() {
 		$widget_ops = array(
 			'classname'   => 'veekls-default-theme-contact-info',
-			'description' => __( 'Display your contact information.', 'veekls-default-theme' ),
+			'description' => __(
+				'Display your contact information.',
+				'veekls-default-theme'
+			),
 		);
+
 		parent::__construct(
 			'veekls-default-theme-contact-info',
-			esc_html__( 'Veekls Default Theme: Contact Info', 'veekls-default-theme' ),
+			esc_html__(
+				'Veekls Default Theme: Contact Info',
+				'veekls-default-theme'
+			),
 			$widget_ops
 		);
 	}
@@ -61,7 +68,12 @@ class Carlistings_Contact_Widget extends WP_Widget {
 
 		if ( is_email( trim( $instance['email'] ) ) ) {
 			printf(
-				'<li><a href="mailto:%1$s"><i class="icofont icofont-envelope"></i>%1$s</a></li>',
+				'<li>
+					<a href="mailto:%1$s">
+						<i class="icofont icofont-envelope"></i>
+						%1$s
+					</a>
+				</li>',
 				esc_html( $instance['email'] )
 			);
 		}
@@ -97,11 +109,15 @@ class Carlistings_Contact_Widget extends WP_Widget {
 		$instance = wp_parse_args( $instance, $this->defaults() );
 		?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'time' ) ); ?>"><?php esc_html_e( 'Working Time:', 'veekls-default-theme' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'time' ) ); ?>">
+				<?php esc_html_e( 'Working Time:', 'veekls-default-theme' ); ?>
+			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'time' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'time' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['time'] ); ?>">
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>"><?php esc_html_e( 'Email:', 'veekls-default-theme' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>">
+				<?php esc_html_e( 'Email:', 'veekls-default-theme' ); ?>
+			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'email' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['email'] ); ?>">
 		</p>
 		<?php

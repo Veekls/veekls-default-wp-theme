@@ -11,14 +11,20 @@ if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
-$args  = array(
-	'post_type' => 'auto-listing',
-	'order'     => 'DESC',
-);
+// $args  = array(
+// 'post_type' => 'auto-listing',
+// 'order'     => 'DESC',
+// );
 
-$query = new WP_Query( $args );
+// $query = new WP_Query( $args );
 
-if ( ! $query->have_posts() ) {
+// if ( ! $query->have_posts() ) {
+// return;
+// }
+
+$vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
+
+if ( empty( $vehicles ) ) {
 	return;
 }
 ?>
@@ -30,28 +36,51 @@ if ( ! $query->have_posts() ) {
 		<?php else : ?>
 			<div class="listing-no-sidebar">
 		<?php endif; ?>
-
 			<?php
-			if ( function_exists( 'auto_listings_view_switcher' ) ) {
-				auto_listings_view_switcher();
-			}
+			// if ( function_exists( 'auto_listings_view_switcher' ) ) {
+			// auto_listings_view_switcher();
+			// }
 
 			$cols  = get_theme_mod( 'front_page_listings_column', 2 );
 			$count = 1;
 
-			while ( $query->have_posts() ) {
-				$query->the_post();
+			foreach ( $vehicles as $vehicle ) {
+				set_query_var( 'vehicle', $vehicle );
 
 				if ( 1 === $count % $cols ) {
-					echo '<ul class="auto-listings-items">';
+					?>
+					<ul class="auto-listings-items">
+					<?php
 				}
+				?>
 
-				if ( function_exists( 'auto_listings_get_part' ) ) {
-					auto_listings_get_part( 'content-listing.php' );
-				}
+				<li <?php post_class( 'col-' . $cols ); ?>>
+					<?php get_template_part( 'template-parts/listings/image' ); ?>
+
+					<div class="summary">
+						<?php
+						get_template_part( 'template-parts/listings/title' );
+						get_template_part( 'template-parts/listings/at-a-glance' );
+						get_template_part( 'template-parts/listings/price' );
+						get_template_part( 'template-parts/listings/address' );
+						get_template_part( 'template-parts/listings/description' );
+						get_template_part( 'template-parts/listings/bottom' );
+						?>
+
+						<?php
+						// do_action( 'auto_listings_after_listings_loop_item' );
+						?>
+
+					</div>
+
+					<?php // do_action( 'auto_listings_after_listings_loop_item_summary' ); ?>
+				</li>
+				<?php
 
 				if ( 0 === $count % $cols ) {
-					echo '</ul>';
+					?>
+					</ul>
+					<?php
 				}
 
 				$count++;
@@ -66,6 +95,7 @@ if ( ! $query->have_posts() ) {
 
 		<?php if ( is_active_sidebar( 'auto-listings' ) ) : ?>
 			</div><!-- has-sidebar -->
+
 			<div class="sidebar">
 				<?php dynamic_sidebar( 'auto-listings' ); ?>
 			</div>
