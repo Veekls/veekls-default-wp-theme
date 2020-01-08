@@ -11,9 +11,9 @@ if ( ! $search_page ) {
 	return;
 }
 
-$post_data = get_post( $search_page );
+$post = get_post( $search_page ); // phpcs:ignore
 
-setup_postdata( $post_data );
+setup_postdata( $post );
 ?>
 
 <section class="section--search container">
