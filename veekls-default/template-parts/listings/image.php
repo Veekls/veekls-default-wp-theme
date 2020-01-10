@@ -37,7 +37,7 @@ $image_url = apply_filters(
 		<?php if ( $new_listing ) : ?>
 			<span style="background:<?php echo esc_attr( $new_listing ); ?>;" class="highlight-new">
 				<i class="fa fa-star"></i>
-				<?php esc_html_e( 'New Listing', 'auto-listings' ); ?>
+				<?php esc_html_e( 'New Listing', 'veekls' ); ?>
 			</span>
 		<?php endif; ?>
 

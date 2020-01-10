@@ -18,20 +18,20 @@ $t_type    = apply_filters( 'veekls_vehicle_type', $vehicle );
 <div class="at-a-glance">
 	<ul>
 		<li class="odometer">
-			<i class="auto-icon-odometer"></i>
+			<i class="icofont icofont-speed-meter"></i>
 			<?php echo esc_html( $vehicle->odometer ); ?>
 		</li>
 
 		<?php if ( ! empty( $t_gearbox ) ) : ?>
 			<li class="transmission">
-				<i class="auto-icon-transmission"></i>
+				<i class="icofont icofont-ui-settings"></i>
 				<?php echo esc_html( $t_gearbox ); ?>
 			</li>
 		<?php endif; ?>
 
 		<?php if ( ! empty( $t_type ) ) : ?>
 			<li class="body">
-				<i class="auto-icon-trunk"></i>
+				<i class="icofont icofont-car-alt-4"></i>
 				<?php echo esc_html( $t_type ); ?>
 			</li>
 		<?php endif; ?>

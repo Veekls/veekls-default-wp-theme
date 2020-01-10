@@ -12,7 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<div class="auto-listings-view-switcher">
-	<div id="list" class="list"><i class="fa fa-list"></i></div>
-	<div id="grid" class="grid"><i class="fa fa-th"></i></div>
+<div class="veekls-view-switcher">
+	<div id="list" class="list">
+		<i class="icofont icofont-justify-all"></i>
+	</div>
+	<div id="grid" class="grid">
+		<i class="icofont icofont-listing-box"></i>
+	</div>
 </div>

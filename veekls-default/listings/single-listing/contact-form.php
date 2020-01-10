@@ -18,7 +18,7 @@ if ( ! veekls_is_plugin_active() ) {
 ?>
 <div class="contact-form">
 	<h3><?php esc_html_e( 'Quick Contact', 'veekls-default-theme' ); ?></h3>
-	<div id="auto-listings-contact">
+	<div id="veekls-contact">
 		<?php echo do_shortcode( '[auto_listings_contact_form]' ); ?>
 	</div>
 </div>

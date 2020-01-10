@@ -21,15 +21,15 @@ $orderby = isset( $_GET['orderby'] ) ? esc_html( $_GET['orderby'] ) : 'date';
 $orderby_options = apply_filters(
 	'auto_listings_listings_orderby',
 	array(
-		'date'       => __( 'Newest Listings', 'auto-listings' ),
-		'date-old'   => __( 'Oldest Listings', 'auto-listings' ),
-		'price'      => __( 'Price (Low to High)', 'auto-listings' ),
-		'price-high' => __( 'Price (High to Low)', 'auto-listings' ),
+		'date'       => __( 'Newest Listings', 'veekls' ),
+		'date-old'   => __( 'Oldest Listings', 'veekls' ),
+		'price'      => __( 'Price (Low to High)', 'veekls' ),
+		'price-high' => __( 'Price (High to Low)', 'veekls' ),
 	)
 );
 
 ?>
-<form class="auto-listings-ordering" method="get">
+<form class="veekls-ordering" method="get">
 
 	<div class="select-wrap">
 		<select name="orderby" class="orderby">

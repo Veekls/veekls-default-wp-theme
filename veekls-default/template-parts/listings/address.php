@@ -11,13 +11,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$address = isset( $vehicle->address ) ? $vehicle->address : __( 'No address' );
+$branch = isset( $vehicle->branch ) && isset( $vehicle->branch->name )
+	? $vehicle->branch->name
+	: '';
 
-if ( empty( $address ) ) {
+if ( empty( $branch ) ) {
 	return;
 }
 ?>
 
 <div class="address">
-	<i class="fa fa-map-marker"></i> &nbsp; <?php echo esc_html( $address ); ?>
+	<i class="fa fa-map-marker"></i> &nbsp; <?php echo esc_html( $branch ); ?>
 </div>

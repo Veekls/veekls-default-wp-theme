@@ -6,9 +6,9 @@
  */
 
 /**
- * Class Contact Widget
+ * Class Contact Widget.
  */
-class Carlistings_Contact_Widget extends WP_Widget {
+class Veekls_Default_Theme_Contact_Widget extends WP_Widget {
 
 	/**
 	 * Constructor
@@ -41,8 +41,9 @@ class Carlistings_Contact_Widget extends WP_Widget {
 	 */
 	public function defaults() {
 		return array(
-			'time'  => __( '10:00 AM to 5:00 PM', 'veekls-default-theme' ),
-			'email' => __( 'name@example.com ', 'veekls-default-theme' ),
+			'address' => __( 'Veekls Av. 1133, Veekls - Chile. ', 'veekls-default-theme' ),
+			'time'    => __( '10:00 AM to 5:00 PM', 'veekls-default-theme' ),
+			'email'   => __( 'name@example.com ', 'veekls-default-theme' ),
 		);
 	}
 
@@ -57,28 +58,43 @@ class Carlistings_Contact_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		$instance = wp_parse_args( $instance, $this->defaults() );
 
-		echo $args['before_widget']; // WPCS: XSS OK.
+		echo $args['before_widget']; // phpcs:ignore
 
-		echo '<ul class="contact">';
+		?>
+		<ul class="contact">
+		<?php
 
 		if ( '' !== $instance['time'] ) {
+			?>
+			<li>
+				<i class="icofont icofont-clock-time"></i>
+				<?php echo esc_html( $instance['time'] ); ?>
+			</li>
+			<?php
+		}
 
-			echo '<li><i class="icofont icofont-clock-time"></i>' . esc_html( $instance['time'] ) . '</li>';
+		if ( '' !== $instance['address'] ) {
+			?>
+			<li>
+				<i class="icofont icofont-google-map"></i>
+				<?php echo esc_html( $instance['address'] ); ?>
+			</li>
+			<?php
 		}
 
 		if ( is_email( trim( $instance['email'] ) ) ) {
-			printf(
-				'<li>
-					<a href="mailto:%1$s">
-						<i class="icofont icofont-envelope"></i>
-						%1$s
-					</a>
-				</li>',
-				esc_html( $instance['email'] )
-			);
+			$email = $instance['email'];
+			?>
+			<li>
+				<a href="mailto:<?php echo esc_html( $email ); ?>">
+					<i class="icofont icofont-envelope"></i>
+					<?php echo esc_html( $email ); ?>
+				</a>
+			</li>
+			<?php
 		}
 
-		echo $args['after_widget']; // WPCS: XSS OK.
+		echo $args['after_widget']; // phpcs:ignore
 	}
 
 
@@ -91,9 +107,10 @@ class Carlistings_Contact_Widget extends WP_Widget {
 	 * @return array
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance          = array();
-		$instance['time']  = wp_strip_all_tags( $new_instance['time'] );
-		$instance['email'] = wp_strip_all_tags( $new_instance['email'] );
+		$instance            = array();
+		$instance['address'] = wp_strip_all_tags( $new_instance['address'] );
+		$instance['email']   = wp_strip_all_tags( $new_instance['email'] );
+		$instance['time']    = wp_strip_all_tags( $new_instance['time'] );
 
 		return $instance;
 	}
@@ -112,13 +129,37 @@ class Carlistings_Contact_Widget extends WP_Widget {
 			<label for="<?php echo esc_attr( $this->get_field_id( 'time' ) ); ?>">
 				<?php esc_html_e( 'Working Time:', 'veekls-default-theme' ); ?>
 			</label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'time' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'time' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['time'] ); ?>">
+			<input
+				name="<?php echo esc_attr( $this->get_field_name( 'time' ) ); ?>"
+				id="<?php echo esc_attr( $this->get_field_id( 'time' ) ); ?>"
+				value="<?php echo esc_attr( $instance['time'] ); ?>"
+				class="widefat"
+				type="text"
+				>
+		</p>
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'address' ) ); ?>">
+				<?php esc_html_e( 'Address:', 'veekls-default-theme' ); ?>
+			</label>
+			<input
+				name="<?php echo esc_attr( $this->get_field_name( 'address' ) ); ?>"
+				id="<?php echo esc_attr( $this->get_field_id( 'address' ) ); ?>"
+				value="<?php echo esc_attr( $instance['address'] ); ?>"
+				class="widefat"
+				type="text"
+				>
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>">
 				<?php esc_html_e( 'Email:', 'veekls-default-theme' ); ?>
 			</label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'email' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['email'] ); ?>">
+			<input
+				name="<?php echo esc_attr( $this->get_field_name( 'email' ) ); ?>"
+				id="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>"
+				value="<?php echo esc_attr( $instance['email'] ); ?>"
+				class="widefat"
+				type="email"
+				>
 		</p>
 		<?php
 	}

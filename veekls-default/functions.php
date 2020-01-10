@@ -22,7 +22,10 @@ if ( ! function_exists( 'veekls_setup' ) ) :
 		 * If you're building a theme based on veekls-default-theme, use a find and replace
 		 * to change 'veekls-default-theme' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'veekls-default-theme', get_template_directory() . '/languages' );
+		load_theme_textdomain(
+			'veekls-default-theme',
+			get_template_directory() . '/languages'
+		);
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -34,14 +37,6 @@ if ( ! function_exists( 'veekls_setup' ) ) :
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
-		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 770, 420, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -87,6 +82,7 @@ if ( ! function_exists( 'veekls_setup' ) ) :
 		add_post_type_support( 'page', 'excerpt' );
 	}
 endif;
+
 add_action( 'after_setup_theme', 'veekls_setup' );
 
 /**
@@ -99,6 +95,7 @@ add_action( 'after_setup_theme', 'veekls_setup' );
 function veekls_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'veekls_content_width', 770 );
 }
+
 add_action( 'after_setup_theme', 'veekls_content_width', 0 );
 
 /**
@@ -118,6 +115,7 @@ function veekls_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Topbar Contact', 'veekls-default-theme' ),
@@ -129,6 +127,7 @@ function veekls_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Topbar Languages', 'veekls-default-theme' ),
@@ -140,8 +139,10 @@ function veekls_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
-	register_widget( 'Carlistings_Contact_Widget' );
+
+	register_widget( 'Veekls_Default_Theme_Contact_Widget' );
 }
+
 add_action( 'widgets_init', 'veekls_widgets_init' );
 
 /**
@@ -149,26 +150,81 @@ add_action( 'widgets_init', 'veekls_widgets_init' );
  */
 function veekls_plugin_scripts() {
 	if ( is_front_page() ) {
-		wp_enqueue_style( 'car-listings-listing-css', get_template_directory_uri() . '/css/auto-listings.css', array(), '1.0.0' );
-		wp_enqueue_script( 'sumoselect', get_template_directory_uri() . '/js/sumoselect.js', array(), '3.0.3', true );
+		wp_enqueue_style(
+			'car-listings-listing-css',
+			get_template_directory_uri() . '/css/veekls.css',
+			array(),
+			'1.0.0'
+		);
+
+		wp_enqueue_script(
+			'sumoselect',
+			get_template_directory_uri() . '/js/sumoselect.js',
+			array(),
+			'3.0.3',
+			true
+		);
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'veekls_plugin_scripts', 0 );
 
 /**
  * Enqueue scripts and styles.
  */
 function veekls_scripts() {
-	wp_enqueue_style( 'icofont', get_template_directory_uri() . '/css/icofont.css', array(), '1.0.0' );
+	wp_enqueue_style(
+		'icofont',
+		get_template_directory_uri() . '/css/icofont.min.css',
+		array(),
+		'1.0.0'
+	);
 
-	wp_enqueue_style( 'veekls-default-theme-fonts', veekls_fonts_url(), array(), '1.0.0' );
-	wp_enqueue_style( 'veekls-default-theme-style', get_stylesheet_uri(), array(), '1.0.0' );
+	wp_enqueue_style(
+		'veekls-default-theme-fonts',
+		veekls_fonts_url(),
+		array(),
+		'1.0.0'
+	);
 
-	wp_enqueue_script( 'veekls-default-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-	wp_enqueue_script( 'veekls-default-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_style(
+		'veekls-default-theme-style',
+		get_stylesheet_uri(),
+		array(),
+		'1.0.0'
+	);
 
-	wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.js', array( 'jquery' ), '1.8.0', true );
-	wp_enqueue_script( 'veekls-default-theme-script', get_template_directory_uri() . '/js/script.js', array( 'slick' ), '1.0', true );
+	wp_enqueue_script(
+		'veekls-default-theme-navigation',
+		get_template_directory_uri() . '/js/navigation.js',
+		array(),
+		'20151215',
+		true
+	);
+
+	wp_enqueue_script(
+		'veekls-default-theme-skip-link-focus-fix',
+		get_template_directory_uri() . '/js/skip-link-focus-fix.js',
+		array(),
+		'20151215',
+		true
+	);
+
+	wp_enqueue_script(
+		'slick',
+		get_template_directory_uri() . '/js/slick.js',
+		array( 'jquery' ),
+		'1.8.0',
+		true
+	);
+
+	wp_enqueue_script(
+		'veekls-default-theme-script',
+		get_template_directory_uri() . '/js/script.js',
+		array( 'slick' ),
+		'1.0',
+		true
+	);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -178,11 +234,17 @@ function veekls_scripts() {
 		$list_grid_view = array(
 			'list_grid_view' => auto_listings_option( 'list_grid_view' ),
 		);
+
 		if ( is_front_page() ) {
-			wp_localize_script( 'veekls-default-theme-script', 'auto_listings', $list_grid_view );
+			wp_localize_script(
+				'veekls-default-theme-script',
+				'auto_listings',
+				$list_grid_view
+			);
 		}
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'veekls_scripts', 99 );
 
 /**
@@ -233,11 +295,18 @@ function veekls_add_editor_styles() {
 		array(
 			'css/editor-style.css',
 			veekls_fonts_url(),
-			get_template_directory_uri() . '/css/icofont.css',
+			get_template_directory_uri() . '/css/icofont.min.css',
 		)
 	);
 }
+
 add_action( 'init', 'veekls_add_editor_styles' );
+
+/**
+ * Allow use in widgets.
+ */
+add_filter( 'widget_text', 'shortcode_unautop' );
+add_filter( 'widget_text', 'do_shortcode' );
 
 /**
  * Implement the Custom Header feature.
@@ -287,5 +356,6 @@ if ( is_admin() ) {
 	 * Dashboard.
 	 */
 	require get_template_directory() . '/inc/dashboard/class-veekls-default-theme-dashboard.php';
+
 	new Carlistings_Dashboard();
 }

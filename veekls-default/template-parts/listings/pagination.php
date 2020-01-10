@@ -17,7 +17,7 @@ if ( $wp_query->max_num_pages <= 1 ) {
 	return;
 }
 ?>
-<nav class="auto-listings-pagination">
+<nav class="veekls-pagination">
 	<?php
 	$pagination = paginate_links(
 		apply_filters(

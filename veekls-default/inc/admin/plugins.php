@@ -35,7 +35,7 @@ function veekls_required_plugins() {
 		),
 		array(
 			'name' => esc_html__( 'Veekls', 'veekls-default-theme' ),
-			'slug' => 'auto-listings',
+			'slug' => 'veekls',
 		),
 		array(
 			'name' => esc_html__( 'Meta Box', 'veekls-default-theme' ),

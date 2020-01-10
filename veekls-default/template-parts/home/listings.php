@@ -11,17 +11,6 @@ if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
-// $args  = array(
-// 'post_type' => 'auto-listing',
-// 'order'     => 'DESC',
-// );
-
-// $query = new WP_Query( $args );
-
-// if ( ! $query->have_posts() ) {
-// return;
-// }
-
 $vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
 
 if ( empty( $vehicles ) ) {
@@ -31,15 +20,13 @@ if ( empty( $vehicles ) ) {
 
 <div id="container" class="container">
 	<div id="content" class="content" role="main">
-		<?php if ( is_active_sidebar( 'auto-listings' ) ) : ?>
+		<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 			<div class="has-sidebar">
 		<?php else : ?>
 			<div class="listing-no-sidebar">
 		<?php endif; ?>
 			<?php
-			// if ( function_exists( 'auto_listings_view_switcher' ) ) {
-			// auto_listings_view_switcher();
-			// }
+			get_template_part( 'template-parts/listings/view-switcher' );
 
 			$cols  = get_theme_mod( 'front_page_listings_column', 2 );
 			$count = 1;
@@ -49,31 +36,26 @@ if ( empty( $vehicles ) ) {
 
 				if ( 1 === $count % $cols ) {
 					?>
-					<ul class="auto-listings-items">
+					<ul class="veekls-items grid-view">
 					<?php
 				}
 				?>
 
 				<li <?php post_class( 'col-' . $cols ); ?>>
-					<?php get_template_part( 'template-parts/listings/image' ); ?>
+					<?php
+					get_template_part( 'template-parts/listings/image' );
+					get_template_part( 'template-parts/listings/at-a-glance' );
+					?>
 
 					<div class="summary">
 						<?php
 						get_template_part( 'template-parts/listings/title' );
-						get_template_part( 'template-parts/listings/at-a-glance' );
 						get_template_part( 'template-parts/listings/price' );
 						get_template_part( 'template-parts/listings/address' );
 						get_template_part( 'template-parts/listings/description' );
 						get_template_part( 'template-parts/listings/bottom' );
 						?>
-
-						<?php
-						// do_action( 'auto_listings_after_listings_loop_item' );
-						?>
-
 					</div>
-
-					<?php // do_action( 'auto_listings_after_listings_loop_item_summary' ); ?>
 				</li>
 				<?php
 
@@ -93,11 +75,11 @@ if ( empty( $vehicles ) ) {
 			wp_reset_postdata();
 			?>
 
-		<?php if ( is_active_sidebar( 'auto-listings' ) ) : ?>
+		<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 			</div><!-- has-sidebar -->
 
 			<div class="sidebar">
-				<?php dynamic_sidebar( 'auto-listings' ); ?>
+				<?php dynamic_sidebar( 'sidebar-1' ); ?>
 			</div>
 		<?php else : ?>
 			</div>

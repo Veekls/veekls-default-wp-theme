@@ -18,7 +18,7 @@ if ( ! veekls_is_plugin_active() ) {
 
 <?php do_action( 'auto_listings_before_single_listing' ); ?>
 
-<div id="listing-<?php the_ID(); ?>" class="auto-listings-single listing">
+<div id="listing-<?php the_ID(); ?>" class="veekls-single listing">
 	<div class="has-sidebar">
 		<div class="image-gallery">
 			<?php
