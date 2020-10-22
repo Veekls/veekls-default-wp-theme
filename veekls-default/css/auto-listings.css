@@ -1,61 +1,61 @@
-.veekls .container > .content {
+.auto-listings .container > .content {
     padding-top: 30px;
     padding-bottom: 30px;
 }
 /* apply a natural box layout model to all elements, but allowing components to change
 should fix up some theme issues
 */
-[class^="veekls-"],
-[class*=" veekls-"] {
+[class^="auto-listings-"],
+[class*=" auto-listings-"] {
     box-sizing: border-box;
 }
-[class^="veekls-"]:before,
-[class*=" veekls-"]:before,
-[class^="veekls-"]:after,
-[class*=" veekls-"]:after {
+[class^="auto-listings-"]:before,
+[class*=" auto-listings-"]:before,
+[class^="auto-listings-"]:after,
+[class*=" auto-listings-"]:after {
     box-sizing: inherit;
 }
 /* ======================================== SOME DEFAULTS ========================================
 */
-.veekls .full-width {
+.auto-listings .full-width {
   display: inline-block;
   width: 100%;
 }
-.veekls .has-sidebar {
+.auto-listings .has-sidebar {
     width: 66.6667%;
     float: left;
 }
-.veekls .sidebar {
+.auto-listings .sidebar {
     width: 28%;
     float: right;
 }
-.veekls-single .content {
+.auto-listings-single .content {
     display: inline-block;
     width: 100%;
 }
-.veekls-single img {
+.auto-listings-single img {
     height: auto;
     max-width: 100%;
 }
-.veekls-single .title, .veekls-items .title, .veekls-single .veekls-tabs table {
+.auto-listings-single .title, .auto-listings-items .title, .auto-listings-single .auto-listings-tabs table {
     text-align: left;
 }
-.veekls-single .contact {
+.auto-listings-single .contact {
   list-style: outside none none;
   margin: 0;
   padding: 0;
   line-height: 28px;
 }
-.veekls-single .contact i {
+.auto-listings-single .contact i {
   color: #337ab7;
   float: left;
   margin: 6px 10px 0 0;
   width: 20px;
 }
-.veekls .price {
+.auto-listings .price {
     color: #337ab7;
 }
-.veekls .al-button, .veekls .contact-form .button-primary, .veekls .cmb2-upload-button, .veekls #wp-submit {
+.auto-listings .al-button, .auto-listings .contact-form .button-primary, .auto-listings .cmb2-upload-button, .auto-listings #wp-submit {
   background: #337ab7 none repeat scroll 0 0;
   border: 2px solid #337ab7;
   border-radius: 0;
@@ -71,18 +71,18 @@ should fix up some theme issues
   text-decoration: none;
   text-transform: uppercase;
 }
-.veekls .al-button:hover, .veekls .contact-form .button-primary:hover, .veekls #wp-submit:hover {
+.auto-listings .al-button:hover, .auto-listings .contact-form .button-primary:hover, .auto-listings #wp-submit:hover {
   background: #fff;
   color: #337ab7;
   text-decoration: none;
 }
-.veekls span.status {
+.auto-listings span.status {
   font-size: 12px;
   font-weight: 300;
   line-height: 12px;
   padding: 5px 10px;
 }
-.veekls span.status i:before {
+.auto-listings span.status i:before {
   display: inline-block;
   float: left;
   font-size: 14px;
@@ -91,7 +91,7 @@ should fix up some theme issues
   margin: 0 5px -2px 0;
   padding: 0;
 }
-.veekls .highlight-new {
+.auto-listings .highlight-new {
   border-radius: 4px;
   color: #fff;
   font-size: 11px;
@@ -103,7 +103,7 @@ should fix up some theme issues
   z-index: 999;
   background: red;
 }
-.veekls span.condition {
+.auto-listings span.condition {
   color: #888;
   display: inline-block;
   font-size: 12px;
@@ -120,42 +120,42 @@ should fix up some theme issues
 /**
  * Image gallery ==============================================
  */
-.veekls-single .title {
+.auto-listings-single .title {
   display: inline-block;
 }
-.veekls-single .upper span.status {
+.auto-listings-single .upper span.status {
   display: inline;
   margin: 0 0 0 20px;
 }
-.veekls-single .image-gallery {
+.auto-listings-single .image-gallery {
     margin-bottom: 30px;
 }
-.veekls-single .image-gallery .lSPager.lSGallery li {
+.auto-listings-single .image-gallery .lSPager.lSGallery li {
     transition: 0.25s;
     border-bottom: 3px solid transparent;
 }
-.veekls-single .image-gallery .lSPager.lSGallery li.active,
-.veekls-single .image-gallery .lSPager.lSGallery li:hover {
+.auto-listings-single .image-gallery .lSPager.lSGallery li.active,
+.auto-listings-single .image-gallery .lSPager.lSGallery li:hover {
     background: #fff none repeat scroll 0 0;
     border-radius: 0;
     border-bottom: 3px solid #337ab7;
 }
 
-.veekls-single .image-gallery .lSAction i.fa {
+.auto-listings-single .image-gallery .lSAction i.fa {
     color: #fff;
     font-size: 40px;
 }
-.veekls-single .image-gallery .prev {
+.auto-listings-single .image-gallery .prev {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
 }
-.veekls-single .image-gallery .lSSlideWrapper .lightSlider > * {
+.auto-listings-single .image-gallery .lSSlideWrapper .lightSlider > * {
     z-index: 1;
 }
-.veekls-single .image-gallery .active {
+.auto-listings-single .image-gallery .active {
     z-index: 2;
 }
 .lg-icon, .lg-icon:before, .lg-icon:after {
@@ -178,11 +178,11 @@ should fix up some theme issues
   content: "\f019";
 }
 
-.veekls-single .gallery-wrap {
+.auto-listings-single .gallery-wrap {
   position: relative;
 }
 
-.veekls .veekls-tabs ul.tabs {
+.auto-listings .auto-listings-tabs ul.tabs {
     list-style: none;
     padding: 0 0 0 10px;
     margin: 0 0 1.618em;
@@ -190,7 +190,7 @@ should fix up some theme issues
     position: relative
 }
 
-.veekls .veekls-tabs ul.tabs li {
+.auto-listings .auto-listings-tabs ul.tabs li {
     border: 1px solid #dddddd;
     background-color: #f4f4f4;
     display: inline-block;
@@ -200,7 +200,7 @@ should fix up some theme issues
     padding: 0 1em
 }
 
-.veekls .veekls-tabs ul.tabs li a {
+.auto-listings .auto-listings-tabs ul.tabs li a {
     display: inline-block;
     padding: .5em 0;
     font-weight: 700;
@@ -208,23 +208,23 @@ should fix up some theme issues
     text-decoration: none
 }
 
-.veekls .veekls-tabs ul.tabs li a:hover {
+.auto-listings .auto-listings-tabs ul.tabs li a:hover {
     text-decoration: none;
     color: #444444;
 }
 
-.veekls .veekls-tabs ul.tabs li.active {
+.auto-listings .auto-listings-tabs ul.tabs li.active {
     background: #fff;
     z-index: 2;
     border-bottom-color: #fff;
     box-shadow: 0 3px 0 #337ab7 inset;
 }
 
-.veekls .veekls-tabs ul.tabs li.active a {
+.auto-listings .auto-listings-tabs ul.tabs li.active a {
     color: inherit;
     text-shadow: inherit
 }
-.veekls .veekls-tabs ul.tabs::before {
+.auto-listings .auto-listings-tabs ul.tabs::before {
     position: absolute;
     content: ' ';
     width: 100%;
@@ -234,7 +234,7 @@ should fix up some theme issues
     z-index: 1
 }
 
-.veekls .veekls-tabs .panel {
+.auto-listings .auto-listings-tabs .panel {
     margin: 0 0 2em;
     padding: 0
 }
@@ -244,56 +244,56 @@ should fix up some theme issues
  * Sidebar ==============================================
  */
 
-.veekls-single .sidebar > div {
+.auto-listings-single .sidebar > div {
   clear: both;
   display: inline-block;
   margin-bottom: 25px;
   width: 100%;
 }
-.veekls-single .sidebar > div.address, .veekls-single .sidebar > div.price {
+.auto-listings-single .sidebar > div.address, .auto-listings-single .sidebar > div.price {
     margin-bottom: 5px;
 }
-.veekls-single .at-a-glance ul {
+.auto-listings-single .at-a-glance ul {
   list-style: outside none none;
   margin: 0;
   padding: 0;
 }
-.veekls-single .at-a-glance ul li {
+.auto-listings-single .at-a-glance ul li {
   display: inline-block;
   font-size: 16px;
   font-weight: 500;
   line-height: 36px;
   width: 100%;
 }
-.veekls-single .at-a-glance ul i {
+.auto-listings-single .at-a-glance ul i {
   margin: 0 15px 0 0;
   color: #999;
 }
-.veekls-single .at-a-glance ul i::before {
+.auto-listings-single .at-a-glance ul i::before {
   font-size: 24px;
 }
 
 
-.veekls-single .contact-form {
+.auto-listings-single .contact-form {
   background: #eee none repeat scroll 0 0;
   padding: 15px 20px;
 }
 /* anti-spam fields - x 2 */
-.veekls-single .contact-form .cmb2-id-url {
+.auto-listings-single .contact-form .cmb2-id-url {
     display: none;
     visibility: hidden;
 }
-.veekls-single .contact-form .cmb2-id-comment {
+.auto-listings-single .contact-form .cmb2-id-comment {
     display: none;
     visibility: hidden;
 }
-.veekls-single .contact-form .form-table {
+.auto-listings-single .contact-form .form-table {
     margin-bottom: 5px;
 }
-.veekls-single .contact-form > h4 {
+.auto-listings-single .contact-form > h4 {
   margin: 0 0 12px;
 }
-.veekls-single .contact-form input:not(.button-primary), .veekls-single .contact-form textarea {
+.auto-listings-single .contact-form input:not(.button-primary), .auto-listings-single .contact-form textarea {
   border: 1px solid #eaeaea;
   font-size: 14px;
   margin: 0 0 5px;
@@ -301,44 +301,44 @@ should fix up some theme issues
   width: 100%;
   color: #888;
 }
-.veekls-single .contact-form input.button-primary {
+.auto-listings-single .contact-form input.button-primary {
   display: inline-block;
   width: 100%;
 }
-.veekls-single .address {
+.auto-listings-single .address {
   margin: 0;
   padding: 5px 0;
 }
-.veekls-single .map {
+.auto-listings-single .map {
     background: #fff none repeat scroll 0 0;
     height: 300px;
     overflow: visible;
     width: 100%;
 }
 
-.veekls-single .tagline {
+.auto-listings-single .tagline {
     margin-top: 20px;
     margin-bottom: 10px;
 }
-.veekls-single .description {
+.auto-listings-single .description {
     margin-bottom: 30px;
 }
 
 /* ======================================== LOOP LISTINGs ========================================
 */
 
-.veekls-items * {
+.auto-listings-items * {
     transition: 0.3s
 }
-.veekls-items {
+.auto-listings-items {
     margin: 0;
     list-style: none;
     padding: 0;
 }
-.veekls-items.list-view {
+.auto-listings-items.list-view {
     margin: 0;
 }
-.veekls-items > li {
+.auto-listings-items > li {
     display: inline-block;
     margin: 0 0 25px;
     padding: 0;
@@ -348,61 +348,61 @@ should fix up some theme issues
     background: #fff;
     max-width: 100%;
 }
-.veekls-items li .image {
+.auto-listings-items li .image {
     float: left;
     width: 25%;
     transition: 0s;
     position: relative;
 }
-.veekls-items li .image img {
+.auto-listings-items li .image img {
     display: block;
     max-width: 100%;
     width: 100%;
 }
-.veekls-items li .status {
+.auto-listings-items li .status {
   background: rgba(255, 255, 255, 0.9) none repeat scroll 0 0;
   color: #222;
   position: absolute;
   bottom: 0;
 }
-.veekls-items li .state {
+.auto-listings-items li .state {
   font-weight: bold;
   font-size: 30px;
 }
-.veekls-items li .summary {
+.auto-listings-items li .summary {
     float: right;
     width: 70%;
     text-align: left;
 }
-.veekls-items li .title {
+.auto-listings-items li .title {
     margin-bottom: 0;
     margin-top: 10px;
     padding: 0 15px 0 0;
 }
-.veekls-items li .at-a-glance {
+.auto-listings-items li .at-a-glance {
   border-bottom: 1px solid #ddd;
   padding: 3px 0 8px;
   margin: 0 0 6px;
 }
-.veekls-items li .price {
+.auto-listings-items li .price {
     margin-bottom: 4px;
 }
-.veekls-items li .address {
+.auto-listings-items li .address {
     margin: 0 0 5px;
     padding: 0;
 }
-.veekls-items li .at-a-glance {
+.auto-listings-items li .at-a-glance {
   display: inline-block;
   margin: 5px 0 5px;
   padding: 3px 0 5px;
   width: 100%;
 }
-.veekls-items .at-a-glance ul {
+.auto-listings-items .at-a-glance ul {
   list-style: outside none none;
   margin: 0;
   padding: 0;
 }
-.veekls-items .at-a-glance ul li {
+.auto-listings-items .at-a-glance ul li {
   display: inline;
   font-size: 15px;
   font-weight: 500;
@@ -410,23 +410,23 @@ should fix up some theme issues
   margin: 0 20px 0 0;
   width: auto;
 }
-.veekls-items .at-a-glance ul i {
+.auto-listings-items .at-a-glance ul i {
   margin: 0 5px 0 0;
   color: #999;
 }
-.veekls-items .at-a-glance ul i:before {
+.auto-listings-items .at-a-glance ul i:before {
   font-size: 18px;
   line-height: unset;
 }
-.veekls-items .description {
+.auto-listings-items .description {
   padding-right: 15px;
   margin: 0;
 }
-.veekls-items .bottom-wrap {
+.auto-listings-items .bottom-wrap {
   display: inline-block;
   margin: 20px 0 0 0;
 }
-.veekls-items .bottom-wrap a.al-button {
+.auto-listings-items .bottom-wrap a.al-button {
   margin: 0 14px 0 0;
   padding: 5px 12px;
   font-size: 13px;
@@ -434,74 +434,74 @@ should fix up some theme issues
 }
 
 /* With sidebar */
-.veekls-items li .summary {
+.auto-listings-items li .summary {
   padding-bottom: 15px;
 }
-.has-sidebar .veekls-items .bottom-wrap {
+.has-sidebar .auto-listings-items .bottom-wrap {
   float: right;
 }
-.has-sidebar .veekls-items .bottom-wrap a.al-button {
+.has-sidebar .auto-listings-items .bottom-wrap a.al-button {
   margin: 0;
 }
-.has-sidebar .veekls-items span.condition {
+.has-sidebar .auto-listings-items span.condition {
   float: left;
   margin: 4px 15px 0 0;
 }
 
 /* Grid view */
-.veekls-items.grid-view {
+.auto-listings-items.grid-view {
     display: inline-block;
     width: 100%;
 }
-.veekls-items.grid-view li {
+.auto-listings-items.grid-view li {
     display: inline-block;
     margin: 0 0 30px;
     overflow: hidden;
     padding: 0;
     float: left;
 }
-.veekls-items.grid-view li .image {
+.auto-listings-items.grid-view li .image {
     float: none;
     margin-bottom: 15px;
     width: 100%;
 }
-.veekls-items.grid-view li .summary {
+.auto-listings-items.grid-view li .summary {
   float: none;
   width: auto;
   padding: 0 15px 15px;
 }
-.veekls-items.grid-view li .summary .title {
+.auto-listings-items.grid-view li .summary .title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.veekls-items.grid-view li.col-2 {
+.auto-listings-items.grid-view li.col-2 {
     width: 48%;
     margin-right: 4%;
 }
-.veekls-items.grid-view li.col-3 {
+.auto-listings-items.grid-view li.col-3 {
     width: 31.3333%;
     margin-right: 3%;
 }
-.veekls-items.grid-view li.col-4 {
+.auto-listings-items.grid-view li.col-4 {
     width: 23%;
     margin-right: 2.6666%;
 }
-.veekls-items.grid-view li:last-child {
+.auto-listings-items.grid-view li:last-child {
     margin-right: 0 !important;
 }
 
 
-.veekls-items.grid-view li.col-4 .title {
+.auto-listings-items.grid-view li.col-4 .title {
   font-size: 19px
 }
 
 /* Grid View With sidebar */
-.has-sidebar .veekls-items.grid-view .bottom-wrap {
+.has-sidebar .auto-listings-items.grid-view .bottom-wrap {
   float: unset;
 }
-.has-sidebar .veekls-items.grid-view .bottom-wrap a.al-button {
+.has-sidebar .auto-listings-items.grid-view .bottom-wrap a.al-button {
   display: block;
   float: none;
   line-height: 24px;
@@ -511,52 +511,52 @@ should fix up some theme issues
 /* ======================================== SORTING, SWITCHING & PAGINATION ========================================
 */
 
-.veekls-ordering {
+.auto-listings-ordering {
     float: left;
     margin-bottom: 40px;
 }
-.veekls-ordering .SumoSelect > .CaptionCont {
+.auto-listings-ordering .SumoSelect > .CaptionCont {
   border: 2px solid #ddd;
 }
-.veekls-view-switcher {
+.auto-listings-view-switcher {
     float: left;
     margin: 0 0 40px 30px;
 }
-.veekls-view-switcher > div {
+.auto-listings-view-switcher > div {
   cursor: pointer;
   float: left;
   margin: 4px 10px 0 0;
 }
-.veekls-view-switcher i:before {
+.auto-listings-view-switcher i:before {
     font-size: 26px;
     color: #444;
 }
-.veekls-pagination {
+.auto-listings-pagination {
     float: right;
     margin-bottom: 40px;
 }
-.veekls-pagination ul {
+.auto-listings-pagination ul {
   display: inline-block;
   list-style: outside none none;
   margin: 5px 0 0 0;
   padding: 0;
 }
-.veekls-pagination ul li {
+.auto-listings-pagination ul li {
     float: left;
     margin: 0 0 0 -2px;
 }
-.veekls-pagination ul li span.current {
+.auto-listings-pagination ul li span.current {
     cursor: not-allowed;
 }
-.veekls-pagination ul li span,
-.veekls-pagination ul li a {
+.auto-listings-pagination ul li span,
+.auto-listings-pagination ul li a {
     font-size: 100% !important;
     line-height: 1;
     padding: 0.5em 0.75em;
     border: 2px solid #ddd;
 }
-.veekls-pagination ul li a.prev,
-.veekls-pagination ul li a.next {
+.auto-listings-pagination ul li a.prev,
+.auto-listings-pagination ul li a.next {
     border-radius: 0px;
     font-size: 100%;
     line-height: 1;
@@ -565,7 +565,7 @@ should fix up some theme issues
 /* ======================================== SEARCH ========================================
 */
 
-.veekls-search {
+.auto-listings-search {
     margin: 0 0 30px;
     width: 100%;
     padding: 0;
@@ -573,13 +573,13 @@ should fix up some theme issues
     display: inline-block;
     text-align: center;
 }
-.veekls-search .row {
+.auto-listings-search .row {
     display: inline-block;
     width: 100%;
     margin: 0 0 15px;
     color: #444;
 }
-.veekls-search .row .field {
+.auto-listings-search .row .field {
     line-height: unset;
     position: relative;
     vertical-align: middle;
@@ -587,25 +587,25 @@ should fix up some theme issues
     font-size: 15px;
     font-weight: 300;
 }
-.veekls-search .condition .prefix {
+.auto-listings-search .condition .prefix {
     font-size: 36px;
     font-weight: 700;
 }
-.veekls-search .price-wrap > div {
+.auto-listings-search .price-wrap > div {
     display: inline-block;
 }
-.veekls-search .price-wrap .prefix {
+.auto-listings-search .price-wrap .prefix {
     font-size: 20px;
     font-weight: 200;
 }
-.veekls-search .area-wrap .field, .veekls-search .area-wrap button {
+.auto-listings-search .area-wrap .field, .auto-listings-search .area-wrap button {
     display: inline-block;
 }
-.veekls-search .area-wrap .prefix {
+.auto-listings-search .area-wrap .prefix {
     font-size: 20px;
     font-weight: 200;
 }
-.veekls-search .area {
+.auto-listings-search .area {
   border: 1px solid #aaa;
   border-radius: 4px 0 0 4px;
   height: 40px;
@@ -620,34 +620,34 @@ should fix up some theme issues
   font-weight: 300;
   color: #444;
 }
-.veekls-search .area-wrap .area::placeholder {
+.auto-listings-search .area-wrap .area::placeholder {
   text-transform: none;
   font-size: 15px;
   font-weight: 300;
   color: #666;
 }
-.veekls-search .area-wrap .area:focus, .veekls-search .area-wrap .area:active {
+.auto-listings-search .area-wrap .area:focus, .auto-listings-search .area-wrap .area:active {
   border: none;
   border-bottom: 2px solid #337ab7;
   border-radius: 0;
 }
-.veekls-search .area-wrap button {
+.auto-listings-search .area-wrap button {
   border-radius: 0 4px 4px 0;
   z-index: 9;
   position: relative;
 }
-.veekls-search .area-wrap button:hover,.veekls-search .area-wrap button:focus {
+.auto-listings-search .area-wrap button:hover,.auto-listings-search .area-wrap button:focus {
   border: 2px solid transparent;
 }
-.veekls-search .extras-wrap {
+.auto-listings-search .extras-wrap {
   display: none;
   margin-top: 15px;
 }
-.veekls-search a.refine {
+.auto-listings-search a.refine {
   cursor: pointer;
   text-decoration: none;
 }
-.veekls-search a.refine.shown i {
+.auto-listings-search a.refine.shown i {
    -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -656,7 +656,7 @@ should fix up some theme issues
 }
 
 /* sumoselect fixups */
-.veekls-search .SumoSelect > .CaptionCont {
+.auto-listings-search .SumoSelect > .CaptionCont {
   background-color: transparent;
   border: 2px solid #a4a4a4;
   border-radius: 4px;
@@ -665,45 +665,45 @@ should fix up some theme issues
   line-height: 24px;
   margin: 0;
 }
-.veekls-search .SumoSelect > .CaptionCont > span {
+.auto-listings-search .SumoSelect > .CaptionCont > span {
   padding-right: 10px;
 }
-.veekls-search .SumoSelect > .CaptionCont > span.placeholder {
+.auto-listings-search .SumoSelect > .CaptionCont > span.placeholder {
   color: inherit;
   font-style: normal;
 }
-.veekls-search  .price-wrap .SumoSelect > .optWrapper {
+.auto-listings-search  .price-wrap .SumoSelect > .optWrapper {
   width: 115%;
 }
-.veekls-search label {
+.auto-listings-search label {
   text-align: left;
   font-weight: 300;
 }
-.veekls-search .SumoSelect > .CaptionCont > label > i {
+.auto-listings-search .SumoSelect > .CaptionCont > label > i {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   height: auto;
   top: 20%;
 }
-.veekls-search .SumoSelect > .CaptionCont > label > i::before {
+.auto-listings-search .SumoSelect > .CaptionCont > label > i::before {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   color: #444;
   content: "\f107";
   font-family: "FontAwesome";
   font-style: normal;
 }
-.veekls-search .SumoSelect {
+.auto-listings-search .SumoSelect {
   margin: 0;
   padding: 0;
 }
-.veekls-search .condition-wrap .SumoSelect {
+.auto-listings-search .condition-wrap .SumoSelect {
   margin-left: 15px;
   width: 140px;
 }
-.veekls-search .price-wrap .SumoSelect {
+.auto-listings-search .price-wrap .SumoSelect {
   width: 100px;
   margin: 0 10px;
 }
-.veekls-search .area-wrap .SumoSelect {
+.auto-listings-search .area-wrap .SumoSelect {
   margin-right: 15px;
   width: 140px;
 }
@@ -711,78 +711,78 @@ should fix up some theme issues
 
 /* ======================================== SEARCH STYLE 2 ========================================
 */
-.veekls-search.s-2 .field {
+.auto-listings-search.s-2 .field {
   color: #fff;
   text-shadow: 0 0 6px rgba(0,0,0,0.5);
 }
-.veekls-search.s-2 .area-wrap .area {
+.auto-listings-search.s-2 .area-wrap .area {
   text-shadow: none;
   border-color: #fff;
 }
-.veekls-search.s-2 .SumoSelect > .CaptionCont {
+.auto-listings-search.s-2 .SumoSelect > .CaptionCont {
   border: 2px solid #fff;
 }
-.veekls-search.s-2 .SumoSelect > .CaptionCont > label > i::before {
+.auto-listings-search.s-2 .SumoSelect > .CaptionCont > label > i::before {
   color: #fff;
 }
-.veekls-search.s-2 a.refine, .veekls-search.s-2 a.refine:hover {
+.auto-listings-search.s-2 a.refine, .auto-listings-search.s-2 a.refine:hover {
   color: #fff;
 }
 
 /* ======================================== SEARCH STYLE 3 ========================================
 */
-.veekls-search.s-3  {
+.auto-listings-search.s-3  {
   background: #eee;
 }
 
 /* ======================================== SEARCH STYLE 4 ========================================
 */
-.veekls-search.s-4 {
+.auto-listings-search.s-4 {
   text-align: left;
   padding: 0;
 }
-.veekls-search.s-4 .field .prefix {
+.auto-listings-search.s-4 .field .prefix {
   font-size: inherit;
   font-weight: 300;
 }
-.veekls-search.s-4 .field .SumoSelect {
+.auto-listings-search.s-4 .field .SumoSelect {
   display: block;
   margin: 0;
   width: 100%;
 }
-.veekls-search.s-4 .price-wrap .field {
+.auto-listings-search.s-4 .price-wrap .field {
   display: inline-block;
   float: left;
   margin: 0;
   width: 50%;
 }
-.veekls-search.s-4 .price-wrap .SumoSelect.sumo_min_price {
+.auto-listings-search.s-4 .price-wrap .SumoSelect.sumo_min_price {
   padding: 0 10px 0 0;
 }
-.veekls-search.s-4 .price-wrap .SumoSelect > .optWrapper {
+.auto-listings-search.s-4 .price-wrap .SumoSelect > .optWrapper {
   width: 100%;
 }
-.veekls-search.s-4 .area-wrap .within {
+.auto-listings-search.s-4 .area-wrap .within {
   width: 40%;
 }
-.veekls-search.s-4 .area-wrap .area {
+.auto-listings-search.s-4 .area-wrap .area {
   border-radius: 4px;
   margin: 0;
   width: 55%;
   float: right;
 }
-.veekls-search.s-4 .area-wrap button {
+.auto-listings-search.s-4 .area-wrap button {
   display: block;
   width: 100%;
   margin-top: 15px;
   border-radius: 4px;
 }
-.veekls-search.s-4 a.refine {
+.auto-listings-search.s-4 a.refine {
   display: inline-block;
   text-align: right;
   width: 100%;
 }
-.veekls-search.s-4 .extras-wrap .field {
+.auto-listings-search.s-4 .extras-wrap .field {
   display: inline-block;
   margin: 0 0 5px;
   width: 100%;
@@ -791,10 +791,10 @@ should fix up some theme issues
 
 /* ======================================== STANDARD SEARCH LAYOUT ========================================
 */
-.veekls-search.standard .field {
+.auto-listings-search.standard .field {
     margin: 0 0 10px;
 }
-.veekls-search.standard .area {
+.auto-listings-search.standard .area {
   border-radius: 4px;
   width: auto;
 }
@@ -802,31 +802,31 @@ should fix up some theme issues
 /* ======================================== LISTINGS COMPACT MODE ========================================
 */
 
-.veekls-items li.compact, .veekls-items.grid-view li.compact {
+.auto-listings-items li.compact, .auto-listings-items.grid-view li.compact {
     width: 100%;
     margin-right: 0;
 }
-.veekls-items li.compact .image, .veekls-items.grid-view li.compact .image {
+.auto-listings-items li.compact .image, .auto-listings-items.grid-view li.compact .image {
   margin: 0 5% 0 0;
   position: absolute;
   width: 20%;
 }
-.veekls-items li.compact .status, .veekls-items.grid-view li.compact .status, .veekls-items li.compact .highlight-new, .veekls-items.grid-view li.compact .highlight-new {
+.auto-listings-items li.compact .status, .auto-listings-items.grid-view li.compact .status, .auto-listings-items li.compact .highlight-new, .auto-listings-items.grid-view li.compact .highlight-new {
     display: none;
 }
-.veekls-items li.compact .summary, .veekls-items.grid-view li.compact .summary {
+.auto-listings-items li.compact .summary, .auto-listings-items.grid-view li.compact .summary {
     float: left;
     width: 100%;
     padding: 0;
 }
-.veekls-items li.compact .at-a-glance, .veekls-items.grid-view li.compact .at-a-glance {
+.auto-listings-items li.compact .at-a-glance, .auto-listings-items.grid-view li.compact .at-a-glance {
   margin: 5px 0 0;
   padding: 0 10px;
 }
-.veekls-items li.compact .at-a-glance li, .veekls-items.grid-view li.compact .at-a-glance li {
+.auto-listings-items li.compact .at-a-glance li, .auto-listings-items.grid-view li.compact .at-a-glance li {
   font-size: 13px;
 }
-.veekls-items li.compact .title, .veekls-items.grid-view li.compact .title {
+.auto-listings-items li.compact .title, .auto-listings-items.grid-view li.compact .title {
   font-size: 18px;
   margin-bottom: 0;
   overflow: hidden;
@@ -835,71 +835,71 @@ should fix up some theme issues
   white-space: nowrap;
   margin-left: 23%;
 }
-.veekls-items li.compact .address, .veekls-items.grid-view li.compact .address {
+.auto-listings-items li.compact .address, .auto-listings-items.grid-view li.compact .address {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.veekls-items li.compact .price, .veekls-items.grid-view li.compact .price {
+.auto-listings-items li.compact .price, .auto-listings-items.grid-view li.compact .price {
   font-size: 14px;
   padding: 2px 10px;
 }
-.veekls-items li.compact .address, .veekls-items.grid-view li.compact .address {
+.auto-listings-items li.compact .address, .auto-listings-items.grid-view li.compact .address {
   font-size: 13px;
   font-weight: 300;
   line-height: 13px;
   margin: 0;
   padding: 5px 10px 0;
 }
-.veekls-items li.compact .bottom-wrap, .veekls-items.grid-view li.compact .bottom-wrap {
+.auto-listings-items li.compact .bottom-wrap, .auto-listings-items.grid-view li.compact .bottom-wrap {
   display: none;
 }
 
 /* ======================================== SINGLE AGENT ========================================
 */
 
-.veekls-single.seller .avatar-wrap {
+.auto-listings-single.seller .avatar-wrap {
     background: #eee none repeat scroll 0 0;
     float: left;
     margin: 5px 30px 30px 0;
     padding: 4px;
 }
-.veekls-single.seller .avatar-wrap img {
+.auto-listings-single.seller .avatar-wrap img {
   display: block;
 }
-.veekls-single.seller .name {
+.auto-listings-single.seller .name {
     display: inline-block;
 }
-.veekls-single.seller .position {
+.auto-listings-single.seller .position {
   font-weight: 600;
   margin: 0 0 5px;
 }
-.veekls-single.seller .social {
+.auto-listings-single.seller .social {
     list-style: none;
     padding: 5px 0 0 0;
     margin: 0;
     display: block;
 }
-.veekls-single.seller .social li {
+.auto-listings-single.seller .social li {
     float: left;
     margin: 0 10px 0 0;
 }
-.veekls-single.seller .social .facebook i {
+.auto-listings-single.seller .social .facebook i {
     color: #3b5998;
 }
-.veekls-single.seller .social .google i {
+.auto-listings-single.seller .social .google i {
     color: #dd4b39;
 }
-.veekls-single.seller .social .twitter i {
+.auto-listings-single.seller .social .twitter i {
     color: #00aced;
 }
-.veekls-single.seller .social .skype i {
+.auto-listings-single.seller .social .skype i {
     color: #00AFF0;
 }
-.veekls-single.seller .social .linkedin i {
+.auto-listings-single.seller .social .linkedin i {
     color: #007bb6;
 }
-.veekls-single.seller .social .youtube i {
+.auto-listings-single.seller .social .youtube i {
     color: #bb0000;
 }
 
@@ -908,96 +908,96 @@ should fix up some theme issues
 
 /* Tiny devices */
 @media (max-width: 650px) {
-  .veekls .has-sidebar {
+  .auto-listings .has-sidebar {
     float: none;
     width: auto;
   }
-  .veekls .sidebar {
+  .auto-listings .sidebar {
     float: none;
     width: auto;
   }
-  .veekls-search {
+  .auto-listings-search {
     text-align: left;
     padding: 0;
   }
-  .veekls-search.s-3 {
+  .auto-listings-search.s-3 {
     padding: 10px;
   }
-  .veekls-search .field .prefix {
+  .auto-listings-search .field .prefix {
     font-size: inherit;
     font-weight: 300;
   }
-  .veekls-search .field .SumoSelect {
+  .auto-listings-search .field .SumoSelect {
     display: block;
     margin: 0;
     width: 100%;
   }
-  .veekls-search .price-wrap .field {
+  .auto-listings-search .price-wrap .field {
     display: inline-block;
     float: left;
     margin: 0;
     width: 50%;
   }
-  .veekls-search .price-wrap .SumoSelect.sumo_min_price {
+  .auto-listings-search .price-wrap .SumoSelect.sumo_min_price {
     padding: 0 10px 0 0;
   }
-  .veekls-search .price-wrap .SumoSelect > .optWrapper {
+  .auto-listings-search .price-wrap .SumoSelect > .optWrapper {
     width: 100%;
   }
-  .veekls-search .area-wrap .within {
+  .auto-listings-search .area-wrap .within {
     width: 40%;
   }
-  .veekls-search .area-wrap .area {
+  .auto-listings-search .area-wrap .area {
     border-radius: 4px;
     margin: 0;
     width: 55%;
     float: right;
   }
-  .veekls-search .area-wrap button {
+  .auto-listings-search .area-wrap button {
     display: block;
     width: 100%;
     margin-top: 15px;
     border-radius: 4px;
   }
-  .veekls-search a.refine {
+  .auto-listings-search a.refine {
     display: inline-block;
     text-align: right;
     width: 100%;
   }
-  .veekls-search .extras-wrap .field {
+  .auto-listings-search .extras-wrap .field {
     display: inline-block;
     margin: 0 0 5px;
     width: 100%;
   }
 
-  .veekls-items li.auto-listing.type-auto-listing {
+  .auto-listings-items li.auto-listing.type-auto-listing {
     margin-right: 0;
     width: 100%;
   }
 
-    .veekls-items li .image {
+    .auto-listings-items li .image {
       float: none;
       margin-bottom: 15px;
       width: 100%;
   }
-  .veekls-items li .summary {
+  .auto-listings-items li .summary {
     float: none;
     width: auto;
     padding: 0 15px 15px;
   }
-  .veekls-items li .summary .title {
+  .auto-listings-items li .summary .title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .veekls-items li .summary .bottom-wrap {
+  .auto-listings-items li .summary .bottom-wrap {
     float: unset;
   }
-  .veekls-items li .summary .bottom-wrap span.condition {
+  .auto-listings-items li .summary .bottom-wrap span.condition {
     float: right;
     margin-left: 15px;
   }
-  .veekls-view-switcher {
+  .auto-listings-view-switcher {
     display: none;
   }
 
@@ -1005,11 +1005,11 @@ should fix up some theme issues
 
 /* Extra small devices */
 @media (max-width: 768px) {
-  .veekls .has-sidebar {
+  .auto-listings .has-sidebar {
     float: none;
     width: auto;
   }
-  .veekls .sidebar {
+  .auto-listings .sidebar {
     float: none;
     width: auto;
   }

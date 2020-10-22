@@ -2,7 +2,7 @@
 /**
  * Add theme dashboard page
  *
- * @package VeeklsDefaultTheme
+ * @package CarListings
  */
 
 /**
@@ -95,7 +95,7 @@ class Carlistings_Dashboard {
 	 */
 	public function footer_text() {
 		// Translators: theme name and theme slug.
-		echo wp_kses_post( sprintf( __( 'Please rate <strong>%1$s</strong> <a href="https://wordpress.org/support/theme/%2$s/reviews/" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="https://wordpress.org/support/theme/%2$s/reviews/" target="_blank">WordPress.org</a> to help us spread the word. Thank you from Veekls!', 'veekls-default-theme' ), $this->theme->name, $this->slug ) );
+		echo wp_kses_post( sprintf( __( 'Please rate <strong>%1$s</strong> <a href="https://wordpress.org/support/theme/%2$s/reviews/" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="https://wordpress.org/support/theme/%2$s/reviews/" target="_blank">WordPress.org</a> to help us spread the word. Thank you from WP Auto Listings!', 'carlistings' ), $this->theme->name, $this->slug ) );
 	}
 
 	/**
@@ -109,14 +109,14 @@ class Carlistings_Dashboard {
 				<p>
 					<?php
 					// Translators: theme name and welcome page.
-					echo wp_kses_post( sprintf( __( 'Welcome! Thank you for choosing %1$s. To get started, visit our <a href="%2$s">welcome page</a>.', 'veekls-default-theme' ), $this->theme->name, esc_url( admin_url( 'themes.php?page=' . $this->slug ) ) ) );
+					echo wp_kses_post( sprintf( __( 'Welcome! Thank you for choosing %1$s. To get started, visit our <a href="%2$s">welcome page</a>.', 'carlistings' ), $this->theme->name, esc_url( admin_url( 'themes.php?page=' . $this->slug ) ) ) );
 					?>
 				</p>
 				<p>
 					<a class="button" href="<?php echo esc_url( admin_url( 'themes.php?page=' . $this->slug ) ); ?>">
 						<?php
 						// Translators: theme name.
-						echo esc_html( sprintf( __( 'Get started with %s', 'veekls-default-theme' ), $this->theme->name ) );
+						echo esc_html( sprintf( __( 'Get started with %s', 'carlistings' ), $this->theme->name ) );
 						?>
 					</a>
 				</p>
@@ -129,32 +129,32 @@ class Carlistings_Dashboard {
 	 * Recommended Plugin Action.
 	 */
 	public function recommended_plugins_action() {
-		$plugins        = veekls_required_plugins();
+		$plugins        = carlistings_required_plugins();
 		$plugins_number = count( $plugins );
 		$installer      = TGM_Plugin_Activation::get_instance();
 		$action         = array();
 
 		if ( $plugins_number > 1 ) {
-			$action['title'] = esc_html__( 'Install The Recommended Plugins', 'veekls-default-theme' );
+			$action['title'] = esc_html__( 'Install The Recommended Plugins', 'carlistings' );
 			/* translators: theme name. */
-			$action['body']        = sprintf( esc_html__( '%s needs some plugins to working properly. Please install and activate our recommended plugins.', 'veekls-default-theme' ), $this->theme->name );
-			$action['button_text'] = esc_html__( 'Install Plugins', 'veekls-default-theme' );
+			$action['body']        = sprintf( esc_html__( '%s needs some plugins to working properly. Please install and activate our recommended plugins.', 'carlistings' ), $this->theme->name );
+			$action['button_text'] = esc_html__( 'Install Plugins', 'carlistings' );
 		} else {
 			$plugin_name = $plugins[0]['name'];
 			/* translators: theme name. */
-			$action['body'] = sprintf( __( '%1$s needs %2$s to working properly. Please install and activate it.', 'veekls-default-theme' ), $this->theme->name, $plugin_name );
+			$action['body'] = sprintf( __( '%1$s needs %2$s to working properly. Please install and activate it.', 'carlistings' ), $this->theme->name, $plugin_name );
 			/* translators: plugin name. */
-			$action['button_text'] = sprintf( esc_html__( 'Install %s', 'veekls-default-theme' ), $plugin_name );
+			$action['button_text'] = sprintf( esc_html__( 'Install %s', 'carlistings' ), $plugin_name );
 			$action['title']       = $action['button_text'];
 
 		}
 
 		if ( $installer->is_tgmpa_complete() ) {
 			if ( $plugins_number > 1 ) {
-				$action['body'] = '<strong>' . esc_html__( 'You have installed and active all recommended plugins', 'veekls-default-theme' ) . '</strong>';
+				$action['body'] = '<strong>' . esc_html__( 'You have installed and active all recommended plugins', 'carlistings' ) . '</strong>';
 			} else {
 				/* translators: plugin name. */
-				$action['body'] = sprintf( __( '<strong>%s has been installed and activated</strong>', 'veekls-default-theme' ), $plugin_name );
+				$action['body'] = sprintf( __( '<strong>%s has been installed and activated</strong>', 'carlistings' ), $plugin_name );
 			}
 			$action['button_text'] = '';
 		}
@@ -165,7 +165,7 @@ class Carlistings_Dashboard {
 	 * Check if Jetpack is recommended
 	 */
 	public function jetpack_is_recommended() {
-		$plugins = veekls_required_plugins();
+		$plugins = carlistings_required_plugins();
 		foreach ( $plugins as $plugin ) {
 			if ( 'jetpack' === $plugin['slug'] ) {
 				return true;

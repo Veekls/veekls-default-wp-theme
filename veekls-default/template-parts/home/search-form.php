@@ -2,17 +2,15 @@
 /**
  * The template part for displaying search form on front page
  *
- * @package VeeklsDefaultTheme
+ * @package CarListings
  */
 
 $search_page = get_theme_mod( 'search_section' );
-
 if ( ! $search_page ) {
 	return;
 }
 
-$post = get_post( $search_page ); // phpcs:ignore
-
+$post = get_post( $search_page );
 setup_postdata( $post );
 ?>
 
@@ -22,5 +20,6 @@ setup_postdata( $post );
 		<div class="search-form__title">
 			<p><?php the_excerpt(); ?></p>
 		</div>
+		<?php the_content(); ?>
 	</div>
 </section>

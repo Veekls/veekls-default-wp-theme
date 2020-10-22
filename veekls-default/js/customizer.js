@@ -5,7 +5,7 @@
  *
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  *
- * @package VeeklsDefaultTheme
+ * @package CarListings
  */
 
 ( function( $ ) {

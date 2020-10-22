@@ -4,14 +4,14 @@
  *
  * This template can be overridden by copying it to yourtheme/listings/archive-listing.php.
  *
- * @package VeeklsDefaultTheme
+ * @package CarListings
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! veekls_is_plugin_active() ) {
+if ( ! carlistings_is_plugin_active() ) {
 	return;
 }
 
@@ -35,7 +35,7 @@ get_header( 'listings' );
 			?>
 		</div>
 
-		<?php if ( is_active_sidebar( 'veekls' ) ) : ?>
+		<?php if ( is_active_sidebar( 'auto-listings' ) ) : ?>
 			<div class="has-sidebar">
 		<?php else : ?>
 			<div class="listing-no-sidebar">
@@ -59,7 +59,7 @@ get_header( 'listings' );
 					the_post();
 
 					if ( 1 === $count % $cols ) {
-						echo '<ul class="veekls-items">';
+						echo '<ul class="auto-listings-items">';
 					}
 
 					if ( function_exists( 'auto_listings_get_part' ) ) {
@@ -87,16 +87,16 @@ get_header( 'listings' );
 			else :
 				?>
 
-				<p class="alert veekls-no-results"><?php esc_html_e( 'Sorry, no listings were found.', 'veekls-default-theme' ); ?></p>
+				<p class="alert auto-listings-no-results"><?php esc_html_e( 'Sorry, no listings were found.', 'carlistings' ); ?></p>
 
 			<?php endif; ?>
 
-		<?php if ( is_active_sidebar( 'veekls' ) ) : ?>
+		<?php if ( is_active_sidebar( 'auto-listings' ) ) : ?>
 
 			</div><!-- has-sidebar -->
 
 			<div class="sidebar">
-				<?php dynamic_sidebar( 'veekls' ); ?>
+				<?php dynamic_sidebar( 'auto-listings' ); ?>
 			</div>
 
 		<?php else : ?>

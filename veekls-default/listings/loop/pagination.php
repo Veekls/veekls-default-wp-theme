@@ -4,14 +4,14 @@
  *
  * This template can be overridden by copying it to yourtheme/listings/loop/pagination.php.
  *
- * @package VeeklsDefaultTheme
+ * @package CarListings
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! veekls_is_plugin_active() ) {
+if ( ! carlistings_is_plugin_active() ) {
 	return;
 }
 
@@ -21,7 +21,7 @@ if ( $wp_query->max_num_pages <= 1 ) {
 	return;
 }
 ?>
-<nav class="veekls-pagination">
+<nav class="auto-listings-pagination">
 	<?php
 	echo paginate_links(
 		array(

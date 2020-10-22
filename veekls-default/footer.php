@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package VeeklsDefaultTheme
+ * @package CarListings
  */
 
 ?>
@@ -16,21 +16,20 @@
 <?php get_template_part( 'template-parts/cta' ); ?>
 
 <footer id="colophon" class="site-footer">
+
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="footer-copyright">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'veekls-default-theme' ) ); ?>">
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'carlistings' ) ); ?>">
 					<?php
 					/* translators: placeholder replaced with string */
-					printf( esc_html__( 'Proudly powered by %s', 'veekls-default-theme' ), 'WordPress' );
+					printf( esc_html__( 'Proudly powered by %s', 'carlistings' ), 'WordPress' );
 					?>
 				</a>
-
 				<span class="sep"> | </span>
-
 				<?php
 				/* translators: placeholder replaced with string */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'veekls-default-theme' ), 'Veekls Default', '<a href="' . esc_url( __( 'https://about.veekls.com/', 'veekls-default-theme' ) ) . '" rel="designer">Veekls</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'carlistings' ), 'Carlistings', '<a href="' . esc_url( __( 'https://wpautolistings.com/', 'carlistings' ) ) . '" rel="designer">WP Auto Listings</a>' );
 				?>
 			</div><!-- .site-info -->
 			<nav id="footer-site-navigation" class="footer-navigation">
@@ -66,11 +65,6 @@
 </nav>
 
 <?php wp_footer(); ?>
-
-<a href="#" class="scroll-to-top hidden">
-	<i class="icofont icofont-rounded-up"></i>
-</a>
-
-<!-- Close document -->
+<a href="#" class="scroll-to-top hidden"><i class="icofont icofont-rounded-up"></i></a>
 </body>
 </html>

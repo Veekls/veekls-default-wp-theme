@@ -5,7 +5,7 @@
  *
  * Learn more: https://git.io/vWdr2
  *
- * @package VeeklsDefaultTheme
+ * @package CarListings
  */
 
 ( function() {

@@ -4,19 +4,18 @@
  *
  * This template can be overridden by copying it to yourtheme/listings/loop/address.php.
  *
- * @package VeeklsDefaultTheme
+ * @package CarListings
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! veekls_is_plugin_active() ) {
+if ( ! carlistings_is_plugin_active() ) {
 	return;
 }
 
 $address = function_exists( 'auto_listings_meta' ) ? auto_listings_meta( 'displayed_address' ) : '';
-
 if ( empty( $address ) ) {
 	return;
 }

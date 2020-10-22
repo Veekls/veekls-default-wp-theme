@@ -1,7 +1,7 @@
 /**
  * Theme main script.
  *
- * @package VeeklsDefaultTheme
+ * @package CarListings
  */
 
 // Run when the DOM ready.
@@ -91,8 +91,8 @@ jQuery( function ( $ ) {
 	 */
 	function moveTagSearchForm() {
 		$( '.search-content .odometer' ).prependTo( '.search-content .area-wrap' );
-		$( '.search-content .condition-wrap' ).prependTo( '#veekls-search' );
-		$( '.search-content .search-form__title' ).prependTo( '#veekls-search' );
+		$( '.search-content .condition-wrap' ).prependTo( '#auto-listings-search' );
+		$( '.search-content .search-form__title' ).prependTo( '#auto-listings-search' );
 	}
 
 	/**
@@ -132,7 +132,7 @@ jQuery( function ( $ ) {
 		auto_listings_view_switcher();
 		auto_listings_buy_sell();
 
-		if ( $( '.veekls-search' ).length > 0 ) {
+		if ( $( '.auto-listings-search' ).length > 0 ) {
 			auto_listings_search_box();
 		}
 	}
@@ -141,7 +141,7 @@ jQuery( function ( $ ) {
 	 * Buy/Sell option
 	 */
 	function auto_listings_buy_sell() {
-		$( '.veekls-search' ).on( 'change', 'select.purpose', function() {
+		$( '.auto-listings-search' ).on( 'change', 'select.purpose', function() {
 			$( this ).closest( 'form' ).submit();
 		} );
 	}
@@ -156,15 +156,15 @@ jQuery( function ( $ ) {
 		var default_view = auto_listings.list_grid_view;
 
 		switch_view( default_view );
-		$( '.veekls-view-switcher div' ).click( function() {
+		$( '.auto-listings-view-switcher div' ).click( function() {
 			var view = $( this ).attr( 'id' );
 			switch_view( view );
 		} );
 
 		function switch_view( to ) {
 			var from = ( to == 'list' ) ? 'grid' : 'list';
-			var $switcher = $( '.veekls-view-switcher' );
-			var $listings = $switcher.nextAll( '.veekls-items' );
+			var $switcher = $( '.auto-listings-view-switcher' );
+			var $listings = $switcher.nextAll( '.auto-listings-items' );
 			$listings.removeClass( from + '-view' ).addClass( to + '-view' );
 		}
 	}
@@ -173,9 +173,9 @@ jQuery( function ( $ ) {
 	 * Search box
 	 */
 	function auto_listings_search_box() {
-		$( '#veekls-search select' ).SumoSelect();
+		$( '#auto-listings-search select' ).SumoSelect();
 
-		$( '.veekls-search' ).on( 'click', 'a.refine', function( e ) {
+		$( '.auto-listings-search' ).on( 'click', 'a.refine', function( e ) {
 			$( '.extras-wrap' ).slideToggle( 200 );
 			$( this ).toggleClass( 'shown' );
 		});

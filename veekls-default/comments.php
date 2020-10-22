@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package VeeklsDefaultTheme
+ * @package CarListings
  */
 
 /*
@@ -21,15 +21,15 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="comments-area">
+
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-
 		<h2 class="comments-title underline-heading">
 			<?php
-			$veekls_comment_count = get_comments_number();
-			echo esc_html( _nx( 'Comment', 'Comments', $veekls_comment_count, 'comments', 'veekls-default-theme' ) );
+			$carlistings_comment_count = get_comments_number();
+			echo esc_html( _nx( 'Comment', 'Comments', $carlistings_comment_count, 'comments', 'carlistings' ) );
 			?>
 		</h2><!-- .comments-title -->
 
@@ -47,16 +47,16 @@ if ( post_password_required() ) {
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php the_comments_navigation(); ?>
-
 		<?php
+		the_comments_navigation();
+
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'veekls-default-theme' ); ?></p>
-		<?php endif; ?>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'carlistings' ); ?></p>
+			<?php
+		endif;
 
-		<?php
 	endif; // Check for have_comments().
 
 	comment_form();

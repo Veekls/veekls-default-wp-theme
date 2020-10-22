@@ -4,21 +4,21 @@
  *
  * This template can be overridden by copying it to yourtheme/listings/single-listing/at-a-glance.php.
  *
- * @package VeeklsDefaultTheme
+ * @package CarListings
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! veekls_is_plugin_active() ) {
+if ( ! carlistings_is_plugin_active() ) {
 	return;
 }
 
 ?>
 
 <div class="at-a-glance">
-	<h3><?php esc_html_e( 'Features Highlight', 'veekls-default-theme' ); ?></h3>
+	<h3><?php esc_html_e( 'Features Highlight', 'carlistings' ); ?></h3>
 	<table>
 		<tbody>
 			<tr>
@@ -29,9 +29,7 @@ if ( ! veekls_is_plugin_active() ) {
 				</td>
 				<td>
 					<?php if ( function_exists( 'auto_listings_transmission' ) && auto_listings_transmission() ) { ?>
-						<span class="transmission"><i class="icofont icofont-ui-settings"></i>
-							<?php echo esc_html( auto_listings_transmission() ); ?>
-						</span>
+						<span class="transmission"><i class="icofont icofont-ui-settings"></i> <?php echo esc_html( auto_listings_transmission() ); ?></span>
 					<?php } ?>
 				</td>
 			</tr>

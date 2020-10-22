@@ -4,14 +4,14 @@
  *
  * This template can be overridden by copying it to yourtheme/listings/single-listing/address.php.
  *
- * @package VeeklsDefaultTheme
+ * @package CarListings
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! veekls_is_plugin_active() ) {
+if ( ! carlistings_is_plugin_active() ) {
 	return;
 }
 
@@ -24,7 +24,6 @@ if ( empty( $dealer_id ) ) {
 $website = '';
 $phone   = '';
 $address = '';
-
 if ( function_exists( 'auto_listings_dealer_meta' ) ) {
 	$website = auto_listings_dealer_meta( 'website', $dealer_id );
 	$phone   = auto_listings_dealer_meta( 'phone', $dealer_id );
@@ -34,7 +33,7 @@ if ( function_exists( 'auto_listings_dealer_meta' ) ) {
 
 <div class="dealer">
 
-	<h3><?php esc_html_e( 'Dealer Details', 'veekls-default-theme' ); ?></h3>
+	<h3><?php esc_html_e( 'Dealer Details', 'carlistings' ); ?></h3>
 
 	<div class="logo">
 		<a href="<?php echo esc_url( get_the_permalink( $dealer_id ) ); ?>">

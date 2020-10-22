@@ -2,7 +2,7 @@
 /**
  * Display breadcrumbs for posts, pages, archive page with the microdata that search engines understand
  *
- * @package VeeklsDefaultTheme
+ * @package CarListings
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param array|string $args argument for HTML output.
  */
-function veekls_breadcrumbs( $args = '' ) {
+function carlistings_breadcrumbs( $args = '' ) {
 	if ( is_front_page() ) {
 		return;
 	}
@@ -33,7 +33,6 @@ function veekls_breadcrumbs( $args = '' ) {
 			<a href="%s" itemprop="url"><span itemprop="title">%s</span></a>
 		</span>
 	</li>';
-
 	$item_text_tpl = '<li class="breadcrumbs-item">
 		<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 			<span itemprop="title">%s</span>
@@ -48,11 +47,11 @@ function veekls_breadcrumbs( $args = '' ) {
 			</span>
 		</li>',
 		esc_url( home_url( '/' ) ),
-		esc_html__( 'Home', 'veekls-default-theme' )
+		esc_html__( 'Home', 'carlistings' )
 	);
 
 	if ( is_home() && ! is_front_page() ) {
-		$page  = get_option( 'page_for_posts' );
+		$page = get_option( 'page_for_posts' );
 		$title = get_the_title( $page );
 	} elseif ( is_post_type_archive() ) {
 		// If post is a custom post type.
@@ -72,7 +71,6 @@ function veekls_breadcrumbs( $args = '' ) {
 			$items[]                = sprintf( $item_tpl_link, esc_url( $post_type_archive_link ), esc_html( $post_type_object->labels->name ) );
 		} else {
 			$blog_page = get_option( 'page_for_posts' );
-
 			if ( ! empty( $blog_page ) ) {
 				$blog_url   = get_permalink( $blog_page );
 				$blog_title = get_the_title( $blog_page );
@@ -80,12 +78,10 @@ function veekls_breadcrumbs( $args = '' ) {
 			}
 
 			$terms = get_the_terms( get_the_ID(), $args['taxonomy'] );
-
 			if ( $terms && ! is_wp_error( $terms ) ) {
 				$term    = current( $terms );
-				$terms   = veekls_get_term_parents( $term->term_id, $args['taxonomy'] );
+				$terms   = carlistings_get_term_parents( $term->term_id, $args['taxonomy'] );
 				$terms[] = $term->term_id;
-
 				foreach ( $terms as $term_id ) {
 					$term    = get_term( $term_id, $args['taxonomy'] );
 					$items[] = sprintf( $item_tpl_link, esc_url( get_term_link( $term, $args['taxonomy'] ) ), esc_html( $term->name ) );
@@ -95,34 +91,24 @@ function veekls_breadcrumbs( $args = '' ) {
 
 		$title = get_the_title();
 	} elseif ( is_page() ) {
-		$pages = veekls_get_post_parents( get_queried_object_id() );
-
+		$pages = carlistings_get_post_parents( get_queried_object_id() );
 		foreach ( $pages as $page ) {
-			$items[] = sprintf(
-				$item_tpl_link,
-				esc_url( get_permalink( $page ) ),
-				esc_html( wp_strip_all_tags( get_the_title( $page ) ) )
-			);
+			$items[] = sprintf( $item_tpl_link, esc_url( get_permalink( $page ) ), esc_html( wp_strip_all_tags( get_the_title( $page ) ) ) );
 		}
 		$title = get_the_title();
 	} elseif ( is_tax() || is_category() || is_tag() ) {
 		$current_term = get_queried_object();
-		$terms        = veekls_get_term_parents( get_queried_object_id(), $current_term->taxonomy );
-
+		$terms        = carlistings_get_term_parents( get_queried_object_id(), $current_term->taxonomy );
 		foreach ( $terms as $term_id ) {
 			$term    = get_term( $term_id, $current_term->taxonomy );
-			$items[] = sprintf(
-				$item_tpl_link,
-				esc_url( get_category_link( $term_id ) ),
-				esc_html( $term->name )
-			);
+			$items[] = sprintf( $item_tpl_link, esc_url( get_category_link( $term_id ) ), esc_html( $term->name ) );
 		}
 		$title = $current_term->name;
 	} elseif ( is_search() ) {
 		/* translators: search query */
-		$title = sprintf( __( 'Search results for &quot;%s&quot;', 'veekls-default-theme' ), get_search_query() );
+		$title = sprintf( __( 'Search results for &quot;%s&quot;', 'carlistings' ), get_search_query() );
 	} elseif ( is_404() ) {
-		$title = __( 'Not found', 'veekls-default-theme' );
+		$title = __( 'Not found', 'carlistings' );
 	} elseif ( is_author() ) {
 		$author_obj = get_queried_object();
 		// Queue the first post, that way we know what author we're dealing with (if that is the case).
@@ -134,8 +120,8 @@ function veekls_breadcrumbs( $args = '' ) {
 	} elseif ( is_year() ) {
 		$title = get_the_date( 'Y' );
 	} else {
-		$title = __( 'Archives', 'veekls-default-theme' );
-	}
+		$title = __( 'Archives', 'carlistings' );
+	} // End if().
 
 	if ( ! is_single() ) {
 		$items[] = sprintf( $item_text_tpl, esc_html( $title ) );
@@ -157,7 +143,7 @@ function veekls_breadcrumbs( $args = '' ) {
  *
  * @return array Array of parent terms' IDs.
  */
-function veekls_get_term_parents( $term_id = '', $taxonomy = 'category' ) {
+function carlistings_get_term_parents( $term_id = '', $taxonomy = 'category' ) {
 	// Set up some default arrays.
 	$list = array();
 
@@ -189,7 +175,7 @@ function veekls_get_term_parents( $term_id = '', $taxonomy = 'category' ) {
  *
  * @return array Array of parent posts' IDs.
  */
-function veekls_get_post_parents( $post_id = '' ) {
+function carlistings_get_post_parents( $post_id = '' ) {
 	// Set up some default array.
 	$list = array();
 

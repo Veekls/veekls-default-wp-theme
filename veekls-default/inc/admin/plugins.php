@@ -2,21 +2,21 @@
 /**
  * Add required and recommended plugins.
  *
- * @package VeeklsDefaultTheme
+ * @package CarListings
  */
 
-add_action( 'tgmpa_register', 'veekls_register_required_plugins', 11 );
+add_action( 'tgmpa_register', 'carlistings_register_required_plugins', 11 );
 
 /**
  * Register required plugins
  *
  * @since  1.0
  */
-function veekls_register_required_plugins() {
-	$plugins = veekls_required_plugins();
+function carlistings_register_required_plugins() {
+	$plugins = carlistings_required_plugins();
 
 	$config = array(
-		'id'          => 'veekls-default-theme',
+		'id'          => 'carlistings',
 		'has_notices' => false,
 		'parent_slug' => 'themes.php',
 		'capability'  => 'install_themes',
@@ -27,22 +27,22 @@ function veekls_register_required_plugins() {
 /**
  * List of required plugins
  */
-function veekls_required_plugins() {
+function carlistings_required_plugins() {
 	return array(
 		array(
-			'name' => esc_html__( 'Jetpack', 'veekls-default-theme' ),
+			'name' => esc_html__( 'Jetpack', 'carlistings' ),
 			'slug' => 'jetpack',
 		),
 		array(
-			'name' => esc_html__( 'Veekls', 'veekls-default-theme' ),
-			'slug' => 'veekls',
+			'name' => esc_html__( 'Auto Listings', 'carlistings' ),
+			'slug' => 'auto-listings',
 		),
 		array(
-			'name' => esc_html__( 'Meta Box', 'veekls-default-theme' ),
+			'name' => esc_html__( 'Meta Box', 'carlistings' ),
 			'slug' => 'meta-box',
 		),
 		array(
-			'name' => esc_html__( 'Slim SEO', 'veekls-default-theme' ),
+			'name' => esc_html__( 'Slim SEO', 'carlistings' ),
 			'slug' => 'slim-seo',
 		),
 	);
