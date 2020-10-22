@@ -34,7 +34,7 @@ $options = apply_filters(
 );
 
 ?>
-<form class="auto-listings-ordering" method="get" >
+<form class="veekls-api-client-ordering" method="get" >
 
 	<div class="select-wrap">
 		<select name="orderby" class="orderby">

@@ -35,7 +35,7 @@ function carlistings_required_plugins() {
 		),
 		array(
 			'name' => esc_html__( 'Auto Listings', 'carlistings' ),
-			'slug' => 'auto-listings',
+			'slug' => 'veekls-api-client',
 		),
 		array(
 			'name' => esc_html__( 'Meta Box', 'carlistings' ),

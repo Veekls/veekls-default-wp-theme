@@ -35,7 +35,7 @@ get_header( 'listings' );
 			?>
 		</div>
 
-		<?php if ( is_active_sidebar( 'auto-listings' ) ) : ?>
+		<?php if ( is_active_sidebar( 'veekls-api-client' ) ) : ?>
 			<div class="has-sidebar">
 		<?php else : ?>
 			<div class="listing-no-sidebar">
@@ -59,7 +59,7 @@ get_header( 'listings' );
 					the_post();
 
 					if ( 1 === $count % $cols ) {
-						echo '<ul class="auto-listings-items">';
+						echo '<ul class="veekls-api-client-items">';
 					}
 
 					if ( function_exists( 'auto_listings_get_part' ) ) {
@@ -87,16 +87,16 @@ get_header( 'listings' );
 			else :
 				?>
 
-				<p class="alert auto-listings-no-results"><?php esc_html_e( 'Sorry, no listings were found.', 'carlistings' ); ?></p>
+				<p class="alert veekls-api-client-no-results"><?php esc_html_e( 'Sorry, no listings were found.', 'carlistings' ); ?></p>
 
 			<?php endif; ?>
 
-		<?php if ( is_active_sidebar( 'auto-listings' ) ) : ?>
+		<?php if ( is_active_sidebar( 'veekls-api-client' ) ) : ?>
 
 			</div><!-- has-sidebar -->
 
 			<div class="sidebar">
-				<?php dynamic_sidebar( 'auto-listings' ); ?>
+				<?php dynamic_sidebar( 'veekls-api-client' ); ?>
 			</div>
 
 		<?php else : ?>

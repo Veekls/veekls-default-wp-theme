@@ -24,7 +24,7 @@ if ( ! $query->have_posts() ) {
 <div id="container" class="container">
 	<div id="content" class="content" role="main">
 
-		<?php if ( is_active_sidebar( 'auto-listings' ) ) : ?>
+		<?php if ( is_active_sidebar( 'veekls-api-client' ) ) : ?>
 			<div class="has-sidebar">
 		<?php else : ?>
 			<div class="listing-no-sidebar">
@@ -41,7 +41,7 @@ if ( ! $query->have_posts() ) {
 				$query->the_post();
 
 				if ( 1 === $count % $cols ) {
-					echo '<ul class="auto-listings-items">';
+					echo '<ul class="veekls-api-client-items">';
 				}
 
 				if ( function_exists( 'auto_listings_get_part' ) ) {
@@ -60,10 +60,10 @@ if ( ! $query->have_posts() ) {
 			wp_reset_postdata();
 			?>
 
-		<?php if ( is_active_sidebar( 'auto-listings' ) ) : ?>
+		<?php if ( is_active_sidebar( 'veekls-api-client' ) ) : ?>
 			</div><!-- has-sidebar -->
 			<div class="sidebar">
-				<?php dynamic_sidebar( 'auto-listings' ); ?>
+				<?php dynamic_sidebar( 'veekls-api-client' ); ?>
 			</div>
 		<?php else : ?>
 			</div>

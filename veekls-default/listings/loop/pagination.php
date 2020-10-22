@@ -21,7 +21,7 @@ if ( $wp_query->max_num_pages <= 1 ) {
 	return;
 }
 ?>
-<nav class="auto-listings-pagination">
+<nav class="veekls-api-client-pagination">
 	<?php
 	echo paginate_links(
 		array(

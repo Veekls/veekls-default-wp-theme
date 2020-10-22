@@ -91,8 +91,8 @@ jQuery( function ( $ ) {
 	 */
 	function moveTagSearchForm() {
 		$( '.search-content .odometer' ).prependTo( '.search-content .area-wrap' );
-		$( '.search-content .condition-wrap' ).prependTo( '#auto-listings-search' );
-		$( '.search-content .search-form__title' ).prependTo( '#auto-listings-search' );
+		$( '.search-content .condition-wrap' ).prependTo( '#veekls-api-client-search' );
+		$( '.search-content .search-form__title' ).prependTo( '#veekls-api-client-search' );
 	}
 
 	/**
@@ -132,7 +132,7 @@ jQuery( function ( $ ) {
 		auto_listings_view_switcher();
 		auto_listings_buy_sell();
 
-		if ( $( '.auto-listings-search' ).length > 0 ) {
+		if ( $( '.veekls-api-client-search' ).length > 0 ) {
 			auto_listings_search_box();
 		}
 	}
@@ -141,7 +141,7 @@ jQuery( function ( $ ) {
 	 * Buy/Sell option
 	 */
 	function auto_listings_buy_sell() {
-		$( '.auto-listings-search' ).on( 'change', 'select.purpose', function() {
+		$( '.veekls-api-client-search' ).on( 'change', 'select.purpose', function() {
 			$( this ).closest( 'form' ).submit();
 		} );
 	}
@@ -156,15 +156,15 @@ jQuery( function ( $ ) {
 		var default_view = auto_listings.list_grid_view;
 
 		switch_view( default_view );
-		$( '.auto-listings-view-switcher div' ).click( function() {
+		$( '.veekls-api-client-view-switcher div' ).click( function() {
 			var view = $( this ).attr( 'id' );
 			switch_view( view );
 		} );
 
 		function switch_view( to ) {
 			var from = ( to == 'list' ) ? 'grid' : 'list';
-			var $switcher = $( '.auto-listings-view-switcher' );
-			var $listings = $switcher.nextAll( '.auto-listings-items' );
+			var $switcher = $( '.veekls-api-client-view-switcher' );
+			var $listings = $switcher.nextAll( '.veekls-api-client-items' );
 			$listings.removeClass( from + '-view' ).addClass( to + '-view' );
 		}
 	}
@@ -173,9 +173,9 @@ jQuery( function ( $ ) {
 	 * Search box
 	 */
 	function auto_listings_search_box() {
-		$( '#auto-listings-search select' ).SumoSelect();
+		$( '#veekls-api-client-search select' ).SumoSelect();
 
-		$( '.auto-listings-search' ).on( 'click', 'a.refine', function( e ) {
+		$( '.veekls-api-client-search' ).on( 'click', 'a.refine', function( e ) {
 			$( '.extras-wrap' ).slideToggle( 200 );
 			$( this ).toggleClass( 'shown' );
 		});

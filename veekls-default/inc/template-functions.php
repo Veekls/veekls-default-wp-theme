@@ -24,7 +24,7 @@ function carlistings_body_classes( $classes ) {
 
 	// Adds a class of plugin to front page.
 	if ( is_front_page() ) {
-		$classes[] = 'auto-listings';
+		$classes[] = 'veekls-api-client';
 	}
 
 	return $classes;
