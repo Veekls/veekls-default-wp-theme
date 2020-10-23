@@ -2498,6 +2498,7 @@ Genericons
 	font-weight: 700;
 	color: #3d414e;
 	text-transform: uppercase;
+	text-align: left;
 }
 
 .section--search .veekls-api-client-search .search-form__title p {
