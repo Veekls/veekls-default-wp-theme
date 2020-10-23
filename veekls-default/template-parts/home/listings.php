@@ -4,10 +4,10 @@
  *
  * This template can be overridden by copying it to yourtheme/listings/archive-listing.php.
  *
- * @package CarListings
+ * @package Veekls
  */
 
-if ( ! carlistings_is_plugin_active() ) {
+if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 

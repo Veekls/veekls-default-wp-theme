@@ -2,28 +2,27 @@
 /**
  * Contact Widget
  *
- * @package CarListings
+ * @package Veekls
  */
 
 /**
  * Class Contact Widget
  */
-class Carlistings_Contact_Widget extends WP_Widget
+class Veekls_Contact_Widget extends WP_Widget
 {
-
     /**
      * Constructor
      */
     public function __construct()
     {
         $widget_ops = array(
-            'classname' => 'carlistings-contact-info',
-            'description' => __('Display your contact information.', 'carlistings'),
+            'classname' => 'veekls-contact-info',
+            'description' => __('Display your contact information.', 'veekls'),
         );
 
         parent::__construct(
-            'carlistings-contact-info',
-            esc_html__('Carlistings: Contact Info', 'carlistings'),
+            'veekls-contact-info',
+            esc_html__('Veekls: Contact Info', 'veekls'),
             $widget_ops
         );
     }
@@ -38,9 +37,9 @@ class Carlistings_Contact_Widget extends WP_Widget
     public function defaults()
     {
         return array(
-            'time' => __('10:00 AM to 5:00 PM', 'carlistings'),
-            'email' => __('name@example.com', 'carlistings'),
-            'address' => __('Example St. 4450 - City', 'carlistings'),
+            'time' => __('10:00 AM to 5:00 PM', 'veekls'),
+            'email' => __('name@example.com', 'veekls'),
+            'address' => __('Example St. 4450 - City', 'veekls'),
         );
     }
 
@@ -80,7 +79,7 @@ class Carlistings_Contact_Widget extends WP_Widget
 			<?php if (!empty(trim($instance['address']))): ?>
 				<?php $address = esc_html($instance['address']);?>
 				<li>
-					<a href="https://maps.google.com/<?php echo urlencode($address); ?>" target="_blank">
+					<a href="https://www.google.com/maps/place/<?php echo urlencode($address); ?>" target="_blank">
 						<i class="icofont icofont-google-map"></i>
 						<?php echo $address; ?>
 					</a>
@@ -119,19 +118,19 @@ class Carlistings_Contact_Widget extends WP_Widget
      */
     public function form($instance)
     {
-        $instance = wp_parse_args($instance, $this->defaults());
-        ?>
+		$instance = wp_parse_args($instance, $this->defaults());
 
+        ?>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id('time')); ?>"><?php esc_html_e('Working Time:', 'carlistings');?></label>
+			<label for="<?php echo esc_attr($this->get_field_id('time')); ?>"><?php esc_html_e('Working Time:', 'veekls');?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('time')); ?>" name="<?php echo esc_attr($this->get_field_name('time')); ?>" type="text" value="<?php echo esc_attr($instance['time']); ?>">
 		</p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id('email')); ?>"><?php esc_html_e('Email:', 'carlistings');?></label>
+			<label for="<?php echo esc_attr($this->get_field_id('email')); ?>"><?php esc_html_e('Email:', 'veekls');?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('email')); ?>" name="<?php echo esc_attr($this->get_field_name('email')); ?>" type="text" value="<?php echo esc_attr($instance['email']); ?>">
 		</p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id('address')); ?>"><?php esc_html_e('Address:', 'carlistings');?></label>
+			<label for="<?php echo esc_attr($this->get_field_id('address')); ?>"><?php esc_html_e('Address:', 'veekls');?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('address')); ?>" name="<?php echo esc_attr($this->get_field_name('address')); ?>" type="text" value="<?php echo esc_attr($instance['address']); ?>">
 		</p>
 		<?php

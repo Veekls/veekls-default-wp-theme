@@ -2,11 +2,11 @@
 /**
  * Tabs navigation.
  *
- * @package CarListings
+ * @package Veekls
  */
 
 ?>
 <h2 class="nav-tab-wrapper">
-	<a href="#getting-started" class="nav-tab nav-tab-active"><?php esc_html_e( 'Getting Started', 'carlistings' ); ?></a>
-	<a href="#actions" class="nav-tab"><?php esc_html_e( 'Actions', 'carlistings' ); ?></a>
+	<a href="#getting-started" class="nav-tab nav-tab-active"><?php esc_html_e('Getting Started', 'veekls');?></a>
+	<a href="#actions" class="nav-tab"><?php esc_html_e('Actions', 'veekls');?></a>
 </h2>

@@ -4,13 +4,13 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package CarListings
+ * @package Veekls
  */
 
 /**
  * Prints HTML with meta information for the current post-date/time.
  */
-function carlistings_posted_on() {
+function veekls_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -30,7 +30,7 @@ function carlistings_posted_on() {
 /**
  * Prints HTML with meta information for the comment number.
  */
-function carlistings_print_comment_link() {
+function veekls_print_comment_link() {
 	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link"><i class="icofont icofont-speech-comments"></i>';
 		comments_popup_link();
@@ -41,12 +41,12 @@ function carlistings_print_comment_link() {
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function carlistings_entry_footer() {
+function veekls_entry_footer() {
 	edit_post_link(
 		sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Edit <span class="screen-reader-text">%s</span>', 'carlistings' ),
+				__( 'Edit <span class="screen-reader-text">%s</span>', 'veekls' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -68,12 +68,12 @@ function carlistings_entry_footer() {
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function carlistings_get_category() {
+function veekls_get_category() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		echo '<span class="entry-header__category">';
 		// translators: used between list items, there is a space after the comma.
-		the_category( esc_html__( ', ', 'carlistings' ) );
+		the_category( esc_html__( ', ', 'veekls' ) );
 		echo '</span>';
 	}
 }
@@ -81,7 +81,7 @@ function carlistings_get_category() {
 /**
  * Author Box.
  */
-function carlistings_author_box() {
+function veekls_author_box() {
 	$description = get_the_author_meta( 'description' );
 	if ( empty( $description ) ) {
 		return;
@@ -111,7 +111,7 @@ function carlistings_author_box() {
 /**
  * Get car ids.
  */
-function carlistings_get_car_ids() {
+function veekls_get_car_ids() {
 	$args  = array(
 		'post_type'      => 'auto-listing',
 		'posts_per_page' => 999,
@@ -125,8 +125,8 @@ function carlistings_get_car_ids() {
 /**
  * Getter function for section car by make.
  */
-function carlistings_get_car_lists() {
-	$items = carlistings_get_car_ids();
+function veekls_get_car_lists() {
+	$items = veekls_get_car_ids();
 	$makes = array();
 
 	if ( $items ) {
@@ -151,7 +151,7 @@ function carlistings_get_car_lists() {
 			<a href="<?php echo esc_url( $make_link ); ?>">
 				<?php
 				// translators: %1$s - make, %2$s number of cars.
-				echo wp_kses_post( sprintf( __( '%1$s <span>(%2$s)</span>', 'carlistings' ), $make, $value ) );
+				echo wp_kses_post( sprintf( __( '%1$s <span>(%2$s)</span>', 'veekls' ), $make, $value ) );
 				?>
 			</a>
 		</li>

@@ -4,14 +4,14 @@
  *
  * This template can be overridden by copying it to yourtheme/listings/loop/orderby.php.
  *
- * @package CarListings
+ * @package Veekls
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! carlistings_is_plugin_active() ) {
+if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
@@ -26,10 +26,10 @@ $by      = $by ? $by : 'date';
 $options = apply_filters(
 	'auto_listings_listings_orderby',
 	array(
-		'date'       => __( '- Newest Listings -', 'carlistings' ),
-		'date-old'   => __( '- Oldest Listings -', 'carlistings' ),
-		'price'      => __( '- Price (Low to High) -', 'carlistings' ),
-		'price-high' => __( '- Price (High to Low) -', 'carlistings' ),
+		'date'       => __( '- Newest Listings -', 'veekls' ),
+		'date-old'   => __( '- Oldest Listings -', 'veekls' ),
+		'price'      => __( '- Price (Low to High) -', 'veekls' ),
+		'price-high' => __( '- Price (High to Low) -', 'veekls' ),
 	)
 );
 

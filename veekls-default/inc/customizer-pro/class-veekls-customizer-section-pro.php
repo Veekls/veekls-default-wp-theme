@@ -2,13 +2,13 @@
 /**
  * The "Go Pro" section in the Customizer.
  *
- * @package CarListings
+ * @package Veekls
  */
 
 /**
  * Pro customizer section.
  */
-class Carlistings_Customizer_Section_Pro extends WP_Customize_Section {
+class Veekls_Customizer_Section_Pro extends WP_Customize_Section {
 	/**
 	 * The type of customize section being rendered.
 	 *

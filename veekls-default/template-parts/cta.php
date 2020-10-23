@@ -2,13 +2,13 @@
 /**
  * The template part for displaying cta section
  *
- * @package CarListings
+ * @package Veekls
  */
 
-$cta_title       = get_theme_mod( 'cta_title', __( 'You Want To Have Your Favorite Car?', 'carlistings' ) );
-$cta_description = get_theme_mod( 'cta_description', __( 'We have a big list of modern & classic cars in both used and new categories.', 'carlistings' ) );
+$cta_title       = get_theme_mod( 'cta_title', __( 'You Want To Have Your Favorite Car?', 'veekls' ) );
+$cta_description = get_theme_mod( 'cta_description', __( 'We have a big list of modern & classic cars in both used and new categories.', 'veekls' ) );
 $button_url      = get_theme_mod( 'cta_button_url', 'http://example.com/' );
-$button_text     = get_theme_mod( 'cta_button_text', __( 'go to car listings', 'carlistings' ) );
+$button_text     = get_theme_mod( 'cta_button_text', __( 'go to car listings', 'veekls' ) );
 
 $image_background = get_theme_mod( 'cta_background', get_template_directory_uri() . '/images/cta.png' );
 ?>

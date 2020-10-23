@@ -2,7 +2,7 @@
 /**
  * Display hero section on the homepage instead of featured slider.
  *
- * @package CarListings
+ * @package Veekls
  */
 
 if ( ! have_posts() ) {

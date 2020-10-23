@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package CarListings
+ * @package Veekls
  */
 
 ?>
@@ -20,16 +20,16 @@
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="footer-copyright">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'carlistings' ) ); ?>">
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'veekls' ) ); ?>">
 					<?php
 					/* translators: placeholder replaced with string */
-					printf( esc_html__( 'Proudly powered by %s', 'carlistings' ), 'WordPress' );
+					printf( esc_html__( 'Proudly powered by %s', 'veekls' ), 'WordPress' );
 					?>
 				</a>
 				<span class="sep"> | </span>
 				<?php
 				/* translators: placeholder replaced with string */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'carlistings' ), 'Carlistings', '<a href="' . esc_url( __( 'https://wpautolistings.com/', 'carlistings' ) ) . '" rel="designer">WP Auto Listings</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'veekls' ), 'Veekls', '<a href="' . esc_url( __( 'https://wpautolistings.com/', 'veekls' ) ) . '" rel="designer">WP Auto Listings</a>' );
 				?>
 			</div><!-- .site-info -->
 			<nav id="footer-site-navigation" class="footer-navigation">

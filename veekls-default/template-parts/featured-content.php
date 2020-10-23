@@ -2,10 +2,10 @@
 /**
  * Display featured content on the homepage.
  *
- * @package CarListings
+ * @package Veekls
  */
 
-$featured_posts = carlistings_get_featured_posts();
+$featured_posts = veekls_get_featured_posts();
 if ( empty( $featured_posts ) ) {
 	get_template_part( 'template-parts/home/hero' );
 	return;

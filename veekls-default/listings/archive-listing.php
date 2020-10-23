@@ -4,14 +4,14 @@
  *
  * This template can be overridden by copying it to yourtheme/listings/archive-listing.php.
  *
- * @package CarListings
+ * @package Veekls
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! carlistings_is_plugin_active() ) {
+if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
@@ -87,7 +87,7 @@ get_header( 'listings' );
 			else :
 				?>
 
-				<p class="alert veekls-api-client-no-results"><?php esc_html_e( 'Sorry, no listings were found.', 'carlistings' ); ?></p>
+				<p class="alert veekls-api-client-no-results"><?php esc_html_e( 'Sorry, no listings were found.', 'veekls' ); ?></p>
 
 			<?php endif; ?>
 

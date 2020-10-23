@@ -1,21 +1,18 @@
 /**
  * Script for custom section.
  *
- * @package CarListings
+ * @package Veekls
  */
 
-( function( api ) {
-
+(function (api) {
 	// Extends our custom "gt-go-pro" section.
-	api.sectionConstructor['gt-go-pro'] = api.Section.extend( {
-
+	api.sectionConstructor['gt-go-pro'] = api.Section.extend({
 		// No events for this type of section.
-		attachEvents: function () {},
+		attachEvents: function () { },
 
 		// Always make the section active.
 		isContextuallyActive: function () {
 			return true;
 		}
-	} );
-
-} )( wp.customize );
+	});
+})(wp.customize);

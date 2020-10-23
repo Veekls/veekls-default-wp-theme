@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package CarListings
+ * @package Veekls
  */
 
 $nav_menu = array(
@@ -29,7 +29,7 @@ $nav_menu = array(
 <body <?php body_class();?>>
 	<?php wp_body_open();?>
 	<div id="page" class="site">
-		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'carlistings');?></a>
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'veekls');?></a>
 
 		<header id="masthead" class="site-header">
 			<div class="header-top">
@@ -71,7 +71,7 @@ $nav_menu = array(
 				</div><!-- .site-branding -->
 
 				<nav id="site-navigation" class="main-navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="bar"></span><?php esc_html_e('Menu', 'carlistings');?></button>
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="bar"></span><?php esc_html_e('Menu', 'veekls');?></button>
 					<?php wp_nav_menu($nav_menu);?>
 				</nav><!-- #site-navigation -->
 			</div>
@@ -84,7 +84,7 @@ $nav_menu = array(
 		<?php if (!is_front_page()): ?>
 			<div class="page-header">
 				<div class="container">
-					<?php carlistings_breadcrumbs();?>
+					<?php veekls_breadcrumbs();?>
 				</div>
 			</div>
 		<?php endif;?>

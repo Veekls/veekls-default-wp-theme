@@ -2,7 +2,7 @@
 /**
  * Template part for displaying results in search pages
  *
- * @package CarListings
+ * @package Veekls
  */
 
 ?>
@@ -13,9 +13,9 @@
 
 	<div class="article__content">
 		<header class="entry-header">
-			<?php carlistings_get_category(); ?>
+			<?php veekls_get_category(); ?>
 			<div class="entry-meta">
-				<?php carlistings_posted_on(); ?>
+				<?php veekls_posted_on(); ?>
 			</div>
 		</header><!-- .entry-header -->
 
@@ -28,7 +28,7 @@
 
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'carlistings' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'veekls' ),
 					'after'  => '</div>',
 				)
 			);

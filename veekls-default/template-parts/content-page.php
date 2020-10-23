@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package CarListings
+ * @package Veekls
  */
 
 ?>
@@ -23,7 +23,7 @@
 
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'carlistings' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'veekls' ),
 					'after'  => '</div>',
 				)
 			);

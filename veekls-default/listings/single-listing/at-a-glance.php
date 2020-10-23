@@ -4,21 +4,21 @@
  *
  * This template can be overridden by copying it to yourtheme/listings/single-listing/at-a-glance.php.
  *
- * @package CarListings
+ * @package Veekls
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! carlistings_is_plugin_active() ) {
+if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
 ?>
 
 <div class="at-a-glance">
-	<h3><?php esc_html_e( 'Features Highlight', 'carlistings' ); ?></h3>
+	<h3><?php esc_html_e( 'Features Highlight', 'veekls' ); ?></h3>
 	<table>
 		<tbody>
 			<tr>

@@ -1,8 +1,8 @@
 <?php
 /**
- * CarListings Theme Customizer
+ * Veekls Theme Customizer
  *
- * @package CarListings
+ * @package Veekls
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function carlistings_customize_register( $wp_customize ) {
+function veekls_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -20,14 +20,14 @@ function carlistings_customize_register( $wp_customize ) {
 			'blogname',
 			array(
 				'selector'        => '.site-title a',
-				'render_callback' => 'carlistings_customize_partial_blogname',
+				'render_callback' => 'veekls_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
 				'selector'        => '.site-description',
-				'render_callback' => 'carlistings_customize_partial_blogdescription',
+				'render_callback' => 'veekls_customize_partial_blogdescription',
 			)
 		);
 	}
@@ -36,9 +36,9 @@ function carlistings_customize_register( $wp_customize ) {
 
 	// Add theme options panel.
 	$wp_customize->add_panel(
-		'carlistings',
+		'veekls',
 		array(
-			'title' => esc_html__( 'Theme Options', 'carlistings' ),
+			'title' => esc_html__( 'Theme Options', 'veekls' ),
 		)
 	);
 
@@ -48,9 +48,9 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'homepage',
 		array(
-			'title'           => esc_html__( 'Homepage', 'carlistings' ),
-			'panel'           => 'carlistings',
-			'active_callback' => 'carlistings_is_plugin_active',
+			'title'           => esc_html__( 'Homepage', 'veekls' ),
+			'panel'           => 'veekls',
+			'active_callback' => 'veekls_is_plugin_active',
 		)
 	);
 
@@ -64,11 +64,11 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'slider_speed',
 		array(
-			'label'           => esc_html__( 'Featured slider speed', 'carlistings' ),
+			'label'           => esc_html__( 'Featured slider speed', 'veekls' ),
 			'section'         => 'homepage',
 			'type'            => 'number',
 			'active_callback' => 'is_front_page',
-			'description'     => esc_html__( 'The animation speed in milliseconds. Enter 0 to disable the slider.', 'carlistings' ),
+			'description'     => esc_html__( 'The animation speed in milliseconds. Enter 0 to disable the slider.', 'veekls' ),
 		)
 	);
 
@@ -84,10 +84,10 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'search_section',
 		array(
-			'label'       => esc_html__( 'Search Page', 'carlistings' ),
+			'label'       => esc_html__( 'Search Page', 'veekls' ),
 			'section'     => 'homepage',
 			'type'        => 'dropdown-pages',
-			'description' => wp_kses_post( __( 'The content of this page will be displayed below the featured slider on your static front page.', 'carlistings' ) ),
+			'description' => wp_kses_post( __( 'The content of this page will be displayed below the featured slider on your static front page.', 'veekls' ) ),
 		)
 	);
 	$wp_customize->selective_refresh->add_partial(
@@ -95,7 +95,7 @@ function carlistings_customize_register( $wp_customize ) {
 		array(
 			'selector'            => '.section--search',
 			'container_inclusive' => true,
-			'render_callback'     => 'carlistings_refresh_search_section',
+			'render_callback'     => 'veekls_refresh_search_section',
 		)
 	);
 
@@ -105,7 +105,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'allcar_title',
 		array(
-			'default'           => esc_html__( 'Browse Cars By Make', 'carlistings' ),
+			'default'           => esc_html__( 'Browse Cars By Make', 'veekls' ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'transport'         => 'postMessage',
 		)
@@ -113,7 +113,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'allcar_title',
 		array(
-			'label'   => esc_html__( 'All Cars Section Title', 'carlistings' ),
+			'label'   => esc_html__( 'All Cars Section Title', 'veekls' ),
 			'section' => 'homepage',
 			'type'    => 'text',
 		)
@@ -122,7 +122,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'allcar_description',
 		array(
-			'default'           => esc_html__( 'Available in different categories', 'carlistings' ),
+			'default'           => esc_html__( 'Available in different categories', 'veekls' ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'transport'         => 'postMessage',
 		)
@@ -130,7 +130,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'allcar_description',
 		array(
-			'label'   => esc_html__( 'All Cars Section Description', 'carlistings' ),
+			'label'   => esc_html__( 'All Cars Section Description', 'veekls' ),
 			'section' => 'homepage',
 			'type'    => 'text',
 		)
@@ -139,7 +139,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'allcar_button_text',
 		array(
-			'default'           => esc_html__( 'See All Cars', 'carlistings' ),
+			'default'           => esc_html__( 'See All Cars', 'veekls' ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'transport'         => 'postMessage',
 		)
@@ -147,7 +147,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'allcar_button_text',
 		array(
-			'label'   => esc_html__( 'All Cars Section Button Text', 'carlistings' ),
+			'label'   => esc_html__( 'All Cars Section Button Text', 'veekls' ),
 			'section' => 'homepage',
 			'type'    => 'text',
 		)
@@ -164,7 +164,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'allcar_button_url',
 		array(
-			'label'   => esc_html__( 'All Cars Section Button URL', 'carlistings' ),
+			'label'   => esc_html__( 'All Cars Section Button URL', 'veekls' ),
 			'section' => 'homepage',
 			'type'    => 'text',
 		)
@@ -173,7 +173,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'allcar_image',
 		array(
-			'sanitize_callback' => 'carlistings_sanitize_image',
+			'sanitize_callback' => 'veekls_sanitize_image',
 		)
 	);
 	$wp_customize->add_control(
@@ -181,7 +181,7 @@ function carlistings_customize_register( $wp_customize ) {
 			$wp_customize,
 			'homepage',
 			array(
-				'label'    => esc_html__( 'All Cars Section Image', 'carlistings' ),
+				'label'    => esc_html__( 'All Cars Section Image', 'veekls' ),
 				'section'  => 'homepage',
 				'settings' => 'allcar_image',
 			)
@@ -198,13 +198,13 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'front_page_listings_column',
 		array(
-			'label'   => esc_html__( 'Listing Columns.', 'carlistings' ),
+			'label'   => esc_html__( 'Listing Columns.', 'veekls' ),
 			'section' => 'homepage',
 			'type'    => 'select',
 			'choices' => array(
-				'2' => esc_html__( '2 columns', 'carlistings' ),
-				'3' => esc_html__( '3 columns', 'carlistings' ),
-				'4' => esc_html__( '4 columns', 'carlistings' ),
+				'2' => esc_html__( '2 columns', 'veekls' ),
+				'3' => esc_html__( '3 columns', 'veekls' ),
+				'4' => esc_html__( '4 columns', 'veekls' ),
 			),
 		)
 	);
@@ -215,8 +215,8 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'cta_section',
 		array(
-			'title' => esc_html__( 'Call To Action Section', 'carlistings' ),
-			'panel' => 'carlistings',
+			'title' => esc_html__( 'Call To Action Section', 'veekls' ),
+			'panel' => 'veekls',
 		)
 	);
 
@@ -227,7 +227,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'cta_title',
 		array(
-			'default'           => wp_kses_post( __( 'You Want To Have Your Favorite Car?', 'carlistings' ) ),
+			'default'           => wp_kses_post( __( 'You Want To Have Your Favorite Car?', 'veekls' ) ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'transport'         => 'postMessage',
 		)
@@ -235,7 +235,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cta_title',
 		array(
-			'label'   => esc_html__( 'Title', 'carlistings' ),
+			'label'   => esc_html__( 'Title', 'veekls' ),
 			'section' => 'cta_section',
 			'type'    => 'text',
 		)
@@ -244,7 +244,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'cta_description',
 		array(
-			'default'           => esc_html__( 'We have a big list of modern & classic cars in both used and new categories.', 'carlistings' ),
+			'default'           => esc_html__( 'We have a big list of modern & classic cars in both used and new categories.', 'veekls' ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'transport'         => 'postMessage',
 		)
@@ -252,7 +252,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cta_description',
 		array(
-			'label'   => esc_html__( 'Description', 'carlistings' ),
+			'label'   => esc_html__( 'Description', 'veekls' ),
 			'section' => 'cta_section',
 			'type'    => 'text',
 		)
@@ -261,7 +261,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'cta_button_text',
 		array(
-			'default'           => esc_html__( 'go to car listings', 'carlistings' ),
+			'default'           => esc_html__( 'go to car listings', 'veekls' ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'transport'         => 'postMessage',
 		)
@@ -269,7 +269,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cta_button_text',
 		array(
-			'label'   => esc_html__( 'Button Text', 'carlistings' ),
+			'label'   => esc_html__( 'Button Text', 'veekls' ),
 			'section' => 'cta_section',
 			'type'    => 'text',
 		)
@@ -286,7 +286,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cta_button_url',
 		array(
-			'label'   => esc_html__( 'Button URL', 'carlistings' ),
+			'label'   => esc_html__( 'Button URL', 'veekls' ),
 			'section' => 'cta_section',
 			'type'    => 'text',
 		)
@@ -296,7 +296,7 @@ function carlistings_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'cta_background',
 		array(
-			'sanitize_callback' => 'carlistings_sanitize_image',
+			'sanitize_callback' => 'veekls_sanitize_image',
 			'default'           => get_template_directory_uri() . '/images/cta.png',
 		)
 	);
@@ -305,21 +305,21 @@ function carlistings_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cta_background',
 			array(
-				'label'    => esc_html__( 'Background', 'carlistings' ),
+				'label'    => esc_html__( 'Background', 'veekls' ),
 				'section'  => 'cta_section',
 				'settings' => 'cta_background',
 			)
 		)
 	);
 }
-add_action( 'customize_register', 'carlistings_customize_register' );
+add_action( 'customize_register', 'veekls_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function carlistings_customize_partial_blogname() {
+function veekls_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -328,17 +328,17 @@ function carlistings_customize_partial_blogname() {
  *
  * @return void
  */
-function carlistings_customize_partial_blogdescription() {
+function veekls_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function carlistings_customize_preview_js() {
-	wp_enqueue_script( 'carlistings-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20180702', true );
+function veekls_customize_preview_js() {
+	wp_enqueue_script( 'veekls-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20180702', true );
 }
-add_action( 'customize_preview_init', 'carlistings_customize_preview_js' );
+add_action( 'customize_preview_init', 'veekls_customize_preview_js' );
 
 /**
  * Sanitizes Image Upload.
@@ -347,7 +347,7 @@ add_action( 'customize_preview_init', 'carlistings_customize_preview_js' );
  *
  * @return string
  */
-function carlistings_sanitize_image( $input ) {
+function veekls_sanitize_image( $input ) {
 	$filetype = wp_check_filetype( $input );
 	if ( $filetype['ext'] && wp_ext2type( $filetype['ext'] ) === 'image' ) {
 		return esc_url( $input );
@@ -359,6 +359,6 @@ function carlistings_sanitize_image( $input ) {
 /**
  * Live refresh search section.
  */
-function carlistings_refresh_search_section() {
+function veekls_refresh_search_section() {
 	get_template_part( 'template-parts/home/search-form' );
 }

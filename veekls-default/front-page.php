@@ -2,7 +2,7 @@
 /**
  * Template Name: Front-page
  *
- * @package CarListings
+ * @package Veekls
  */
 
 if ( 'posts' === get_option( 'show_on_front' ) ) {

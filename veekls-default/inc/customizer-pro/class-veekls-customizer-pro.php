@@ -2,13 +2,13 @@
 /**
  * Handles the "Go Pro" section in the Customizer.
  *
- * @package CarListings
+ * @package Veekls
  */
 
 /**
  * The customizer pro class.
  */
-final class Carlistings_Customizer_Pro {
+final class Veekls_Customizer_Pro {
 
 	/**
 	 * Theme slug.
@@ -47,19 +47,19 @@ final class Carlistings_Customizer_Pro {
 	 */
 	public function sections( $manager ) {
 		// Load custom sections.
-		require get_template_directory() . '/inc/customizer-pro/class-carlistings-customizer-section-pro.php';
+		require get_template_directory() . '/inc/customizer-pro/class-veekls-customizer-section-pro.php';
 
 		// Register custom section types.
-		$manager->register_section_type( 'Carlistings_Customizer_Section_Pro' );
+		$manager->register_section_type( 'Veekls_Customizer_Section_Pro' );
 
 		// Register sections.
 		$manager->add_section(
-			new Carlistings_Customizer_Section_Pro(
+			new Veekls_Customizer_Section_Pro(
 				$manager,
-				'carlistings',
+				'veekls',
 				array(
-					'doc_title' => esc_html__( 'Need Some Help?', 'carlistings' ),
-					'doc_text'  => esc_html__( 'Need help setting up your site?', 'carlistings' ),
+					'doc_title' => esc_html__( 'Need Some Help?', 'veekls' ),
+					'doc_text'  => esc_html__( 'Need help setting up your site?', 'veekls' ),
 					'doc_url'   => esc_url( "https://wpautolistings.com/docs/{$this->slug}/{$this->utm}" ),
 					'priority'  => 0,
 				)
@@ -71,7 +71,7 @@ final class Carlistings_Customizer_Pro {
 	 * Loads theme customizer CSS.
 	 */
 	public function enqueue_control_scripts() {
-		wp_enqueue_style( 'carlistings-customize-pro-style', get_template_directory_uri() . '/inc/customizer-pro/customize-controls.css', array(), '1.0.0' );
-		wp_enqueue_script( 'carlistings-customize-pro-script', get_template_directory_uri() . '/inc/customizer-pro/customize-controls.js', array( 'customize-controls' ), '1.0.0', true );
+		wp_enqueue_style( 'veekls-customize-pro-style', get_template_directory_uri() . '/inc/customizer-pro/customize-controls.css', array(), '1.0.0' );
+		wp_enqueue_script( 'veekls-customize-pro-script', get_template_directory_uri() . '/inc/customizer-pro/customize-controls.js', array( 'customize-controls' ), '1.0.0', true );
 	}
 }

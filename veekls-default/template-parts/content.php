@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package CarListings
+ * @package Veekls
  */
 
 ?>
@@ -18,11 +18,11 @@
 	<div class="article__content">
 
 		<header class="entry-header">
-			<?php carlistings_get_category(); ?>
+			<?php veekls_get_category(); ?>
 			<div class="entry-meta">
 				<?php
-				carlistings_print_comment_link();
-				carlistings_posted_on();
+				veekls_print_comment_link();
+				veekls_posted_on();
 				?>
 			</div>
 		</header><!-- .entry-header -->
@@ -33,12 +33,12 @@
 
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'carlistings' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'veekls' ),
 					'after'  => '</div>',
 				)
 			);
 
-			carlistings_entry_footer();
+			veekls_entry_footer();
 
 			if ( function_exists( 'sharing_display' ) ) {
 				sharing_display( '', true );
@@ -46,7 +46,7 @@
 			?>
 		</div><!-- .entry-content -->
 
-		<?php carlistings_author_box(); ?>
+		<?php veekls_author_box(); ?>
 	</div>
 
 </article><!-- #post-<?php the_ID(); ?> -->

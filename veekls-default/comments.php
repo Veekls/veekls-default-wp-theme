@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package CarListings
+ * @package Veekls
  */
 
 /*
@@ -28,8 +28,8 @@ if ( post_password_required() ) {
 		?>
 		<h2 class="comments-title underline-heading">
 			<?php
-			$carlistings_comment_count = get_comments_number();
-			echo esc_html( _nx( 'Comment', 'Comments', $carlistings_comment_count, 'comments', 'carlistings' ) );
+			$veekls_comment_count = get_comments_number();
+			echo esc_html( _nx( 'Comment', 'Comments', $veekls_comment_count, 'comments', 'veekls' ) );
 			?>
 		</h2><!-- .comments-title -->
 
@@ -53,7 +53,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'carlistings' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'veekls' ); ?></p>
 			<?php
 		endif;
 

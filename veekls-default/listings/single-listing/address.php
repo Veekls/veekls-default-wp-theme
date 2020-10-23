@@ -4,14 +4,14 @@
  *
  * This template can be overridden by copying it to yourtheme/listings/single-listing/address.php.
  *
- * @package CarListings
+ * @package Veekls
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! carlistings_is_plugin_active() ) {
+if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
@@ -23,7 +23,7 @@ if ( empty( $address ) ) {
 ?>
 
 <div class="address">
-	<h3><?php esc_html_e( 'Listing Location:', 'carlistings' ); ?></h3>
+	<h3><?php esc_html_e( 'Listing Location:', 'veekls' ); ?></h3>
 	<i class="icofont-location-pin"></i>
 	<span><?php echo esc_html( $address ); ?></span>
 </div>

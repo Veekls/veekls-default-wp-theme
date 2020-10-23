@@ -4,14 +4,14 @@
  *
  * This template can be overridden by copying it to yourtheme/listings/content-single-listing.php.
  *
- * @package CarListings
+ * @package Veekls
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! carlistings_is_plugin_active() ) {
+if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 ?>

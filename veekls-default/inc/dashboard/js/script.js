@@ -1,7 +1,7 @@
 /**
  * Script for theme dashboard.
  *
- * @package CarListings.
+ * @package Veekls.
  */
 
 ( function ( $ ) {

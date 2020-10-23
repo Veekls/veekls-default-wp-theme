@@ -1,13 +1,13 @@
 <?php
 /**
- * Carlistings functions and definitions
+ * Veekls functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package CarListings
+ * @package Veekls
  */
 
-if (!function_exists('carlistings_setup')):
+if (!function_exists('veekls_setup')):
     /**
      * Sets up theme defaults and registers support for various WordPress features.
      *
@@ -16,15 +16,15 @@ if (!function_exists('carlistings_setup')):
      * as indicating support for post thumbnails.
      */
 
-    function carlistings_setup()
+    function veekls_setup()
 {
         /*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
-         * If you're building a theme based on carlistings, use a find and replace
-         * to change 'carlistings' to the name of your theme in all the template files.
+         * If you're building a theme based on veekls, use a find and replace
+         * to change 'veekls' to the name of your theme in all the template files.
          */
-        load_theme_textdomain('carlistings', get_template_directory() . '/languages');
+        load_theme_textdomain('veekls', get_template_directory() . '/languages');
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support('automatic-feed-links');
@@ -48,8 +48,8 @@ if (!function_exists('carlistings_setup')):
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(
             array(
-                'menu-1' => esc_html__('Primary', 'carlistings'),
-                'menu-2' => esc_html__('Footer', 'carlistings'),
+                'menu-1' => esc_html__('Primary', 'veekls'),
+                'menu-2' => esc_html__('Footer', 'veekls'),
             )
         );
 
@@ -91,7 +91,7 @@ if (!function_exists('carlistings_setup')):
 
 endif;
 
-add_action('after_setup_theme', 'carlistings_setup');
+add_action('after_setup_theme', 'veekls_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -100,25 +100,25 @@ add_action('after_setup_theme', 'carlistings_setup');
  *
  * @global int $content_width
  */
-function carlistings_content_width()
+function veekls_content_width()
 {
-    $GLOBALS['content_width'] = apply_filters('carlistings_content_width', 770);
+    $GLOBALS['content_width'] = apply_filters('veekls_content_width', 770);
 }
 
-add_action('after_setup_theme', 'carlistings_content_width', 0);
+add_action('after_setup_theme', 'veekls_content_width', 0);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function carlistings_widgets_init()
+function veekls_widgets_init()
 {
     register_sidebar(
         array(
-            'name' => esc_html__('Sidebar', 'carlistings'),
+            'name' => esc_html__('Sidebar', 'veekls'),
             'id' => 'sidebar-1',
-            'description' => esc_html__('Add widgets here.', 'carlistings'),
+            'description' => esc_html__('Add widgets here.', 'veekls'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget' => '</section>',
             'before_title' => '<h2 class="widget-title">',
@@ -128,9 +128,9 @@ function carlistings_widgets_init()
 
     register_sidebar(
         array(
-            'name' => esc_html__('Topbar Contact', 'carlistings'),
+            'name' => esc_html__('Topbar Contact', 'veekls'),
             'id' => 'topbar-contact',
-            'description' => esc_html__('Add your contact widget here.', 'carlistings'),
+            'description' => esc_html__('Add your contact widget here.', 'veekls'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget' => '</section>',
             'before_title' => '<h2 class="widget-title">',
@@ -140,9 +140,9 @@ function carlistings_widgets_init()
 
     register_sidebar(
         array(
-            'name' => esc_html__('Topbar Languages', 'carlistings'),
+            'name' => esc_html__('Topbar Languages', 'veekls'),
             'id' => 'topbar-languages',
-            'description' => esc_html__('Add your language widget here.', 'carlistings'),
+            'description' => esc_html__('Add your language widget here.', 'veekls'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget' => '</section>',
             'before_title' => '<h2 class="widget-title">',
@@ -150,39 +150,39 @@ function carlistings_widgets_init()
         )
     );
 
-    register_widget('Carlistings_Contact_Widget');
+    register_widget('Veekls_Contact_Widget');
 }
 
-add_action('widgets_init', 'carlistings_widgets_init');
+add_action('widgets_init', 'veekls_widgets_init');
 
 /**
  * Enqueue plugins scripts and styles first.
  */
-function carlistings_plugin_scripts()
+function veekls_plugin_scripts()
 {
     if (is_front_page()) {
         wp_enqueue_style('car-listings-listing-css', get_template_directory_uri() . '/css/veekls-api-client.css', array(), '1.0.0');
-        wp_enqueue_script('sumoselect', get_template_directory_uri() . '/js/sumoselect.js', array(), '3.0.3', true);
+        wp_enqueue_script('sumoselect', get_template_directory_uri() . '/js/sumoselect.min.js', array(), '3.0.3', true);
     }
 }
 
-add_action('wp_enqueue_scripts', 'carlistings_plugin_scripts', 0);
+add_action('wp_enqueue_scripts', 'veekls_plugin_scripts', 0);
 
 /**
  * Enqueue scripts and styles.
  */
-function carlistings_scripts()
+function veekls_scripts()
 {
     wp_enqueue_style('icofont', get_template_directory_uri() . '/css/icofont.min.css', array(), '1.0.1');
 
-    wp_enqueue_style('carlistings-fonts', carlistings_fonts_url(), array(), '1.0.0');
-    wp_enqueue_style('carlistings-style', get_stylesheet_uri(), array(), '1.0.0');
+    wp_enqueue_style('veekls-fonts', veekls_fonts_url(), array(), '1.0.0');
+    wp_enqueue_style('veekls-style', get_stylesheet_uri(), array(), '1.0.0');
 
-    wp_enqueue_script('carlistings-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
-    wp_enqueue_script('carlistings-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
+    wp_enqueue_script('veekls-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
+    wp_enqueue_script('veekls-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 
-    wp_enqueue_script('slick', get_template_directory_uri() . '/js/slick.js', array('jquery'), '1.8.0', true);
-    wp_enqueue_script('carlistings-script', get_template_directory_uri() . '/js/script.js', array('slick'), '1.0', true);
+    wp_enqueue_script('slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.8.0', true);
+    wp_enqueue_script('veekls-script', get_template_directory_uri() . '/js/veekls-script.js', array('slick'), '1.0', true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -194,24 +194,24 @@ function carlistings_scripts()
         );
 
         if (is_front_page()) {
-            wp_localize_script('carlistings-script', 'auto_listings', $list_grid_view);
+            wp_localize_script('veekls-script', 'auto_listings', $list_grid_view);
         }
     }
 }
 
-add_action('wp_enqueue_scripts', 'carlistings_scripts', 99);
+add_action('wp_enqueue_scripts', 'veekls_scripts', 99);
 
 /**
  * Get Google fonts URL for the theme.
  *
  * @return string Google fonts URL for the theme.
  */
-function carlistings_fonts_url()
+function veekls_fonts_url()
 {
     $fonts = array();
     $subsets = 'latin,latin-ext';
 
-    if ('off' !== _x('on', 'Open Sans font: on or off', 'carlistings')) {
+    if ('off' !== _x('on', 'Open Sans font: on or off', 'veekls')) {
         $fonts[] = 'Open Sans:300,400,600,700,800';
     }
 
@@ -219,7 +219,7 @@ function carlistings_fonts_url()
      * Translators: To add an additional character subset specific to your language,
      * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
      */
-    $subset = _x('no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'carlistings');
+    $subset = _x('no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'veekls');
 
     if ('cyrillic' === $subset) {
         $subsets .= ',cyrillic,cyrillic-ext';
@@ -245,18 +245,18 @@ function carlistings_fonts_url()
 /**
  * Add editor style.
  */
-function carlistings_add_editor_styles()
+function veekls_add_editor_styles()
 {
     add_editor_style(
         array(
             'css/editor-style.css',
-            carlistings_fonts_url(),
+            veekls_fonts_url(),
             get_template_directory_uri() . '/css/icofont.css',
         )
     );
 }
 
-add_action('init', 'carlistings_add_editor_styles');
+add_action('init', 'veekls_add_editor_styles');
 
 /**
  * Implement the Custom Header feature.
@@ -266,7 +266,7 @@ require get_template_directory() . '/inc/custom-header.php';
 /**
  * Include widget file
  */
-require get_template_directory() . '/inc/widgets/class-carlistings-contact-widget.php';
+require get_template_directory() . '/inc/widgets/class-veekls-contact-widget.php';
 
 /**
  * Implement the Breadcrumbs.
@@ -305,17 +305,17 @@ if (is_admin()) {
     /**
      * Dashboard.
      */
-    require get_template_directory() . '/inc/dashboard/class-carlistings-dashboard.php';
+    require get_template_directory() . '/inc/dashboard/class-veekls-dashboard.php';
 
-    new Carlistings_Dashboard();
+    new Veekls_Dashboard();
 }
 
 /**
  * Customizer Pro.
  */
-require get_template_directory() . '/inc/customizer-pro/class-carlistings-customizer-pro.php';
+require get_template_directory() . '/inc/customizer-pro/class-veekls-customizer-pro.php';
 
-$customizer_pro = new Carlistings_Customizer_Pro();
+$customizer_pro = new Veekls_Customizer_Pro();
 $customizer_pro->init();
 
 if (!function_exists('wp_body_open')) {

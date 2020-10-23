@@ -2,7 +2,7 @@
 /**
  * The template part for displaying search form on front page
  *
- * @package CarListings
+ * @package Veekls
  */
 
 $search_page = get_theme_mod( 'search_section' );
