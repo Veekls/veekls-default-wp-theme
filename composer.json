@@ -4,7 +4,7 @@
 	"type": "wordpress-plugin",
 	"require-dev": {
 		"wp-coding-standards/wpcs": "^2.2",
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
 		"phpcompatibility/phpcompatibility-wp": "^2.1",
 		"squizlabs/php_codesniffer": "^3.5"
 	},
@@ -18,5 +18,8 @@
 			"name": "Santiago G. Marín",
 			"email": "santiago.marin@veekls.com"
 		}
-	]
+	],
+	"require": {
+		"friendsofphp/php-cs-fixer": "^2.16"
+	}
 }

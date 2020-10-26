@@ -16,47 +16,56 @@ if ( ! veekls_is_plugin_active() ) {
 }
 
 $front_page_listings_column = get_theme_mod( 'front_page_listings_column', 2 );
+
+$vehicle            = $args['vehicle'];
+$vehicle->title     = apply_filters( 'veekls_title', $vehicle );
+$vehicle->url       = '/vehicle?id=' . $vehicle->_id;
+$vehicle->thumbnail = apply_filters(
+	'veekls_picture',
+	$vehicle->pictures[0],
+	array(
+		'thumbnail' => 'sm',
+	)
+);
+
 if ( is_front_page() ) {
 	$cols = $front_page_listings_column;
 } else {
-	$cols = function_exists( 'auto_listings_columns' ) ? auto_listings_columns() : 1;
+	$cols = 2;
 }
+
 ?>
 
-<li <?php post_class( 'col-' . $cols ); ?>>
-	<?php
-	/**
-	 * Image and at a glance
-	 *
-	 * @hooked auto_listings_template_loop_image
-	 */
-	do_action( 'auto_listings_before_listings_loop_item_summary' );
-	?>
-	<div class="summary">
-
-	<?php
-	do_action( 'auto_listings_before_listings_loop_item' );
-
-	/**
-	 * Info single listings
-	 *
-	 * @hooked auto_listings_template_loop_title
-	 * @hooked auto_listings_template_loop_at_a_glance
-	 * @hooked auto_listings_template_loop_address
-	 * @hooked auto_listings_template_loop_price
-	 * @hooked auto_listings_template_loop_description
-	 * @hooked auto_listings_template_loop_bottom
-	 */
-	do_action( 'auto_listings_listings_loop_item' );
-
-	do_action( 'auto_listings_after_listings_loop_item' );
-	?>
-
+<li <?php esc_attr( post_class( 'col-' . $cols ) ); ?>>
+	<div class="image">
+		<a href="<?php echo esc_url( $vehicle->url ); ?>" title="<?php echo esc_attr( $vehicle->title ); ?>">
+			<img alt="<?php echo esc_attr( $vehicle->title ); ?>" src="<?php echo esc_url( $vehicle->thumbnail ); ?>"/>
+		</a>
 	</div>
 
-	<?php
+	<div class="summary">
+		<h3 class="title">
+			<a href="<?php echo esc_url( $vehicle->url ); ?>" title="<?php echo esc_attr( $vehicle->title ); ?>">
+				<?php echo esc_html( $vehicle->title ); ?>
+			</a>
+		</h3>
 
-	do_action( 'auto_listings_after_listings_loop_item_summary' );
-	?>
+		<div class="at-a-glance">
+			<ul>
+				<li class="odometer"><i class="auto-icon-odometer"></i> <?php echo esc_html( $vehicle->odometer ); ?></li>
+				<li class="transmission"><i class="auto-icon-transmission"></i> <?php echo esc_html( $vehicle->transmission ); ?></li>
+				<li class="body"><i class="auto-icon-trunk"></i> <?php echo esc_html( $vehicle->type ); ?></li>
+			</ul>
+		</div>
 
+		<div class="price"><?php echo esc_html( $vehicle->price ); ?></div>
+
+		<div class="description"><?php echo esc_html( $vehicle->promo['message'] ); ?></div>
+
+		<div class="bottom-wrap">
+			<a class="al-button" href="<?php echo esc_url( $vehicle->url ); ?>" title="<?php esc_attr_e( 'View', 'veekls' ); ?> <?php esc_attr( $vehicle->title ); ?>">
+				<?php echo esc_html_e( 'More Details', 'veekls' ); ?> &nbsp; <i class="fa fa-angle-right"></i>
+			</a>
+		</div>
+	</div>
 </li>

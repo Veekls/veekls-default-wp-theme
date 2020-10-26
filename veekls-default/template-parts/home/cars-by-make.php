@@ -20,6 +20,7 @@ $cars = veekls_get_car_ids();
 if ( ! $cars ) {
 	return;
 }
+
 ?>
 
 <section class="all--car">
@@ -42,4 +43,3 @@ if ( ! $cars ) {
 		<?php endif; ?>
 	</div>
 </section>
-

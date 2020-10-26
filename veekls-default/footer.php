@@ -16,7 +16,6 @@
 <?php get_template_part( 'template-parts/cta' ); ?>
 
 <footer id="colophon" class="site-footer">
-
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="footer-copyright">
@@ -26,12 +25,15 @@
 					printf( esc_html__( 'Proudly powered by %s', 'veekls' ), 'WordPress' );
 					?>
 				</a>
+
 				<span class="sep"> | </span>
+
 				<?php
 				/* translators: placeholder replaced with string */
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'veekls' ), 'Veekls', '<a href="' . esc_url( __( 'https://wpautolistings.com/', 'veekls' ) ) . '" rel="designer">WP Auto Listings</a>' );
 				?>
 			</div><!-- .site-info -->
+
 			<nav id="footer-site-navigation" class="footer-navigation">
 				<?php
 				if ( has_nav_menu( 'menu-2' ) ) {

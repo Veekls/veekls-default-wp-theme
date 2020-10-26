@@ -11,6 +11,7 @@ $button_url      = get_theme_mod( 'cta_button_url', 'http://example.com/' );
 $button_text     = get_theme_mod( 'cta_button_text', __( 'go to car listings', 'veekls' ) );
 
 $image_background = get_theme_mod( 'cta_background', get_template_directory_uri() . '/images/cta.png' );
+
 ?>
 
 <section class="section--cta" style="background-image: url( <?php echo esc_url( $image_background ); ?> )">

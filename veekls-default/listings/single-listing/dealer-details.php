@@ -24,15 +24,16 @@ if ( empty( $dealer_id ) ) {
 $website = '';
 $phone   = '';
 $address = '';
+
 if ( function_exists( 'auto_listings_dealer_meta' ) ) {
 	$website = auto_listings_dealer_meta( 'website', $dealer_id );
 	$phone   = auto_listings_dealer_meta( 'phone', $dealer_id );
 	$address = auto_listings_dealer_meta( 'displayed_address', $dealer_id );
 }
+
 ?>
 
 <div class="dealer">
-
 	<h3><?php esc_html_e( 'Dealer Details', 'veekls' ); ?></h3>
 
 	<div class="logo">
@@ -68,5 +69,4 @@ if ( function_exists( 'auto_listings_dealer_meta' ) ) {
 			<li class="phone"><i class="icofont-phone"></i><?php echo esc_html( $phone ); ?></li>
 		<?php endif; ?>
 	</ul>
-
 </div>

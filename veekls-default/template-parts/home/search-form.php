@@ -6,12 +6,15 @@
  */
 
 $search_page = get_theme_mod( 'search_section' );
+
 if ( ! $search_page ) {
 	return;
 }
 
-$post = get_post( $search_page );
-setup_postdata( $post );
+$current_post = get_post( $search_page );
+
+setup_postdata( $current_post );
+
 ?>
 
 <section class="section--search container">
@@ -20,6 +23,7 @@ setup_postdata( $post );
 		<div class="search-form__title">
 			<p><?php the_excerpt(); ?></p>
 		</div>
+
 		<?php the_content(); ?>
 	</div>
 </section>

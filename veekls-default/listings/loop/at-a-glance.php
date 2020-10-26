@@ -14,19 +14,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! veekls_is_plugin_active() ) {
 	return;
 }
+
 ?>
 
 <div class="at-a-glance">
 	<ul>
-	<?php if ( function_exists( 'auto_listings_odometer' ) && auto_listings_odometer() ) { ?>
-		<li class="odomoter"><i class="icofont icofont-speed-meter"></i> <?php echo esc_html( auto_listings_odometer() ); ?></li>
-	<?php } ?>
-	<?php if ( function_exists( 'auto_listings_transmission' ) && auto_listings_transmission() ) { ?>
-		<li class="transmission"><i class="icofont icofont-ui-settings"></i> <?php echo esc_html( auto_listings_transmission() ); ?></li>
-	<?php } ?>
-	<?php if ( function_exists( 'auto_listings_body_type' ) && auto_listings_body_type() ) { ?>
-		<li class="body"><i class="icofont icofont-car-alt-4"></i> <?php echo wp_kses_post( auto_listings_body_type() ); ?></li>
-	<?php } ?>
-	</ul>
+		<?php if ( function_exists( 'auto_listings_odometer' ) && auto_listings_odometer() ) : ?>
+			<li class="odomoter"><i class="icofont icofont-speed-meter"></i> <?php echo esc_html( auto_listings_odometer() ); ?></li>
+		<?php endif; ?>
 
+		<?php if ( function_exists( 'auto_listings_transmission' ) && auto_listings_transmission() ) : ?>
+			<li class="transmission"><i class="icofont icofont-ui-settings"></i> <?php echo esc_html( auto_listings_transmission() ); ?></li>
+		<?php endif; ?>
+
+		<?php if ( function_exists( 'auto_listings_body_type' ) && auto_listings_body_type() ) : ?>
+			<li class="body"><i class="icofont icofont-car-alt-4"></i> <?php echo wp_kses_post( auto_listings_body_type() ); ?></li>
+		<?php endif; ?>
+	</ul>
 </div>

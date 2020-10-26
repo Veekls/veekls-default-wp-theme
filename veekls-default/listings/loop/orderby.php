@@ -34,8 +34,8 @@ $options = apply_filters(
 );
 
 ?>
-<form class="veekls-api-client-ordering" method="get" >
 
+<form class="veekls-api-client-ordering" method="get" >
 	<div class="select-wrap">
 		<select name="orderby" class="orderby">
 			<?php foreach ( $options as $value => $label ) : ?>
@@ -43,19 +43,20 @@ $options = apply_filters(
 			<?php endforeach; ?>
 		</select>
 	</div>
-	<?php
-	foreach ( $_GET as $key => $val ) {
+
+	<?php foreach ( $_GET as $key => $val ) : ?>
+		<?php
 		if ( 'orderby' === $key || 'submit' === $key ) {
 			continue;
 		}
-		if ( is_array( $val ) ) {
-			foreach ( $val as $inner_val ) {
-				echo '<input type="hidden" name="' . esc_attr( $key ) . '[]" value="' . esc_attr( $inner_val ) . '" />';
-			}
-		} else {
-			echo '<input type="hidden" name="' . esc_attr( $key ) . '" value="' . esc_attr( $val ) . '" />';
-		}
-	}
-	?>
+		?>
 
+		<?php if ( is_array( $val ) ) : ?>
+			<?php foreach ( $val as $inner_val ) : ?>
+				<input type="hidden" name="<?php echo esc_attr( $key ); ?>[]" value="<?php echo esc_attr( $inner_val ); ?>" />
+			<?php endforeach; ?>
+		<?php else : ?>
+			<input type="hidden" name="<?php echo esc_attr( $key ); ?>" value="<?php echo esc_attr( $val ); ?>" />
+		<?php endif; ?>
+	<?php endforeach; ?>
 </form>
