@@ -17,11 +17,7 @@ $vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
 
 <div id="container" class="container">
 	<div id="content" class="content" role="main">
-		<?php if ( is_active_sidebar( 'veekls-api-client' ) ) : ?>
-			<div class="has-sidebar">
-		<?php else : ?>
-			<div class="listing-no-sidebar">
-		<?php endif; ?>
+		<div class="<?php is_active_sidebar( 'veekls-api-client' ) ? 'has-sidebar' : 'listing-no-sidebar'; ?>">
 
 		<div class="auto-listings-view-switcher">
 			<div id="list" class="list"><i class="fa fa-list"></i></div>
@@ -53,7 +49,7 @@ $vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
 			<?php endif; ?>
 
 			<?php $count++; ?>
-			<?php endforeach; ?>
+		<?php endforeach; ?>
 
 		<?php if ( 1 !== $count % $cols ) : ?>
 			</ul>

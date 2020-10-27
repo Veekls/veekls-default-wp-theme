@@ -167,6 +167,7 @@ add_action( 'wp_enqueue_scripts', 'veekls_plugin_scripts', 0 );
  * Enqueue scripts and styles.
  */
 function veekls_scripts() {
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/fontawesome-all.min.css', array(), '5.15.1' );
 	wp_enqueue_style( 'icofont', get_template_directory_uri() . '/css/icofont.min.css', array(), '1.0.1' );
 
 	wp_enqueue_style( 'veekls-fonts', veekls_fonts_url(), array(), '1.0.0' );
@@ -243,7 +244,8 @@ function veekls_add_editor_styles() {
 		array(
 			'css/editor-style.css',
 			veekls_fonts_url(),
-			get_template_directory_uri() . '/css/icofont.css',
+			get_template_directory_uri() . '/css/fontawesome-all.min.css',
+			get_template_directory_uri() . '/css/icofont.min.css',
 		)
 	);
 }
