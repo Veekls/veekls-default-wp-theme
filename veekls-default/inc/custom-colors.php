@@ -13,11 +13,11 @@ function veekls_custom_colors() {
 	<!-- Theme custom colors -->
 	<style type="text/css">
 	:root {
-		--color-primary: <?php echo esc_html( get_theme_mod( 'primary_color' ) ); ?>;
-		--color-info: <?php echo esc_html( get_theme_mod( 'info_color' ) ); ?>;
-		--color-success: <?php echo esc_html( get_theme_mod( 'success_color' ) ); ?>;
-		--color-warning: <?php echo esc_html( get_theme_mod( 'warning_color' ) ); ?>;
-		--color-danger: <?php echo esc_html( get_theme_mod( 'danger_color' ) ); ?>;
+		--color-primary: <?php echo esc_html( get_option( 'veekls_primary_color', '#f01840' ) ); ?>;
+		--color-info: <?php echo esc_html( get_option( 'veekls_info_color', '#61707d' ) ); ?>;
+		--color-success: <?php echo esc_html( get_option( 'veekls_success_color', '#04a777' ) ); ?>;
+		--color-warning: <?php echo esc_html( get_option( 'veekls_warning_color', '#e67f0d' ) ); ?>;
+		--color-danger: <?php echo esc_html( get_option( 'veekls_danger_color', '#8332ac' ) ); ?>;
 	}
 	</style>
 	<?php

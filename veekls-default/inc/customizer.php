@@ -321,100 +321,114 @@ function veekls_customize_register( $wp_customize ) {
 
 	// -- Colors.
 	$wp_customize->add_setting(
-		'primary_color',
-		array(
-			'sanitize_callback' => 'esc_html',
-			'default'           => '#f01840',
+		new WP_Customize_Setting(
+			$wp_customize,
+			'veekls_primary_color',
+			array(
+				'default' => '#f01840',
+				'type'    => 'option',
+			)
 		)
 	);
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'primary_color',
+			'veekls_primary_color',
 			array(
 				'label'    => esc_html__( 'Primary Color', 'veekls' ),
-				'settings' => 'primary_color',
+				'settings' => 'veekls_primary_color',
 				'section'  => 'colors',
 			)
 		)
 	);
 
 	$wp_customize->add_setting(
-		'info_color',
-		array(
-			'sanitize_callback' => 'esc_html',
-			'default'           => '#61707d',
+		new WP_Customize_Setting(
+			$wp_customize,
+			'veekls_info_color',
+			array(
+				'default' => '#61707d',
+				'type'    => 'option',
+			)
 		)
 	);
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'info_color',
+			'veekls_info_color',
 			array(
 				'label'    => esc_html__( 'Info Color', 'veekls' ),
-				'settings' => 'info_color',
+				'settings' => 'veekls_info_color',
 				'section'  => 'colors',
 			)
 		)
 	);
 
 	$wp_customize->add_setting(
-		'success_color',
-		array(
-			'sanitize_callback' => 'esc_html',
-			'default'           => '#04a777',
+		new WP_Customize_Setting(
+			$wp_customize,
+			'veekls_success_color',
+			array(
+				'default' => '#04a777',
+				'type'    => 'option',
+			)
 		)
 	);
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'success_color',
+			'veekls_success_color',
 			array(
 				'label'    => esc_html__( 'Success Color', 'veekls' ),
-				'settings' => 'success_color',
+				'settings' => 'veekls_success_color',
 				'section'  => 'colors',
 			)
 		)
 	);
 
 	$wp_customize->add_setting(
-		'warning_color',
-		array(
-			'sanitize_callback' => 'esc_html',
-			'default'           => '#e67f0d',
+		new WP_Customize_Setting(
+			$wp_customize,
+			'veekls_warning_color',
+			array(
+				'default' => '#e67f0d',
+				'type'    => 'option',
+			)
 		)
 	);
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'warning_color',
+			'veekls_warning_color',
 			array(
 				'label'    => esc_html__( 'Warning Color', 'veekls' ),
-				'settings' => 'warning_color',
+				'settings' => 'veekls_warning_color',
 				'section'  => 'colors',
 			)
 		)
 	);
 
 	$wp_customize->add_setting(
-		'danger_color',
-		array(
-			'sanitize_callback' => 'esc_html',
-			'default'           => '#8332ac',
+		new WP_Customize_Setting(
+			$wp_customize,
+			'veekls_danger_color',
+			array(
+				'default' => '#8332ac',
+			)
 		)
 	);
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'danger_color',
+			'veekls_danger_color',
 			array(
 				'label'    => esc_html__( 'Danger Color', 'veekls' ),
-				'settings' => 'danger_color',
+				'settings' => 'veekls_danger_color',
 				'section'  => 'colors',
 			)
 		)

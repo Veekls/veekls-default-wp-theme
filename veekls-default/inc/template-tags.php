@@ -12,6 +12,7 @@
  */
 function veekls_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 	}
@@ -23,8 +24,14 @@ function veekls_posted_on() {
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
 	);
+	?>
 
-	echo '<span class="posted-on"><a href="' . esc_url( get_the_permalink() ) . '"><i class="icofont icofont-clock-time"></i>' . wp_kses_post( $time_string ) . '</a></span>';
+	<span class="posted-on">
+		<a href="' . esc_url( get_the_permalink() ) . '"><i class="fas fa-clock"></i>
+		<?php wp_kses_post( $time_string ); ?>
+		</a>
+	</span>
+	<?php
 }
 
 /**
@@ -32,9 +39,11 @@ function veekls_posted_on() {
  */
 function veekls_print_comment_link() {
 	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link"><i class="icofont icofont-speech-comments"></i>';
-		comments_popup_link();
-		echo '</span>';
+		?>
+		<span class="comments-link"><i class="fas fa-comments"></i>
+			<?php comments_popup_link(); ?>
+		</span>
+		<?php
 	}
 }
 
@@ -71,10 +80,15 @@ function veekls_entry_footer() {
 function veekls_get_category() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
-		echo '<span class="entry-header__category">';
+		?>
+		<span class="entry-header__category">
+		<?php
 		// translators: used between list items, there is a space after the comma.
 		the_category( esc_html__( ', ', 'veekls' ) );
-		echo '</span>';
+		?>
+
+		</span>
+		<?php
 	}
 }
 

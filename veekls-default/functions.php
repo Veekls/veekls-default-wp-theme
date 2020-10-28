@@ -84,37 +84,6 @@ if ( ! function_exists( 'veekls_setup' ) ) :
 			)
 		);
 
-		/**
-		 * Add support for custom colors.
-		 *
-		 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-color-palettes
-		 */
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'strong magenta', 'themeLangDomain' ),
-					'slug'  => 'strong-magenta',
-					'color' => '#a156b4',
-				),
-				array(
-					'name'  => __( 'light grayish magenta', 'themeLangDomain' ),
-					'slug'  => 'light-grayish-magenta',
-					'color' => '#d0a5db',
-				),
-				array(
-					'name'  => __( 'very light gray', 'themeLangDomain' ),
-					'slug'  => 'very-light-gray',
-					'color' => '#eee',
-				),
-				array(
-					'name'  => __( 'very dark gray', 'themeLangDomain' ),
-					'slug'  => 'very-dark-gray',
-					'color' => '#444',
-				),
-			)
-		);
-
 		add_post_type_support( 'page', 'excerpt' );
 	}
 endif;
