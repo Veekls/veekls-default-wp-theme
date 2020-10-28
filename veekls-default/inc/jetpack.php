@@ -66,6 +66,7 @@ function veekls_jetpack_setup() {
 		)
 	);
 }
+
 add_action( 'after_setup_theme', 'veekls_jetpack_setup' );
 
 /**
@@ -97,6 +98,7 @@ function veekls_get_featured_posts() {
 function veekls_deregister_jetpack_style() {
 	wp_deregister_style( 'jetpack-social-menu' );
 }
+
 add_action( 'wp_enqueue_scripts', 'veekls_deregister_jetpack_style', 999 );
 
 /**
@@ -111,4 +113,5 @@ function veekls_remove_share() {
 	remove_filter( 'the_content', 'sharing_display', 19 );
 	remove_filter( 'the_excerpt', 'sharing_display', 19 );
 }
+
 add_action( 'loop_start', 'veekls_remove_share' );

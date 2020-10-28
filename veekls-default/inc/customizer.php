@@ -11,8 +11,8 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function veekls_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
@@ -23,6 +23,7 @@ function veekls_customize_register( $wp_customize ) {
 				'render_callback' => 'veekls_customize_partial_blogname',
 			)
 		);
+
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
@@ -42,9 +43,8 @@ function veekls_customize_register( $wp_customize ) {
 		)
 	);
 
-	/**
-	 * Homepage.
-	 */
+	// -- Homepage.
+
 	$wp_customize->add_section(
 		'homepage',
 		array(
@@ -61,6 +61,7 @@ function veekls_customize_register( $wp_customize ) {
 			'default'           => 3000,
 		)
 	);
+
 	$wp_customize->add_control(
 		'slider_speed',
 		array(
@@ -72,15 +73,15 @@ function veekls_customize_register( $wp_customize ) {
 		)
 	);
 
-	/**
-	 * Search page.
-	 */
+	// -- Search page.
+
 	$wp_customize->add_setting(
 		'search_section',
 		array(
 			'sanitize_callback' => 'absint',
 		)
 	);
+
 	$wp_customize->add_control(
 		'search_section',
 		array(
@@ -90,6 +91,7 @@ function veekls_customize_register( $wp_customize ) {
 			'description' => wp_kses_post( __( 'The content of this page will be displayed below the featured slider on your static front page.', 'veekls' ) ),
 		)
 	);
+
 	$wp_customize->selective_refresh->add_partial(
 		'search_section',
 		array(
@@ -99,17 +101,17 @@ function veekls_customize_register( $wp_customize ) {
 		)
 	);
 
-	/**
-	 * All car section.
-	 */
+	// -- All car section.
+
 	$wp_customize->add_setting(
 		'allcar_title',
 		array(
-			'default'           => esc_html__( 'Browse Cars By Make', 'veekls' ),
+			'default'           => esc_html__( 'Browse Cars By Brand', 'veekls' ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'transport'         => 'postMessage',
 		)
 	);
+
 	$wp_customize->add_control(
 		'allcar_title',
 		array(
@@ -127,6 +129,7 @@ function veekls_customize_register( $wp_customize ) {
 			'transport'         => 'postMessage',
 		)
 	);
+
 	$wp_customize->add_control(
 		'allcar_description',
 		array(
@@ -144,6 +147,7 @@ function veekls_customize_register( $wp_customize ) {
 			'transport'         => 'postMessage',
 		)
 	);
+
 	$wp_customize->add_control(
 		'allcar_button_text',
 		array(
@@ -161,6 +165,7 @@ function veekls_customize_register( $wp_customize ) {
 			'transport'         => 'postMessage',
 		)
 	);
+
 	$wp_customize->add_control(
 		'allcar_button_url',
 		array(
@@ -176,6 +181,7 @@ function veekls_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'veekls_sanitize_image',
 		)
 	);
+
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
 			$wp_customize,
@@ -195,6 +201,7 @@ function veekls_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'absint',
 		)
 	);
+
 	$wp_customize->add_control(
 		'front_page_listings_column',
 		array(
@@ -209,9 +216,8 @@ function veekls_customize_register( $wp_customize ) {
 		)
 	);
 
-	/**
-	 * Call To Action.
-	 */
+	// -- Call To Action.
+
 	$wp_customize->add_section(
 		'cta_section',
 		array(
@@ -219,10 +225,6 @@ function veekls_customize_register( $wp_customize ) {
 			'panel' => 'veekls',
 		)
 	);
-
-	/**
-	 * Cta section.
-	 */
 
 	$wp_customize->add_setting(
 		'cta_title',
@@ -232,6 +234,7 @@ function veekls_customize_register( $wp_customize ) {
 			'transport'         => 'postMessage',
 		)
 	);
+
 	$wp_customize->add_control(
 		'cta_title',
 		array(
@@ -249,6 +252,7 @@ function veekls_customize_register( $wp_customize ) {
 			'transport'         => 'postMessage',
 		)
 	);
+
 	$wp_customize->add_control(
 		'cta_description',
 		array(
@@ -266,6 +270,7 @@ function veekls_customize_register( $wp_customize ) {
 			'transport'         => 'postMessage',
 		)
 	);
+
 	$wp_customize->add_control(
 		'cta_button_text',
 		array(
@@ -283,6 +288,7 @@ function veekls_customize_register( $wp_customize ) {
 			'transport'         => 'postMessage',
 		)
 	);
+
 	$wp_customize->add_control(
 		'cta_button_url',
 		array(
@@ -300,6 +306,7 @@ function veekls_customize_register( $wp_customize ) {
 			'default'           => get_template_directory_uri() . '/images/cta.png',
 		)
 	);
+
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
 			$wp_customize,
@@ -311,7 +318,109 @@ function veekls_customize_register( $wp_customize ) {
 			)
 		)
 	);
+
+	// -- Colors.
+	$wp_customize->add_setting(
+		'primary_color',
+		array(
+			'sanitize_callback' => 'esc_html',
+			'default'           => '#f01840',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'primary_color',
+			array(
+				'label'    => esc_html__( 'Primary Color', 'veekls' ),
+				'settings' => 'primary_color',
+				'section'  => 'colors',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'info_color',
+		array(
+			'sanitize_callback' => 'esc_html',
+			'default'           => '#61707d',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'info_color',
+			array(
+				'label'    => esc_html__( 'Info Color', 'veekls' ),
+				'settings' => 'info_color',
+				'section'  => 'colors',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'success_color',
+		array(
+			'sanitize_callback' => 'esc_html',
+			'default'           => '#04a777',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'success_color',
+			array(
+				'label'    => esc_html__( 'Success Color', 'veekls' ),
+				'settings' => 'success_color',
+				'section'  => 'colors',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'warning_color',
+		array(
+			'sanitize_callback' => 'esc_html',
+			'default'           => '#e67f0d',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'warning_color',
+			array(
+				'label'    => esc_html__( 'Warning Color', 'veekls' ),
+				'settings' => 'warning_color',
+				'section'  => 'colors',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'danger_color',
+		array(
+			'sanitize_callback' => 'esc_html',
+			'default'           => '#8332ac',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'danger_color',
+			array(
+				'label'    => esc_html__( 'Danger Color', 'veekls' ),
+				'settings' => 'danger_color',
+				'section'  => 'colors',
+			)
+		)
+	);
 }
+
 add_action( 'customize_register', 'veekls_customize_register' );
 
 /**
@@ -338,6 +447,7 @@ function veekls_customize_partial_blogdescription() {
 function veekls_customize_preview_js() {
 	wp_enqueue_script( 'veekls-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20180702', true );
 }
+
 add_action( 'customize_preview_init', 'veekls_customize_preview_js' );
 
 /**
@@ -349,6 +459,7 @@ add_action( 'customize_preview_init', 'veekls_customize_preview_js' );
  */
 function veekls_sanitize_image( $input ) {
 	$filetype = wp_check_filetype( $input );
+
 	if ( $filetype['ext'] && wp_ext2type( $filetype['ext'] ) === 'image' ) {
 		return esc_url( $input );
 	}

@@ -29,6 +29,7 @@ function veekls_body_classes( $classes ) {
 
 	return $classes;
 }
+
 add_filter( 'body_class', 'veekls_body_classes' );
 
 /**
@@ -39,4 +40,5 @@ function veekls_pingback_header() {
 		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 	}
 }
+
 add_action( 'wp_head', 'veekls_pingback_header' );

@@ -77,16 +77,46 @@ if ( ! function_exists( 'veekls_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 300,
-				'width'       => 67,
+				'height'      => 50,
+				'width'       => 240,
 				'flex-width'  => true,
 				'flex-height' => true,
 			)
 		);
 
+		/**
+		 * Add support for custom colors.
+		 *
+		 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-color-palettes
+		 */
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name'  => __( 'strong magenta', 'themeLangDomain' ),
+					'slug'  => 'strong-magenta',
+					'color' => '#a156b4',
+				),
+				array(
+					'name'  => __( 'light grayish magenta', 'themeLangDomain' ),
+					'slug'  => 'light-grayish-magenta',
+					'color' => '#d0a5db',
+				),
+				array(
+					'name'  => __( 'very light gray', 'themeLangDomain' ),
+					'slug'  => 'very-light-gray',
+					'color' => '#eee',
+				),
+				array(
+					'name'  => __( 'very dark gray', 'themeLangDomain' ),
+					'slug'  => 'very-dark-gray',
+					'color' => '#444',
+				),
+			)
+		);
+
 		add_post_type_support( 'page', 'excerpt' );
 	}
-
 endif;
 
 add_action( 'after_setup_theme', 'veekls_setup' );
@@ -204,8 +234,8 @@ function veekls_fonts_url() {
 	$fonts   = array();
 	$subsets = 'latin,latin-ext';
 
-	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'veekls' ) ) {
-		$fonts[] = 'Open Sans:300,400,600,700,800';
+	if ( 'off' !== _x( 'on', 'Lato font: on or off', 'veekls' ) ) {
+		$fonts[] = 'Lato:300,400,600,700,800';
 	}
 
 	/*
@@ -254,6 +284,11 @@ add_action( 'init', 'veekls_add_editor_styles' );
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Implement the Custom Colors feature.
+ */
+require get_template_directory() . '/inc/custom-colors.php';
 
 /**
  * Include widget file

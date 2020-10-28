@@ -51,12 +51,13 @@ function veekls_breadcrumbs( $args = '' ) {
 	);
 
 	if ( is_home() && ! is_front_page() ) {
-		$page = get_option( 'page_for_posts' );
+		$page  = get_option( 'page_for_posts' );
 		$title = get_the_title( $page );
 	} elseif ( is_post_type_archive() ) {
 		// If post is a custom post type.
 		$query     = get_queried_object();
 		$post_type = $query->name;
+
 		if ( 'post' !== $post_type ) {
 			$post_type_object       = get_post_type_object( $post_type );
 			$post_type_archive_link = get_post_type_archive_link( $post_type );
@@ -65,12 +66,14 @@ function veekls_breadcrumbs( $args = '' ) {
 	} elseif ( is_single() ) {
 		// If post is a custom post type.
 		$post_type = get_post_type();
+
 		if ( 'post' !== $post_type ) {
 			$post_type_object       = get_post_type_object( $post_type );
 			$post_type_archive_link = get_post_type_archive_link( $post_type );
 			$items[]                = sprintf( $item_tpl_link, esc_url( $post_type_archive_link ), esc_html( $post_type_object->labels->name ) );
 		} else {
 			$blog_page = get_option( 'page_for_posts' );
+
 			if ( ! empty( $blog_page ) ) {
 				$blog_url   = get_permalink( $blog_page );
 				$blog_title = get_the_title( $blog_page );
@@ -78,10 +81,12 @@ function veekls_breadcrumbs( $args = '' ) {
 			}
 
 			$terms = get_the_terms( get_the_ID(), $args['taxonomy'] );
+
 			if ( $terms && ! is_wp_error( $terms ) ) {
 				$term    = current( $terms );
 				$terms   = veekls_get_term_parents( $term->term_id, $args['taxonomy'] );
 				$terms[] = $term->term_id;
+
 				foreach ( $terms as $term_id ) {
 					$term    = get_term( $term_id, $args['taxonomy'] );
 					$items[] = sprintf( $item_tpl_link, esc_url( get_term_link( $term, $args['taxonomy'] ) ), esc_html( $term->name ) );
@@ -92,17 +97,21 @@ function veekls_breadcrumbs( $args = '' ) {
 		$title = get_the_title();
 	} elseif ( is_page() ) {
 		$pages = veekls_get_post_parents( get_queried_object_id() );
+
 		foreach ( $pages as $page ) {
 			$items[] = sprintf( $item_tpl_link, esc_url( get_permalink( $page ) ), esc_html( wp_strip_all_tags( get_the_title( $page ) ) ) );
 		}
+
 		$title = get_the_title();
 	} elseif ( is_tax() || is_category() || is_tag() ) {
 		$current_term = get_queried_object();
 		$terms        = veekls_get_term_parents( get_queried_object_id(), $current_term->taxonomy );
+
 		foreach ( $terms as $term_id ) {
 			$term    = get_term( $term_id, $current_term->taxonomy );
 			$items[] = sprintf( $item_tpl_link, esc_url( get_category_link( $term_id ) ), esc_html( $term->name ) );
 		}
+
 		$title = $current_term->name;
 	} elseif ( is_search() ) {
 		/* translators: search query */
@@ -121,7 +130,7 @@ function veekls_breadcrumbs( $args = '' ) {
 		$title = get_the_date( 'Y' );
 	} else {
 		$title = __( 'Archives', 'veekls' );
-	} // End if().
+	}
 
 	if ( ! is_single() ) {
 		$items[] = sprintf( $item_text_tpl, esc_html( $title ) );
@@ -130,7 +139,7 @@ function veekls_breadcrumbs( $args = '' ) {
 	echo '<h1 class="page-title">' . wp_kses_post( $title ) . '</h1>';
 
 	// Already escaped above.
-	echo '<ul class="breadcrumbs">' . implode( $args['separator'], $items ) . '</ul>'; // WPCS: XSS OK.
+	echo '<ul class="breadcrumbs">' . implode( $args['separator'], $items ) . '</ul>'; // phpcs:ignore
 }
 
 /**

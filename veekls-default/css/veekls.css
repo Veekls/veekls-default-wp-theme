@@ -49,20 +49,20 @@ should fix up some theme issues
   line-height: 28px;
 }
 .veekls-single .contact i {
-  color: #337ab7;
+  color: var(--color-primary);
   float: left;
   margin: 6px 10px 0 0;
   width: 20px;
 }
 .veekls .price {
-  color: #337ab7;
+  color: var(--color-primary);
 }
 .veekls .al-button,
 .veekls .contact-form .button-primary,
 .veekls .cmb2-upload-button,
 .veekls #wp-submit {
-  background: #337ab7 none repeat scroll 0 0;
-  border: 2px solid #337ab7;
+  background: var(--color-primary) none repeat scroll 0 0;
+  border: 2px solid var(--color-primary);
   border-radius: 0;
   box-shadow: none;
   color: #fff;
@@ -80,7 +80,7 @@ should fix up some theme issues
 .veekls .contact-form .button-primary:hover,
 .veekls #wp-submit:hover {
   background: #fff;
-  color: #337ab7;
+  color: var(--color-primary);
   text-decoration: none;
 }
 .veekls span.status {
@@ -145,7 +145,7 @@ should fix up some theme issues
 .veekls-single .image-gallery .lSPager.lSGallery li:hover {
   background: #fff none repeat scroll 0 0;
   border-radius: 0;
-  border-bottom: 3px solid #337ab7;
+  border-bottom: 3px solid var(--color-primary);
 }
 
 .veekls-single .image-gallery .lSAction i.fa {
@@ -226,7 +226,7 @@ should fix up some theme issues
   background: #fff;
   z-index: 2;
   border-bottom-color: #fff;
-  box-shadow: 0 3px 0 #337ab7 inset;
+  box-shadow: 0 3px 0 var(--color-primary) inset;
 }
 
 .veekls .veekls-tabs ul.tabs li.active a {
@@ -638,7 +638,7 @@ should fix up some theme issues
 .veekls-search .area-wrap .area:focus,
 .veekls-search .area-wrap .area:active {
   border: none;
-  border-bottom: 2px solid #337ab7;
+  border-bottom: 2px solid var(--color-primary);
   border-radius: 0;
 }
 .veekls-search .area-wrap button {

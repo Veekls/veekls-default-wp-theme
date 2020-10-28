@@ -22,6 +22,7 @@ function veekls_read_more_link( $more ) {
 
 	return $more;
 }
+
 add_filter( 'the_content_more_link', 'veekls_read_more_link' );
 add_filter( 'excerpt_more', 'veekls_read_more_link' );
 
@@ -34,6 +35,7 @@ add_filter( 'excerpt_more', 'veekls_read_more_link' );
 function veekls_custom_excerpt_length( $length ) {
 	return is_admin() ? $length : 50;
 }
+
 add_filter( 'excerpt_length', 'veekls_custom_excerpt_length' );
 
 /**
@@ -41,12 +43,10 @@ add_filter( 'excerpt_length', 'veekls_custom_excerpt_length' );
  */
 add_action( 'veekls_before_listings_loop_item_summary', 'veekls_template_loop_at_a_glance', 20 );
 
-/**
- * Add description
- */
 remove_action( 'veekls_listings_loop_item', 'veekls_template_loop_description', 50 );
 
 add_filter( 'comment_form_default_fields', 'veekls_modify_comment_form_default' );
+
 /**
  * Modify default comment form.
  *
@@ -60,11 +60,23 @@ function veekls_modify_comment_form_default( $fields ) {
 	$html5     = 'html5' === current_theme_supports( 'html5', 'comment-form' ) ? 'html5' : 'xhtml';
 
 	$fields['author'] = '<p class="comment-form-author">' .
-				'<input id="author" name="author" placeholder="' . esc_attr__( 'Full Name *', 'veekls' ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' /></p>';
-	$fields['email']  = '<p class="comment-form-email">' .
-				'<input id="email" placeholder="' . esc_attr__( 'Mail Address *', 'veekls' ) . '" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req . ' /></p>';
-	$fields['url']    = '<p class="comment-form-url">' .
-				'<input id="url" placeholder="' . esc_attr__( 'Website URL', 'veekls' ) . '" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></p>';
+				'<input id="author" name="author" placeholder="' .
+				esc_attr__( 'Full Name *', 'veekls' ) . '" type="text" value="' .
+				esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req .
+				' /></p>';
+
+	$fields['email'] = '<p class="comment-form-email">' .
+				'<input id="email" placeholder="' .
+				esc_attr__( 'Mail Address *', 'veekls' ) . '" name="email" ' .
+				( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' .
+				esc_attr( $commenter['comment_author_email'] ) .
+				'" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req . ' /></p>';
+
+	$fields['url'] = '<p class="comment-form-url">' .
+				'<input id="url" placeholder="' .
+				esc_attr__( 'Website URL', 'veekls' ) . '" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) .
+				' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></p>';
+
 	return $fields;
 }
 
@@ -76,22 +88,27 @@ add_filter( 'comment_form_defaults', 'veekls_modify_comment_form_args' );
  * @param array $defaults default args.
  */
 function veekls_modify_comment_form_args( $defaults ) {
-	$defaults['label_submit']         = esc_html__( 'Submit Comment', 'veekls' );
-	$defaults['title_reply_before']   = '';
-	$submit_button                    = sprintf(
+	$defaults['label_submit']       = esc_html__( 'Submit Comment', 'veekls' );
+	$defaults['title_reply_before'] = '';
+	$submit_button                  = sprintf(
 		$defaults['submit_button'],
 		esc_attr( $defaults['name_submit'] ),
 		esc_attr( $defaults['id_submit'] ),
 		esc_attr( $defaults['class_submit'] ),
 		esc_attr( $defaults['label_submit'] )
 	);
-	$submit_field                     = sprintf(
+
+	$submit_field = sprintf(
 		$defaults['submit_field'],
 		$submit_button,
 		get_comment_id_fields( get_the_ID() )
 	);
+
 	$defaults['submit_field']         = '';
-	$defaults['comment_field']        = '<div class="comment-form-comment"><textarea id="comment" placeholder="' . esc_attr__( 'Write Your Comments Here...', 'veekls' ) . '" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea>' . $submit_field . '</div>';
+	$defaults['comment_field']        = '<div class="comment-form-comment"><textarea id="comment" placeholder="' .
+		esc_attr__( 'Write Your Comments Here...', 'veekls' ) .
+		'" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea>' .
+		$submit_field . '</div>';
 	$defaults['title_reply']          = '';
 	$defaults['comment_notes_before'] = '';
 
