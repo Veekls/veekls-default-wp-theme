@@ -11,9 +11,9 @@ if ( ! $search_page ) {
 	return;
 }
 
-$current_post = get_post( $search_page );
+$post = get_post( $search_page ); // phpcs:ignore
 
-setup_postdata( $current_post );
+setup_postdata( $post );
 
 ?>
 

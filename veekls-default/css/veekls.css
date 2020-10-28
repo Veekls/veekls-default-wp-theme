@@ -1,66 +1,66 @@
-.veekls-api-client .container > .content {
+.veekls .container > .content {
   padding-top: 30px;
   padding-bottom: 30px;
 }
 /* apply a natural box layout model to all elements, but allowing components to change
 should fix up some theme issues
 */
-[class^="veekls-api-client-"],
-[class*=" veekls-api-client-"] {
+[class^="veekls-"],
+[class*=" veekls-"] {
   box-sizing: border-box;
 }
-[class^="veekls-api-client-"]:before,
-[class*=" veekls-api-client-"]:before,
-[class^="veekls-api-client-"]:after,
-[class*=" veekls-api-client-"]:after {
+[class^="veekls-"]:before,
+[class*=" veekls-"]:before,
+[class^="veekls-"]:after,
+[class*=" veekls-"]:after {
   box-sizing: inherit;
 }
 /* ======================================== SOME DEFAULTS ========================================
 */
-.veekls-api-client .full-width {
+.veekls .full-width {
   display: inline-block;
   width: 100%;
 }
-.veekls-api-client .has-sidebar {
+.veekls .has-sidebar {
   width: 66.6667%;
   float: left;
 }
-.veekls-api-client .sidebar {
+.veekls .sidebar {
   width: 28%;
   float: right;
 }
-.veekls-api-client-single .content {
+.veekls-single .content {
   display: inline-block;
   width: 100%;
 }
-.veekls-api-client-single img {
+.veekls-single img {
   height: auto;
   max-width: 100%;
 }
-.veekls-api-client-single .title,
-.veekls-api-client-items .title,
-.veekls-api-client-single .veekls-api-client-tabs table {
+.veekls-single .title,
+.veekls-items .title,
+.veekls-single .veekls-tabs table {
   text-align: left;
 }
-.veekls-api-client-single .contact {
+.veekls-single .contact {
   list-style: outside none none;
   margin: 0;
   padding: 0;
   line-height: 28px;
 }
-.veekls-api-client-single .contact i {
+.veekls-single .contact i {
   color: #337ab7;
   float: left;
   margin: 6px 10px 0 0;
   width: 20px;
 }
-.veekls-api-client .price {
+.veekls .price {
   color: #337ab7;
 }
-.veekls-api-client .al-button,
-.veekls-api-client .contact-form .button-primary,
-.veekls-api-client .cmb2-upload-button,
-.veekls-api-client #wp-submit {
+.veekls .al-button,
+.veekls .contact-form .button-primary,
+.veekls .cmb2-upload-button,
+.veekls #wp-submit {
   background: #337ab7 none repeat scroll 0 0;
   border: 2px solid #337ab7;
   border-radius: 0;
@@ -76,20 +76,20 @@ should fix up some theme issues
   text-decoration: none;
   text-transform: uppercase;
 }
-.veekls-api-client .al-button:hover,
-.veekls-api-client .contact-form .button-primary:hover,
-.veekls-api-client #wp-submit:hover {
+.veekls .al-button:hover,
+.veekls .contact-form .button-primary:hover,
+.veekls #wp-submit:hover {
   background: #fff;
   color: #337ab7;
   text-decoration: none;
 }
-.veekls-api-client span.status {
+.veekls span.status {
   font-size: 12px;
   font-weight: 300;
   line-height: 12px;
   padding: 5px 10px;
 }
-.veekls-api-client span.status i:before {
+.veekls span.status i:before {
   display: inline-block;
   float: left;
   font-size: 14px;
@@ -98,7 +98,7 @@ should fix up some theme issues
   margin: 0 5px -2px 0;
   padding: 0;
 }
-.veekls-api-client .highlight-new {
+.veekls .highlight-new {
   border-radius: 4px;
   color: #fff;
   font-size: 11px;
@@ -110,7 +110,7 @@ should fix up some theme issues
   z-index: 999;
   background: red;
 }
-.veekls-api-client span.condition {
+.veekls span.condition {
   color: #888;
   display: inline-block;
   font-size: 12px;
@@ -127,42 +127,42 @@ should fix up some theme issues
 /**
  * Image gallery ==============================================
  */
-.veekls-api-client-single .title {
+.veekls-single .title {
   display: inline-block;
 }
-.veekls-api-client-single .upper span.status {
+.veekls-single .upper span.status {
   display: inline;
   margin: 0 0 0 20px;
 }
-.veekls-api-client-single .image-gallery {
+.veekls-single .image-gallery {
   margin-bottom: 30px;
 }
-.veekls-api-client-single .image-gallery .lSPager.lSGallery li {
+.veekls-single .image-gallery .lSPager.lSGallery li {
   transition: 0.25s;
   border-bottom: 3px solid transparent;
 }
-.veekls-api-client-single .image-gallery .lSPager.lSGallery li.active,
-.veekls-api-client-single .image-gallery .lSPager.lSGallery li:hover {
+.veekls-single .image-gallery .lSPager.lSGallery li.active,
+.veekls-single .image-gallery .lSPager.lSGallery li:hover {
   background: #fff none repeat scroll 0 0;
   border-radius: 0;
   border-bottom: 3px solid #337ab7;
 }
 
-.veekls-api-client-single .image-gallery .lSAction i.fa {
+.veekls-single .image-gallery .lSAction i.fa {
   color: #fff;
   font-size: 40px;
 }
-.veekls-api-client-single .image-gallery .prev {
+.veekls-single .image-gallery .prev {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-.veekls-api-client-single .image-gallery .lSSlideWrapper .lightSlider > * {
+.veekls-single .image-gallery .lSSlideWrapper .lightSlider > * {
   z-index: 1;
 }
-.veekls-api-client-single .image-gallery .active {
+.veekls-single .image-gallery .active {
   z-index: 2;
 }
 .lg-icon,
@@ -187,11 +187,11 @@ should fix up some theme issues
   content: "\f019";
 }
 
-.veekls-api-client-single .gallery-wrap {
+.veekls-single .gallery-wrap {
   position: relative;
 }
 
-.veekls-api-client .veekls-api-client-tabs ul.tabs {
+.veekls .veekls-tabs ul.tabs {
   list-style: none;
   padding: 0 0 0 10px;
   margin: 0 0 1.618em;
@@ -199,7 +199,7 @@ should fix up some theme issues
   position: relative;
 }
 
-.veekls-api-client .veekls-api-client-tabs ul.tabs li {
+.veekls .veekls-tabs ul.tabs li {
   border: 1px solid #dddddd;
   background-color: #f4f4f4;
   display: inline-block;
@@ -209,7 +209,7 @@ should fix up some theme issues
   padding: 0 1em;
 }
 
-.veekls-api-client .veekls-api-client-tabs ul.tabs li a {
+.veekls .veekls-tabs ul.tabs li a {
   display: inline-block;
   padding: 0.5em 0;
   font-weight: 700;
@@ -217,23 +217,23 @@ should fix up some theme issues
   text-decoration: none;
 }
 
-.veekls-api-client .veekls-api-client-tabs ul.tabs li a:hover {
+.veekls .veekls-tabs ul.tabs li a:hover {
   text-decoration: none;
   color: #444444;
 }
 
-.veekls-api-client .veekls-api-client-tabs ul.tabs li.active {
+.veekls .veekls-tabs ul.tabs li.active {
   background: #fff;
   z-index: 2;
   border-bottom-color: #fff;
   box-shadow: 0 3px 0 #337ab7 inset;
 }
 
-.veekls-api-client .veekls-api-client-tabs ul.tabs li.active a {
+.veekls .veekls-tabs ul.tabs li.active a {
   color: inherit;
   text-shadow: inherit;
 }
-.veekls-api-client .veekls-api-client-tabs ul.tabs::before {
+.veekls .veekls-tabs ul.tabs::before {
   position: absolute;
   content: " ";
   width: 100%;
@@ -243,7 +243,7 @@ should fix up some theme issues
   z-index: 1;
 }
 
-.veekls-api-client .veekls-api-client-tabs .panel {
+.veekls .veekls-tabs .panel {
   margin: 0 0 2em;
   padding: 0;
 }
@@ -252,57 +252,57 @@ should fix up some theme issues
  * Sidebar ==============================================
  */
 
-.veekls-api-client-single .sidebar > div {
+.veekls-single .sidebar > div {
   clear: both;
   display: inline-block;
   margin-bottom: 25px;
   width: 100%;
 }
-.veekls-api-client-single .sidebar > div.address,
-.veekls-api-client-single .sidebar > div.price {
+.veekls-single .sidebar > div.address,
+.veekls-single .sidebar > div.price {
   margin-bottom: 5px;
 }
-.veekls-api-client-single .at-a-glance ul {
+.veekls-single .at-a-glance ul {
   list-style: outside none none;
   margin: 0;
   padding: 0;
 }
-.veekls-api-client-single .at-a-glance ul li {
+.veekls-single .at-a-glance ul li {
   display: inline-block;
   font-size: 16px;
   font-weight: 500;
   line-height: 36px;
   width: 100%;
 }
-.veekls-api-client-single .at-a-glance ul i {
+.veekls-single .at-a-glance ul i {
   margin: 0 15px 0 0;
   color: #999;
 }
-.veekls-api-client-single .at-a-glance ul i::before {
+.veekls-single .at-a-glance ul i::before {
   font-size: 24px;
 }
 
-.veekls-api-client-single .contact-form {
+.veekls-single .contact-form {
   background: #eee none repeat scroll 0 0;
   padding: 15px 20px;
 }
 /* anti-spam fields - x 2 */
-.veekls-api-client-single .contact-form .cmb2-id-url {
+.veekls-single .contact-form .cmb2-id-url {
   display: none;
   visibility: hidden;
 }
-.veekls-api-client-single .contact-form .cmb2-id-comment {
+.veekls-single .contact-form .cmb2-id-comment {
   display: none;
   visibility: hidden;
 }
-.veekls-api-client-single .contact-form .form-table {
+.veekls-single .contact-form .form-table {
   margin-bottom: 5px;
 }
-.veekls-api-client-single .contact-form > h4 {
+.veekls-single .contact-form > h4 {
   margin: 0 0 12px;
 }
-.veekls-api-client-single .contact-form input:not(.button-primary),
-.veekls-api-client-single .contact-form textarea {
+.veekls-single .contact-form input:not(.button-primary),
+.veekls-single .contact-form textarea {
   border: 1px solid #eaeaea;
   font-size: 14px;
   margin: 0 0 5px;
@@ -310,44 +310,44 @@ should fix up some theme issues
   width: 100%;
   color: #888;
 }
-.veekls-api-client-single .contact-form input.button-primary {
+.veekls-single .contact-form input.button-primary {
   display: inline-block;
   width: 100%;
 }
-.veekls-api-client-single .address {
+.veekls-single .address {
   margin: 0;
   padding: 5px 0;
 }
-.veekls-api-client-single .map {
+.veekls-single .map {
   background: #fff none repeat scroll 0 0;
   height: 300px;
   overflow: visible;
   width: 100%;
 }
 
-.veekls-api-client-single .tagline {
+.veekls-single .tagline {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-.veekls-api-client-single .description {
+.veekls-single .description {
   margin-bottom: 30px;
 }
 
 /* ======================================== LOOP LISTINGs ========================================
 */
 
-.veekls-api-client-items * {
+.veekls-items * {
   transition: 0.3s;
 }
-.veekls-api-client-items {
+.veekls-items {
   margin: 0;
   list-style: none;
   padding: 0;
 }
-.veekls-api-client-items.list-view {
+.veekls-items.list-view {
   margin: 0;
 }
-.veekls-api-client-items > li {
+.veekls-items > li {
   display: inline-block;
   margin: 0 0 25px;
   padding: 0;
@@ -357,61 +357,61 @@ should fix up some theme issues
   background: #fff;
   max-width: 100%;
 }
-.veekls-api-client-items li .image {
+.veekls-items li .image {
   float: left;
   width: 25%;
   transition: 0s;
   position: relative;
 }
-.veekls-api-client-items li .image img {
+.veekls-items li .image img {
   display: block;
   max-width: 100%;
   width: 100%;
 }
-.veekls-api-client-items li .status {
+.veekls-items li .status {
   background: rgba(255, 255, 255, 0.9) none repeat scroll 0 0;
   color: #222;
   position: absolute;
   bottom: 0;
 }
-.veekls-api-client-items li .state {
+.veekls-items li .state {
   font-weight: bold;
   font-size: 30px;
 }
-.veekls-api-client-items li .summary {
+.veekls-items li .summary {
   float: right;
   width: 70%;
   text-align: left;
 }
-.veekls-api-client-items li .title {
+.veekls-items li .title {
   margin-bottom: 0;
   margin-top: 10px;
   padding: 0 15px 0 0;
 }
-.veekls-api-client-items li .at-a-glance {
+.veekls-items li .at-a-glance {
   border-bottom: 1px solid #ddd;
   padding: 3px 0 8px;
   margin: 0 0 6px;
 }
-.veekls-api-client-items li .price {
+.veekls-items li .price {
   margin-bottom: 4px;
 }
-.veekls-api-client-items li .address {
+.veekls-items li .address {
   margin: 0 0 5px;
   padding: 0;
 }
-.veekls-api-client-items li .at-a-glance {
+.veekls-items li .at-a-glance {
   display: inline-block;
   margin: 5px 0 5px;
   padding: 3px 0 5px;
   width: 100%;
 }
-.veekls-api-client-items .at-a-glance ul {
+.veekls-items .at-a-glance ul {
   list-style: outside none none;
   margin: 0;
   padding: 0;
 }
-.veekls-api-client-items .at-a-glance ul li {
+.veekls-items .at-a-glance ul li {
   display: inline;
   font-size: 15px;
   font-weight: 500;
@@ -419,23 +419,23 @@ should fix up some theme issues
   margin: 0 20px 0 0;
   width: auto;
 }
-.veekls-api-client-items .at-a-glance ul i {
+.veekls-items .at-a-glance ul i {
   margin: 0 5px 0 0;
   color: #999;
 }
-.veekls-api-client-items .at-a-glance ul i:before {
+.veekls-items .at-a-glance ul i:before {
   font-size: 18px;
   line-height: unset;
 }
-.veekls-api-client-items .description {
+.veekls-items .description {
   padding-right: 15px;
   margin: 0;
 }
-.veekls-api-client-items .bottom-wrap {
+.veekls-items .bottom-wrap {
   display: inline-block;
   margin: 20px 0 0 0;
 }
-.veekls-api-client-items .bottom-wrap a.al-button {
+.veekls-items .bottom-wrap a.al-button {
   margin: 0 14px 0 0;
   padding: 5px 12px;
   font-size: 13px;
@@ -443,73 +443,73 @@ should fix up some theme issues
 }
 
 /* With sidebar */
-.veekls-api-client-items li .summary {
+.veekls-items li .summary {
   padding-bottom: 15px;
 }
-.has-sidebar .veekls-api-client-items .bottom-wrap {
+.has-sidebar .veekls-items .bottom-wrap {
   float: right;
 }
-.has-sidebar .veekls-api-client-items .bottom-wrap a.al-button {
+.has-sidebar .veekls-items .bottom-wrap a.al-button {
   margin: 0;
 }
-.has-sidebar .veekls-api-client-items span.condition {
+.has-sidebar .veekls-items span.condition {
   float: left;
   margin: 4px 15px 0 0;
 }
 
 /* Grid view */
-.veekls-api-client-items.grid-view {
+.veekls-items.grid-view {
   display: inline-block;
   width: 100%;
 }
-.veekls-api-client-items.grid-view li {
+.veekls-items.grid-view li {
   display: inline-block;
   margin: 0 0 30px;
   overflow: hidden;
   padding: 0;
   float: left;
 }
-.veekls-api-client-items.grid-view li .image {
+.veekls-items.grid-view li .image {
   float: none;
   margin-bottom: 15px;
   width: 100%;
 }
-.veekls-api-client-items.grid-view li .summary {
+.veekls-items.grid-view li .summary {
   float: none;
   width: auto;
   padding: 0 15px 15px;
 }
-.veekls-api-client-items.grid-view li .summary .title {
+.veekls-items.grid-view li .summary .title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.veekls-api-client-items.grid-view li.col-2 {
+.veekls-items.grid-view li.col-2 {
   width: 48%;
   margin-right: 4%;
 }
-.veekls-api-client-items.grid-view li.col-3 {
+.veekls-items.grid-view li.col-3 {
   width: 31.3333%;
   margin-right: 3%;
 }
-.veekls-api-client-items.grid-view li.col-4 {
+.veekls-items.grid-view li.col-4 {
   width: 23%;
   margin-right: 2.6666%;
 }
-.veekls-api-client-items.grid-view li:last-child {
+.veekls-items.grid-view li:last-child {
   margin-right: 0 !important;
 }
 
-.veekls-api-client-items.grid-view li.col-4 .title {
+.veekls-items.grid-view li.col-4 .title {
   font-size: 19px;
 }
 
 /* Grid View With sidebar */
-.has-sidebar .veekls-api-client-items.grid-view .bottom-wrap {
+.has-sidebar .veekls-items.grid-view .bottom-wrap {
   float: unset;
 }
-.has-sidebar .veekls-api-client-items.grid-view .bottom-wrap a.al-button {
+.has-sidebar .veekls-items.grid-view .bottom-wrap a.al-button {
   display: block;
   float: none;
   line-height: 24px;
@@ -519,52 +519,52 @@ should fix up some theme issues
 /* ======================================== SORTING, SWITCHING & PAGINATION ========================================
 */
 
-.veekls-api-client-ordering {
+.veekls-ordering {
   float: left;
   margin-bottom: 40px;
 }
-.veekls-api-client-ordering .SumoSelect > .CaptionCont {
+.veekls-ordering .SumoSelect > .CaptionCont {
   border: 2px solid #ddd;
 }
-.veekls-api-client-view-switcher {
+.veekls-switcher {
   float: left;
   margin: 0 0 40px 30px;
 }
-.veekls-api-client-view-switcher > div {
+.veekls-switcher > div {
   cursor: pointer;
   float: left;
   margin: 4px 10px 0 0;
 }
-.veekls-api-client-view-switcher i:before {
+.veekls-switcher i:before {
   font-size: 26px;
   color: #444;
 }
-.veekls-api-client-pagination {
+.veekls-pagination {
   float: right;
   margin-bottom: 40px;
 }
-.veekls-api-client-pagination ul {
+.veekls-pagination ul {
   display: inline-block;
   list-style: outside none none;
   margin: 5px 0 0 0;
   padding: 0;
 }
-.veekls-api-client-pagination ul li {
+.veekls-pagination ul li {
   float: left;
   margin: 0 0 0 -2px;
 }
-.veekls-api-client-pagination ul li span.current {
+.veekls-pagination ul li span.current {
   cursor: not-allowed;
 }
-.veekls-api-client-pagination ul li span,
-.veekls-api-client-pagination ul li a {
+.veekls-pagination ul li span,
+.veekls-pagination ul li a {
   font-size: 100% !important;
   line-height: 1;
   padding: 0.5em 0.75em;
   border: 2px solid #ddd;
 }
-.veekls-api-client-pagination ul li a.prev,
-.veekls-api-client-pagination ul li a.next {
+.veekls-pagination ul li a.prev,
+.veekls-pagination ul li a.next {
   border-radius: 0px;
   font-size: 100%;
   line-height: 1;
@@ -573,7 +573,7 @@ should fix up some theme issues
 /* ======================================== SEARCH ========================================
 */
 
-.veekls-api-client-search {
+.veekls-search {
   margin: 0 0 30px;
   width: 100%;
   padding: 0;
@@ -581,13 +581,13 @@ should fix up some theme issues
   display: inline-block;
   text-align: center;
 }
-.veekls-api-client-search .row {
+.veekls-search .row {
   display: inline-block;
   width: 100%;
   margin: 0 0 15px;
   color: #444;
 }
-.veekls-api-client-search .row .field {
+.veekls-search .row .field {
   line-height: unset;
   position: relative;
   vertical-align: middle;
@@ -595,26 +595,26 @@ should fix up some theme issues
   font-size: 15px;
   font-weight: 300;
 }
-.veekls-api-client-search .condition .prefix {
+.veekls-search .condition .prefix {
   font-size: 36px;
   font-weight: 700;
 }
-.veekls-api-client-search .price-wrap > div {
+.veekls-search .price-wrap > div {
   display: inline-block;
 }
-.veekls-api-client-search .price-wrap .prefix {
+.veekls-search .price-wrap .prefix {
   font-size: 20px;
   font-weight: 200;
 }
-.veekls-api-client-search .area-wrap .field,
-.veekls-api-client-search .area-wrap button {
+.veekls-search .area-wrap .field,
+.veekls-search .area-wrap button {
   display: inline-block;
 }
-.veekls-api-client-search .area-wrap .prefix {
+.veekls-search .area-wrap .prefix {
   font-size: 20px;
   font-weight: 200;
 }
-.veekls-api-client-search .area {
+.veekls-search .area {
   border: 1px solid #aaa;
   border-radius: 4px 0 0 4px;
   height: 40px;
@@ -629,36 +629,36 @@ should fix up some theme issues
   font-weight: 300;
   color: #444;
 }
-.veekls-api-client-search .area-wrap .area::placeholder {
+.veekls-search .area-wrap .area::placeholder {
   text-transform: none;
   font-size: 15px;
   font-weight: 300;
   color: #666;
 }
-.veekls-api-client-search .area-wrap .area:focus,
-.veekls-api-client-search .area-wrap .area:active {
+.veekls-search .area-wrap .area:focus,
+.veekls-search .area-wrap .area:active {
   border: none;
   border-bottom: 2px solid #337ab7;
   border-radius: 0;
 }
-.veekls-api-client-search .area-wrap button {
+.veekls-search .area-wrap button {
   border-radius: 0 4px 4px 0;
   z-index: 9;
   position: relative;
 }
-.veekls-api-client-search .area-wrap button:hover,
-.veekls-api-client-search .area-wrap button:focus {
+.veekls-search .area-wrap button:hover,
+.veekls-search .area-wrap button:focus {
   border: 2px solid transparent;
 }
-.veekls-api-client-search .extras-wrap {
+.veekls-search .extras-wrap {
   display: none;
   margin-top: 15px;
 }
-.veekls-api-client-search a.refine {
+.veekls-search a.refine {
   cursor: pointer;
   text-decoration: none;
 }
-.veekls-api-client-search a.refine.shown i {
+.veekls-search a.refine.shown i {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
@@ -667,7 +667,7 @@ should fix up some theme issues
 }
 
 /* sumoselect fixups */
-.veekls-api-client-search .SumoSelect > .CaptionCont {
+.veekls-search .SumoSelect > .CaptionCont {
   background-color: transparent;
   border: 2px solid #a4a4a4;
   border-radius: 4px;
@@ -676,124 +676,124 @@ should fix up some theme issues
   line-height: 24px;
   margin: 0;
 }
-.veekls-api-client-search .SumoSelect > .CaptionCont > span {
+.veekls-search .SumoSelect > .CaptionCont > span {
   padding-right: 10px;
 }
-.veekls-api-client-search .SumoSelect > .CaptionCont > span.placeholder {
+.veekls-search .SumoSelect > .CaptionCont > span.placeholder {
   color: inherit;
   font-style: normal;
 }
-.veekls-api-client-search .price-wrap .SumoSelect > .optWrapper {
+.veekls-search .price-wrap .SumoSelect > .optWrapper {
   width: 115%;
 }
-.veekls-api-client-search label {
+.veekls-search label {
   text-align: left;
   font-weight: 300;
 }
-.veekls-api-client-search .SumoSelect > .CaptionCont > label > i {
+.veekls-search .SumoSelect > .CaptionCont > label > i {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   height: auto;
   top: 20%;
 }
-.veekls-api-client-search .SumoSelect > .CaptionCont > label > i::before {
+.veekls-search .SumoSelect > .CaptionCont > label > i::before {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   color: #444;
   content: "\f107";
   font-family: "FontAwesome";
   font-style: normal;
 }
-.veekls-api-client-search .SumoSelect {
+.veekls-search .SumoSelect {
   margin: 0;
   padding: 0;
 }
-.veekls-api-client-search .condition-wrap .SumoSelect {
+.veekls-search .condition-wrap .SumoSelect {
   margin-left: 15px;
   width: 140px;
 }
-.veekls-api-client-search .price-wrap .SumoSelect {
+.veekls-search .price-wrap .SumoSelect {
   width: 100px;
   margin: 0 10px;
 }
-.veekls-api-client-search .area-wrap .SumoSelect {
+.veekls-search .area-wrap .SumoSelect {
   margin-right: 15px;
   width: 140px;
 }
 
 /* ======================================== SEARCH STYLE 2 ========================================
 */
-.veekls-api-client-search.s-2 .field {
+.veekls-search.s-2 .field {
   color: #fff;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
-.veekls-api-client-search.s-2 .area-wrap .area {
+.veekls-search.s-2 .area-wrap .area {
   text-shadow: none;
   border-color: #fff;
 }
-.veekls-api-client-search.s-2 .SumoSelect > .CaptionCont {
+.veekls-search.s-2 .SumoSelect > .CaptionCont {
   border: 2px solid #fff;
 }
-.veekls-api-client-search.s-2 .SumoSelect > .CaptionCont > label > i::before {
+.veekls-search.s-2 .SumoSelect > .CaptionCont > label > i::before {
   color: #fff;
 }
-.veekls-api-client-search.s-2 a.refine,
-.veekls-api-client-search.s-2 a.refine:hover {
+.veekls-search.s-2 a.refine,
+.veekls-search.s-2 a.refine:hover {
   color: #fff;
 }
 
 /* ======================================== SEARCH STYLE 3 ========================================
 */
-.veekls-api-client-search.s-3 {
+.veekls-search.s-3 {
   background: #eee;
 }
 
 /* ======================================== SEARCH STYLE 4 ========================================
 */
-.veekls-api-client-search.s-4 {
+.veekls-search.s-4 {
   text-align: left;
   padding: 0;
 }
-.veekls-api-client-search.s-4 .field .prefix {
+.veekls-search.s-4 .field .prefix {
   font-size: inherit;
   font-weight: 300;
 }
-.veekls-api-client-search.s-4 .field .SumoSelect {
+.veekls-search.s-4 .field .SumoSelect {
   display: block;
   margin: 0;
   width: 100%;
 }
-.veekls-api-client-search.s-4 .price-wrap .field {
+.veekls-search.s-4 .price-wrap .field {
   display: inline-block;
   float: left;
   margin: 0;
   width: 50%;
 }
-.veekls-api-client-search.s-4 .price-wrap .SumoSelect.sumo_min_price {
+.veekls-search.s-4 .price-wrap .SumoSelect.sumo_min_price {
   padding: 0 10px 0 0;
 }
-.veekls-api-client-search.s-4 .price-wrap .SumoSelect > .optWrapper {
+.veekls-search.s-4 .price-wrap .SumoSelect > .optWrapper {
   width: 100%;
 }
-.veekls-api-client-search.s-4 .area-wrap .within {
+.veekls-search.s-4 .area-wrap .within {
   width: 40%;
 }
-.veekls-api-client-search.s-4 .area-wrap .area {
+.veekls-search.s-4 .area-wrap .area {
   border-radius: 4px;
   margin: 0;
   width: 55%;
   float: right;
 }
-.veekls-api-client-search.s-4 .area-wrap button {
+.veekls-search.s-4 .area-wrap button {
   display: block;
   width: 100%;
   margin-top: 15px;
   border-radius: 4px;
 }
-.veekls-api-client-search.s-4 a.refine {
+.veekls-search.s-4 a.refine {
   display: inline-block;
   text-align: right;
   width: 100%;
 }
-.veekls-api-client-search.s-4 .extras-wrap .field {
+.veekls-search.s-4 .extras-wrap .field {
   display: inline-block;
   margin: 0 0 5px;
   width: 100%;
@@ -801,10 +801,10 @@ should fix up some theme issues
 
 /* ======================================== STANDARD SEARCH LAYOUT ========================================
 */
-.veekls-api-client-search.standard .field {
+.veekls-search.standard .field {
   margin: 0 0 10px;
 }
-.veekls-api-client-search.standard .area {
+.veekls-search.standard .area {
   border-radius: 4px;
   width: auto;
 }
@@ -812,40 +812,40 @@ should fix up some theme issues
 /* ======================================== LISTINGS COMPACT MODE ========================================
 */
 
-.veekls-api-client-items li.compact,
-.veekls-api-client-items.grid-view li.compact {
+.veekls-items li.compact,
+.veekls-items.grid-view li.compact {
   width: 100%;
   margin-right: 0;
 }
-.veekls-api-client-items li.compact .image,
-.veekls-api-client-items.grid-view li.compact .image {
+.veekls-items li.compact .image,
+.veekls-items.grid-view li.compact .image {
   margin: 0 5% 0 0;
   position: absolute;
   width: 20%;
 }
-.veekls-api-client-items li.compact .status,
-.veekls-api-client-items.grid-view li.compact .status,
-.veekls-api-client-items li.compact .highlight-new,
-.veekls-api-client-items.grid-view li.compact .highlight-new {
+.veekls-items li.compact .status,
+.veekls-items.grid-view li.compact .status,
+.veekls-items li.compact .highlight-new,
+.veekls-items.grid-view li.compact .highlight-new {
   display: none;
 }
-.veekls-api-client-items li.compact .summary,
-.veekls-api-client-items.grid-view li.compact .summary {
+.veekls-items li.compact .summary,
+.veekls-items.grid-view li.compact .summary {
   float: left;
   width: 100%;
   padding: 0;
 }
-.veekls-api-client-items li.compact .at-a-glance,
-.veekls-api-client-items.grid-view li.compact .at-a-glance {
+.veekls-items li.compact .at-a-glance,
+.veekls-items.grid-view li.compact .at-a-glance {
   margin: 5px 0 0;
   padding: 0 10px;
 }
-.veekls-api-client-items li.compact .at-a-glance li,
-.veekls-api-client-items.grid-view li.compact .at-a-glance li {
+.veekls-items li.compact .at-a-glance li,
+.veekls-items.grid-view li.compact .at-a-glance li {
   font-size: 13px;
 }
-.veekls-api-client-items li.compact .title,
-.veekls-api-client-items.grid-view li.compact .title {
+.veekls-items li.compact .title,
+.veekls-items.grid-view li.compact .title {
   font-size: 18px;
   margin-bottom: 0;
   overflow: hidden;
@@ -854,75 +854,75 @@ should fix up some theme issues
   white-space: nowrap;
   margin-left: 23%;
 }
-.veekls-api-client-items li.compact .address,
-.veekls-api-client-items.grid-view li.compact .address {
+.veekls-items li.compact .address,
+.veekls-items.grid-view li.compact .address {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.veekls-api-client-items li.compact .price,
-.veekls-api-client-items.grid-view li.compact .price {
+.veekls-items li.compact .price,
+.veekls-items.grid-view li.compact .price {
   font-size: 14px;
   padding: 2px 10px;
 }
-.veekls-api-client-items li.compact .address,
-.veekls-api-client-items.grid-view li.compact .address {
+.veekls-items li.compact .address,
+.veekls-items.grid-view li.compact .address {
   font-size: 13px;
   font-weight: 300;
   line-height: 13px;
   margin: 0;
   padding: 5px 10px 0;
 }
-.veekls-api-client-items li.compact .bottom-wrap,
-.veekls-api-client-items.grid-view li.compact .bottom-wrap {
+.veekls-items li.compact .bottom-wrap,
+.veekls-items.grid-view li.compact .bottom-wrap {
   display: none;
 }
 
 /* ======================================== SINGLE AGENT ========================================
 */
 
-.veekls-api-client-single.seller .avatar-wrap {
+.veekls-single.seller .avatar-wrap {
   background: #eee none repeat scroll 0 0;
   float: left;
   margin: 5px 30px 30px 0;
   padding: 4px;
 }
-.veekls-api-client-single.seller .avatar-wrap img {
+.veekls-single.seller .avatar-wrap img {
   display: block;
 }
-.veekls-api-client-single.seller .name {
+.veekls-single.seller .name {
   display: inline-block;
 }
-.veekls-api-client-single.seller .position {
+.veekls-single.seller .position {
   font-weight: 600;
   margin: 0 0 5px;
 }
-.veekls-api-client-single.seller .social {
+.veekls-single.seller .social {
   list-style: none;
   padding: 5px 0 0 0;
   margin: 0;
   display: block;
 }
-.veekls-api-client-single.seller .social li {
+.veekls-single.seller .social li {
   float: left;
   margin: 0 10px 0 0;
 }
-.veekls-api-client-single.seller .social .facebook i {
+.veekls-single.seller .social .facebook i {
   color: #3b5998;
 }
-.veekls-api-client-single.seller .social .google i {
+.veekls-single.seller .social .google i {
   color: #dd4b39;
 }
-.veekls-api-client-single.seller .social .twitter i {
+.veekls-single.seller .social .twitter i {
   color: #00aced;
 }
-.veekls-api-client-single.seller .social .skype i {
+.veekls-single.seller .social .skype i {
   color: #00aff0;
 }
-.veekls-api-client-single.seller .social .linkedin i {
+.veekls-single.seller .social .linkedin i {
   color: #007bb6;
 }
-.veekls-api-client-single.seller .social .youtube i {
+.veekls-single.seller .social .youtube i {
   color: #bb0000;
 }
 
@@ -931,107 +931,107 @@ should fix up some theme issues
 
 /* Tiny devices */
 @media (max-width: 650px) {
-  .veekls-api-client .has-sidebar {
+  .veekls .has-sidebar {
     float: none;
     width: auto;
   }
-  .veekls-api-client .sidebar {
+  .veekls .sidebar {
     float: none;
     width: auto;
   }
-  .veekls-api-client-search {
+  .veekls-search {
     text-align: left;
     padding: 0;
   }
-  .veekls-api-client-search.s-3 {
+  .veekls-search.s-3 {
     padding: 10px;
   }
-  .veekls-api-client-search .field .prefix {
+  .veekls-search .field .prefix {
     font-size: inherit;
     font-weight: 300;
   }
-  .veekls-api-client-search .field .SumoSelect {
+  .veekls-search .field .SumoSelect {
     display: block;
     margin: 0;
     width: 100%;
   }
-  .veekls-api-client-search .price-wrap .field {
+  .veekls-search .price-wrap .field {
     display: inline-block;
     float: left;
     margin: 0;
     width: 50%;
   }
-  .veekls-api-client-search .price-wrap .SumoSelect.sumo_min_price {
+  .veekls-search .price-wrap .SumoSelect.sumo_min_price {
     padding: 0 10px 0 0;
   }
-  .veekls-api-client-search .price-wrap .SumoSelect > .optWrapper {
+  .veekls-search .price-wrap .SumoSelect > .optWrapper {
     width: 100%;
   }
-  .veekls-api-client-search .area-wrap .within {
+  .veekls-search .area-wrap .within {
     width: 40%;
   }
-  .veekls-api-client-search .area-wrap .area {
+  .veekls-search .area-wrap .area {
     border-radius: 4px;
     margin: 0;
     width: 55%;
     float: right;
   }
-  .veekls-api-client-search .area-wrap button {
+  .veekls-search .area-wrap button {
     display: block;
     width: 100%;
     margin-top: 15px;
     border-radius: 4px;
   }
-  .veekls-api-client-search a.refine {
+  .veekls-search a.refine {
     display: inline-block;
     text-align: right;
     width: 100%;
   }
-  .veekls-api-client-search .extras-wrap .field {
+  .veekls-search .extras-wrap .field {
     display: inline-block;
     margin: 0 0 5px;
     width: 100%;
   }
 
-  .veekls-api-client-items li.auto-listing.type-auto-listing {
+  .veekls-items li.veekls-listing.type-veekls-listing {
     margin-right: 0;
     width: 100%;
   }
 
-  .veekls-api-client-items li .image {
+  .veekls-items li .image {
     float: none;
     margin-bottom: 15px;
     width: 100%;
   }
-  .veekls-api-client-items li .summary {
+  .veekls-items li .summary {
     float: none;
     width: auto;
     padding: 0 15px 15px;
   }
-  .veekls-api-client-items li .summary .title {
+  .veekls-items li .summary .title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .veekls-api-client-items li .summary .bottom-wrap {
+  .veekls-items li .summary .bottom-wrap {
     float: unset;
   }
-  .veekls-api-client-items li .summary .bottom-wrap span.condition {
+  .veekls-items li .summary .bottom-wrap span.condition {
     float: right;
     margin-left: 15px;
   }
-  .veekls-api-client-view-switcher {
+  .veekls-switcher {
     display: none;
   }
 }
 
 /* Extra small devices */
 @media (max-width: 768px) {
-  .veekls-api-client .has-sidebar {
+  .veekls .has-sidebar {
     float: none;
     width: auto;
   }
-  .veekls-api-client .sidebar {
+  .veekls .sidebar {
     float: none;
     width: auto;
   }
@@ -1129,7 +1129,7 @@ should fix up some theme issues
 .SumoSelect:focus > .CaptionCont,
 .SumoSelect:hover > .CaptionCont,
 .SumoSelect.open > .CaptionCont {
-  box-shadow: 0 0 2px #7799d0;
+  /* box-shadow: 0 0 2px #7799d0; */
   border-color: #7799d0;
 }
 .SumoSelect > .CaptionCont {
@@ -1189,7 +1189,7 @@ should fix up some theme issues
   box-sizing: border-box;
   background: #fff;
   border: 1px solid #ddd;
-  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.11);
+  /* box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.11); */
   border-radius: 3px;
   overflow: hidden;
 }
@@ -1237,7 +1237,7 @@ should fix up some theme issues
 }
 .SumoSelect > .optWrapper.isFloating > .options {
   max-height: 100%;
-  box-shadow: 0 0 100px #595959;
+  /* box-shadow: 0 0 100px #595959; */
 }
 .SumoSelect > .optWrapper > .options li.opt {
   padding: 6px 6px;
@@ -1332,14 +1332,14 @@ should fix up some theme issues
   height: 14px;
   border: 1px solid #aeaeae;
   border-radius: 2px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
+  /* box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15); */
   background-color: #fff;
 }
 .SumoSelect > .optWrapper > .MultiControls {
   display: none;
   border-top: 1px solid #ddd;
   background-color: #fff;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.13);
+  /* box-shadow: 0 0 2px rgba(0, 0, 0, 0.13); */
   border-radius: 0 0 3px 3px;
 }
 .SumoSelect > .optWrapper.multiple.isFloating > .MultiControls {
@@ -1397,7 +1397,7 @@ should fix up some theme issues
 .SumoSelect > .optWrapper.multiple > .options li.opt.selected span i,
 .SumoSelect .select-all.selected > span i,
 .SumoSelect .select-all.partial > span i {
-  background-color: rgb(17, 169, 17);
+  background-color: #666666;
   box-shadow: none;
   border-color: transparent;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAYAAAD+Bd/7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAABMSURBVAiZfc0xDkAAFIPhd2Kr1WRjcAExuIgzGUTIZ/AkImjSofnbNBAfHvzAHjOKNzhiQ42IDFXCDivaaxAJd0xYshT3QqBxqnxeHvhunpu23xnmAAAAAElFTkSuQmCC");

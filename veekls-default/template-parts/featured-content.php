@@ -13,7 +13,6 @@ if ( empty( $featured_posts ) ) {
 }
 
 $speed = get_theme_mod( 'slider_speed', 3000 );
-
 ?>
 
 <div class="featured-posts is-hidden">

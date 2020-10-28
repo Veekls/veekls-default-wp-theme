@@ -30,7 +30,7 @@
 
 				<?php
 				/* translators: placeholder replaced with string */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'veekls' ), 'Veekls', '<a href="' . esc_url( __( 'https://wpautolistings.com/', 'veekls' ) ) . '" rel="designer">WP Auto Listings</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'veekls' ), 'Veekls Default', '<a href="' . esc_url( __( 'https://veekls.com/', 'veekls' ) ) . '" rel="designer">Veekls</a>' );
 				?>
 			</div><!-- .site-info -->
 
@@ -67,6 +67,7 @@
 </nav>
 
 <?php wp_footer(); ?>
-<a href="#" class="scroll-to-top hidden"><i class="icofont icofont-rounded-up"></i></a>
+
+<a href="#" class="scroll-to-top hidden"><i class="fa fa-chevron-up"></i></a>
 </body>
 </html>

@@ -156,7 +156,7 @@ add_action( 'widgets_init', 'veekls_widgets_init' );
  */
 function veekls_plugin_scripts() {
 	if ( is_front_page() ) {
-		wp_enqueue_style( 'car-listings-listing-css', get_template_directory_uri() . '/css/veekls-api-client.css', array(), '1.0.0' );
+		wp_enqueue_style( 'veekls-css', get_template_directory_uri() . '/css/veekls.css', array(), '1.0.0' );
 		wp_enqueue_script( 'sumoselect', get_template_directory_uri() . '/js/sumoselect.min.js', array(), '3.0.3', true );
 	}
 }
@@ -168,7 +168,6 @@ add_action( 'wp_enqueue_scripts', 'veekls_plugin_scripts', 0 );
  */
 function veekls_scripts() {
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/fontawesome-all.min.css', array(), '5.15.1' );
-	wp_enqueue_style( 'icofont', get_template_directory_uri() . '/css/icofont.min.css', array(), '1.0.1' );
 
 	wp_enqueue_style( 'veekls-fonts', veekls_fonts_url(), array(), '1.0.0' );
 	wp_enqueue_style( 'veekls-style', get_stylesheet_uri(), array(), '1.0.0' );
@@ -183,13 +182,13 @@ function veekls_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	if ( function_exists( 'auto_listings_option' ) ) {
+	if ( function_exists( 'veekls_option' ) ) {
 		$list_grid_view = array(
-			'list_grid_view' => auto_listings_option( 'list_grid_view' ),
+			'list_grid_view' => veekls_option( 'list_grid_view' ),
 		);
 
 		if ( is_front_page() ) {
-			wp_localize_script( 'veekls-script', 'auto_listings', $list_grid_view );
+			wp_localize_script( 'veekls-script', 'veekls', $list_grid_view );
 		}
 	}
 }
@@ -245,7 +244,6 @@ function veekls_add_editor_styles() {
 			'css/editor-style.css',
 			veekls_fonts_url(),
 			get_template_directory_uri() . '/css/fontawesome-all.min.css',
-			get_template_directory_uri() . '/css/icofont.min.css',
 		)
 	);
 }

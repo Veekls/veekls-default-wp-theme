@@ -83,14 +83,17 @@ function veekls_get_category() {
  */
 function veekls_author_box() {
 	$description = get_the_author_meta( 'description' );
+
 	if ( empty( $description ) ) {
 		return;
 	}
 	?>
+
 	<div class="entry-author">
 		<div class="author-avatar">
 			<?php echo get_avatar( get_the_author_meta( 'user_email' ), 85 ); ?>
 		</div><!-- .author-avatar -->
+
 		<div class="author-info">
 			<div class="author-header">
 				<div class="author-heading">
@@ -112,50 +115,52 @@ function veekls_author_box() {
  * Get car ids.
  */
 function veekls_get_car_ids() {
-	$args  = array(
-		'post_type'      => 'auto-listing',
-		'posts_per_page' => 999,
-		'post_status'    => array( 'publish' ),
-		'fields'         => 'ids',
-	);
-	$items = new WP_Query( $args );
-	return $items->posts;
+	$vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
+
+	return $vehicles;
 }
 
 /**
  * Getter function for section car by make.
  */
 function veekls_get_car_lists() {
-	$items = veekls_get_car_ids();
-	$makes = array();
+	$vehicles = veekls_get_car_ids();
+	$brands   = array();
 
-	if ( $items ) {
-		foreach ( $items as $id ) {
-			$makes[] = get_post_meta( $id, '_al_listing_make_display', true );
+	if ( $vehicles ) {
+		foreach ( $vehicles as $vehicle ) {
+			$brands[] = $vehicle->brand;
 		}
 	}
-	$makes        = array_count_values( $makes );
-	$archive_link = get_post_type_archive_link( 'auto-listing' );
 
-	echo '<ul>';
-	foreach ( $makes as $make => $value ) {
-		$make_link = add_query_arg(
+	$brands       = array_count_values( $brands );
+	$archive_link = '/vehicles';
+	?>
+
+	<ul>
+
+	<?php foreach ( $brands as $brand => $value ) : ?>
+		<?php
+		$brand_link = add_query_arg(
 			array(
-				's'      => '',
-				'make[]' => $make,
+				's'       => '',
+				'brand[]' => $brand,
 			),
 			$archive_link
 		);
 		?>
+
 		<li>
-			<a href="<?php echo esc_url( $make_link ); ?>">
+			<a href="<?php echo esc_url( $brand_link ); ?>">
 				<?php
-				// translators: %1$s - make, %2$s number of cars.
-				echo wp_kses_post( sprintf( __( '%1$s <span>(%2$s)</span>', 'veekls' ), $make, $value ) );
+				// translators: %1$s - brand, %2$s number of cars.
+				echo wp_kses_post( sprintf( __( '%1$s <span>(%2$s)</span>', 'veekls' ), $brand, $value ) );
 				?>
 			</a>
 		</li>
-		<?php
-	}
-	echo '</ul>';
+	<?php endforeach; ?>
+
+	</ul>
+
+	<?php
 }

@@ -9,12 +9,6 @@
  * @package Veekls
  */
 
-$nav_menu = array(
-	'theme_location' => 'menu-1',
-	'menu_id'        => 'primary-menu',
-	'menu_class'     => 'primary-menu',
-);
-
 ?>
 
 <!doctype html>
@@ -88,7 +82,15 @@ $nav_menu = array(
 						<?php esc_html_e( 'Menu', 'veekls' ); ?>
 					</button>
 
-					<?php wp_nav_menu( $nav_menu ); ?>
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+							'menu_class'     => 'primary-menu',
+						)
+					);
+					?>
 				</nav><!-- #site-navigation -->
 			</div>
 		</header><!-- #masthead -->

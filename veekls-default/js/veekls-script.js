@@ -4,6 +4,8 @@
  * @package Veekls
  */
 
+window.veekls = {};
+
 // Run when the DOM ready.
 jQuery(function ($) {
 	'use strict';
@@ -96,8 +98,8 @@ jQuery(function ($) {
 	 */
 	function moveTagSearchForm () {
 		$('.search-content .odometer').prependTo('.search-content .area-wrap');
-		$('.search-content .condition-wrap').prependTo('#veekls-api-client-search');
-		$('.search-content .search-form__title').prependTo('#veekls-api-client-search');
+		$('.search-content .condition-wrap').prependTo('#veekls-search');
+		$('.search-content .search-form__title').prependTo('#veekls-search');
 	}
 
 	/**
@@ -136,19 +138,19 @@ jQuery(function ($) {
 	moveTagSearchForm();
 
 	if ($('body').hasClass('home')) {
-		auto_listings_view_switcher();
-		auto_listings_buy_sell();
+		veekls_view_switcher();
+		veekls_buy_sell();
 
-		if ($('.veekls-api-client-search').length > 0) {
-			auto_listings_search_box();
+		if ($('.veekls-search').length > 0) {
+			veekls_search_box();
 		}
 	}
 
 	/**
 	 * Buy/Sell option
 	 */
-	function auto_listings_buy_sell () {
-		$('.veekls-api-client-search').on('change', 'select.purpose', function () {
+	function veekls_buy_sell () {
+		$('.veekls-search').on('change', 'select.purpose', function () {
 			$(this).closest('form').submit();
 		});
 	}
@@ -156,24 +158,24 @@ jQuery(function ($) {
 	/**
 	 * View switcher
 	 */
-	function auto_listings_view_switcher () {
-		if (typeof auto_listings !== 'object') {
+	function veekls_view_switcher () {
+		if (typeof veekls !== 'object') {
 			return;
 		}
 
-		var default_view = auto_listings.list_grid_view;
+		var default_view = veekls.list_grid_view;
 
 		switch_view(default_view);
 
-		$('.veekls-api-client-view-switcher div').click(function () {
+		$('.veekls-view-switcher div').click(function () {
 			var view = $(this).attr('id');
 			switch_view(view);
 		});
 
 		function switch_view (to) {
 			var from = (to == 'list') ? 'grid' : 'list';
-			var $switcher = $('.veekls-api-client-view-switcher');
-			var $listings = $switcher.nextAll('.veekls-api-client-items');
+			var $switcher = $('.veekls-view-switcher');
+			var $listings = $switcher.nextAll('.veekls-items');
 
 			$listings.removeClass(from + '-view').addClass(to + '-view');
 		}
@@ -182,10 +184,10 @@ jQuery(function ($) {
 	/**
 	 * Search box
 	 */
-	function auto_listings_search_box () {
-		$('#veekls-api-client-search select').SumoSelect();
+	function veekls_search_box () {
+		$('#veekls-search select').SumoSelect();
 
-		$('.veekls-api-client-search').on('click', 'a.refine', function (e) {
+		$('.veekls-search').on('click', 'a.refine', function (e) {
 			$('.extras-wrap').slideToggle(200);
 			$(this).toggleClass('shown');
 		});

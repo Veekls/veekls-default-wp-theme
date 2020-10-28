@@ -156,7 +156,7 @@ function veekls_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'allcar_button_url',
 		array(
-			'default'           => esc_url( get_post_type_archive_link( 'auto-listing' ) ),
+			'default'           => esc_url( get_post_type_archive_link( 'veekls-listing' ) ),
 			'sanitize_callback' => 'esc_url_raw',
 			'transport'         => 'postMessage',
 		)

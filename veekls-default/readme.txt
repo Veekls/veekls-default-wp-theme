@@ -10,7 +10,7 @@ Veekls is a beautiful and easy to use WordPress auto listings theme for car sell
 
 == Installation ==
 
-Please see https://wpautolistings.com/docs/veekls/
+Please see https://wordpress.veekls.com/docs/veekls/
 
 == License ==
 
@@ -21,7 +21,7 @@ Veekls WordPress Theme, Copyright 2018 WP Auto Listings
 Veekls is distributed under the terms of the GNU GPL
 
 Unless otherwise specified, all images are self shot by WP Auto Listings
-Copyright: WP Auto Listings, https://wpautolistings.com/
+Copyright: WP Auto Listings, https://wordpress.veekls.com/
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -61,7 +61,7 @@ Veekls is based on Underscores http://underscores.me/, (C) 2012-2018 Automattic,
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Veekls is Licensed under the GNU GPL 3 license
-https://wpautolistings.com/
+https://wordpress.veekls.com/
 
 
 == Changelog ==

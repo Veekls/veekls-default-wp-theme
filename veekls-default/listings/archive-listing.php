@@ -20,22 +20,22 @@ get_header( 'listings' );
 /**
  * Outputs opening divs for the content
  *
- * @hooked auto_listings_output_content_wrapper
+ * @hooked veekls_output_content_wrapper
  */
-do_action( 'auto_listings_before_main_content' ); ?>
+do_action( 'veekls_before_main_content' ); ?>
 
 <div class="full-width upper">
 	<?php
 	/**
 	 * Comment
 	 *
-	 * @hooked auto_listings_listing_archive_description (displays any content, including shortcodes, within the main content editor of your chosen listing archive page)
+	 * @hooked veekls_listing_archive_description (displays any content, including shortcodes, within the main content editor of your chosen listing archive page)
 	 */
-	do_action( 'auto_listings_archive_page_upper_full_width' );
+	do_action( 'veekls_archive_page_upper_full_width' );
 	?>
 </div>
 
-<?php if ( is_active_sidebar( 'veekls-api-client' ) ) : ?>
+<?php if ( is_active_sidebar( 'veekls' ) ) : ?>
 	<div class="has-sidebar">
 <?php else : ?>
 	<div class="listing-no-sidebar">
@@ -46,24 +46,24 @@ do_action( 'auto_listings_before_main_content' ); ?>
 	/**
 	 * Comment
 	 *
-	 * @hooked auto_listings_ordering (the ordering dropdown)
-	 * @hooked auto_listings_view_switcher (the view switcher)
-	 * @hooked auto_listings_pagination (the pagination)
+	 * @hooked veekls_ordering (the ordering dropdown)
+	 * @hooked veekls_view_switcher (the view switcher)
+	 * @hooked veekls_pagination (the pagination)
 	 */
-	do_action( 'auto_listings_before_listings_loop' );
+	do_action( 'veekls_before_listings_loop' );
 
-	$cols  = function_exists( 'auto_listings_columns' ) ? auto_listings_columns() : 1;
+	$cols  = function_exists( 'veekls_columns' ) ? veekls_columns() : 1;
 	$count = 1;
 
 	while ( have_posts() ) :
 		the_post();
 
 		if ( 1 === $count % $cols ) {
-			echo '<ul class="veekls-api-client-items">';
+			echo '<ul class="veekls-items">';
 		}
 
-		if ( function_exists( 'auto_listings_get_part' ) ) {
-			auto_listings_get_part( 'content-listing.php' );
+		if ( function_exists( 'veekls_get_part' ) ) {
+			veekls_get_part( 'content-listing.php' );
 		}
 
 		if ( 0 === $count % $cols ) {
@@ -80,23 +80,23 @@ do_action( 'auto_listings_before_main_content' ); ?>
 	/**
 	 * Comment
 	 *
-	 * @hooked auto_listings_pagination (the pagination)
+	 * @hooked veekls_pagination (the pagination)
 	 */
-	do_action( 'auto_listings_after_listings_loop' );
+	do_action( 'veekls_after_listings_loop' );
 
 else :
 	?>
 
-	<p class="alert veekls-api-client-no-results"><?php esc_html_e( 'Sorry, no listings were found.', 'veekls' ); ?></p>
+	<p class="alert veekls-no-results"><?php esc_html_e( 'Sorry, no listings were found.', 'veekls' ); ?></p>
 
 <?php endif; ?>
 
-<?php if ( is_active_sidebar( 'veekls-api-client' ) ) : ?>
+<?php if ( is_active_sidebar( 'veekls' ) ) : ?>
 
 	</div><!-- has-sidebar -->
 
 	<div class="sidebar">
-		<?php dynamic_sidebar( 'veekls-api-client' ); ?>
+		<?php dynamic_sidebar( 'veekls' ); ?>
 	</div>
 
 <?php else : ?>
@@ -104,16 +104,16 @@ else :
 <?php endif; ?>
 
 <div class="full-width lower">
-	<?php do_action( 'auto_listings_archive_page_lower_full_width' ); ?>
+	<?php do_action( 'veekls_archive_page_lower_full_width' ); ?>
 </div>
 
 <?php
 /**
  * Comment
  *
- * @hooked auto_listings_output_content_wrapper_end (outputs closing divs for the content)
+ * @hooked veekls_output_content_wrapper_end (outputs closing divs for the content)
  */
-do_action( 'auto_listings_after_main_content' );
+do_action( 'veekls_after_main_content' );
 
 
 get_footer( 'listings' );

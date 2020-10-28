@@ -17,18 +17,18 @@ if ( ! veekls_is_plugin_active() ) {
 
 ?>
 
-<?php do_action( 'auto_listings_before_single_listing' ); ?>
+<?php do_action( 'veekls_before_single_listing' ); ?>
 
-<div id="listing-<?php the_ID(); ?>" class="veekls-api-client-single listing">
+<div id="listing-<?php the_ID(); ?>" class="veekls-single listing">
 	<div class="has-sidebar">
 		<div class="image-gallery">
 			<?php
 			/**
 			 * Slider
 			 *
-			 * @hooked auto_listings_template_single_gallery
+			 * @hooked veekls_template_single_gallery
 			 */
-			do_action( 'auto_listings_single_gallery' );
+			do_action( 'veekls_single_gallery' );
 			?>
 		</div>
 
@@ -37,12 +37,12 @@ if ( ! veekls_is_plugin_active() ) {
 			/**
 			 * Title
 			 *
-			 * @hooked auto_listings_template_single_title
+			 * @hooked veekls_template_single_title
 			 */
-			do_action( 'auto_listings_single_upper_full_width' );
+			do_action( 'veekls_single_upper_full_width' );
 			?>
-			<?php if ( function_exists( 'auto_listings_price' ) ) : ?>
-				<h4><?php echo wp_kses_post( auto_listings_price() ); ?></h4>
+			<?php if ( function_exists( 'veekls_price' ) ) : ?>
+				<h4><?php echo wp_kses_post( veekls_price() ); ?></h4>
 			<?php endif; ?>
 		</div>
 
@@ -51,11 +51,11 @@ if ( ! veekls_is_plugin_active() ) {
 			/**
 			 * Info single listing
 			 *
-			 * @hooked auto_listings_template_single_tagline
-			 * @hooked auto_listings_template_single_description
-			 * @hooked auto_listings_output_listing_tabs
+			 * @hooked veekls_template_single_tagline
+			 * @hooked veekls_template_single_description
+			 * @hooked veekls_output_listing_tabs
 			 */
-			do_action( 'auto_listings_single_content' );
+			do_action( 'veekls_single_content' );
 			?>
 		</div>
 	</div>
@@ -65,19 +65,19 @@ if ( ! veekls_is_plugin_active() ) {
 		/**
 		 * Sidebar
 		 *
-		 * @hooked auto_listings_template_single_price
-		 * @hooked auto_listings_template_single_at_a_glance
-		 * @hooked auto_listings_template_single_address
-		 * @hooked auto_listings_template_single_map
-		 * @hooked auto_listings_template_single_contact_form
+		 * @hooked veekls_template_single_price
+		 * @hooked veekls_template_single_at_a_glance
+		 * @hooked veekls_template_single_address
+		 * @hooked veekls_template_single_map
+		 * @hooked veekls_template_single_contact_form
 		 */
-		do_action( 'auto_listings_single_sidebar' );
+		do_action( 'veekls_single_sidebar' );
 		?>
 	</div>
 
 	<div class="full-width lower">
-		<?php do_action( 'auto_listings_single_lower_full_width' ); ?>
+		<?php do_action( 'veekls_single_lower_full_width' ); ?>
 	</div>
 </div>
 
-<?php do_action( 'auto_listings_after_single_listing' ); ?>
+<?php do_action( 'veekls_after_single_listing' ); ?>

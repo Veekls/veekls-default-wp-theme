@@ -14,7 +14,7 @@
 	</label>
 
 	<button type="submit" class="search-submit">
-		<i class="icofont icofont-search"></i>
+		<i class="fas fa-search"></i>
 		<span class="screen-reader-text"><?php esc_html_e( 'Search', 'veekls' ); ?></span>
 	</button>
 </form>

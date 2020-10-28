@@ -24,7 +24,7 @@ if ( 1 === $wp_query->found_posts ) {
 $by      = filter_input( INPUT_GET, 'orderby', FILTER_SANITIZE_STRING );
 $by      = $by ? $by : 'date';
 $options = apply_filters(
-	'auto_listings_listings_orderby',
+	'veekls_listings_orderby',
 	array(
 		'date'       => __( '- Newest Listings -', 'veekls' ),
 		'date-old'   => __( '- Oldest Listings -', 'veekls' ),
@@ -35,7 +35,7 @@ $options = apply_filters(
 
 ?>
 
-<form class="veekls-api-client-ordering" method="get" >
+<form class="veekls-ordering" method="get" >
 	<div class="select-wrap">
 		<select name="orderby" class="orderby">
 			<?php foreach ( $options as $value => $label ) : ?>

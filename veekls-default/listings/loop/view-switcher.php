@@ -9,7 +9,7 @@
 
 ?>
 
-<div class="veekls-api-client-view-switcher">
+<div class="veekls-view-switcher">
 	<div id="list" class="list"><i class="icofont icofont-justify-all"></i></div>
 	<div id="grid" class="grid"><i class="icofont icofont-listing-box"></i></div>
 </div>

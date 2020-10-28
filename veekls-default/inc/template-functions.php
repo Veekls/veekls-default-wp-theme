@@ -24,7 +24,7 @@ function veekls_body_classes( $classes ) {
 
 	// Adds a class of plugin to front page.
 	if ( is_front_page() ) {
-		$classes[] = 'veekls-api-client';
+		$classes[] = 'veekls';
 	}
 
 	return $classes;

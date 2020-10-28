@@ -22,7 +22,7 @@ if ( $wp_query->max_num_pages <= 1 ) {
 }
 
 ?>
-<nav class="veekls-api-client-pagination">
+<nav class="veekls-pagination">
 	<?php
 	echo paginate_links(
 		array(

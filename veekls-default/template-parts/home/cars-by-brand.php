@@ -2,11 +2,11 @@
 /**
  * The template part for displaying search form on front page
  *
- * @package Veekls
+ * @package Veekls_Default
  */
 
-$listings_archive_link = get_post_type_archive_link( 'auto-listing' );
-$section_title         = get_theme_mod( 'allcar_title', __( 'Browse Cars By Make', 'veekls' ) );
+$listings_archive_link = get_post_type_archive_link( 'veekls-listing' );
+$section_title         = get_theme_mod( 'allcar_title', __( 'Browse Cars By Brand', 'veekls' ) );
 $description           = get_theme_mod( 'allcar_description', __( 'Available in different categories', 'veekls' ) );
 $button_url            = get_theme_mod( 'allcar_button_url', esc_url( $listings_archive_link ) );
 $button_text           = get_theme_mod( 'allcar_button_text', __( 'See all cars', 'veekls' ) );
@@ -14,13 +14,6 @@ $button_text           = get_theme_mod( 'allcar_button_text', __( 'See all cars'
 $image    = get_theme_mod( 'allcar_image' );
 $image_id = attachment_url_to_postid( $image );
 $alt      = ( ! empty( $image_id ) ) ? get_post_meta( $image_id, '_wp_attachment_image_alt', true ) : '';
-
-$cars = veekls_get_car_ids();
-
-if ( ! $cars ) {
-	return;
-}
-
 ?>
 
 <section class="all--car">

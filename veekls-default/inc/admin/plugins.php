@@ -35,7 +35,7 @@ function veekls_required_plugins() {
 			'slug' => 'jetpack',
 		),
 		array(
-			'name' => esc_html__( 'Auto Listings', 'veekls' ),
+			'name' => esc_html__( 'Veekls API Client', 'veekls' ),
 			'slug' => 'veekls-api-client',
 		),
 		array(

@@ -39,12 +39,12 @@ add_filter( 'excerpt_length', 'veekls_custom_excerpt_length' );
 /**
  * Add at a glance to left section
  */
-add_action( 'auto_listings_before_listings_loop_item_summary', 'auto_listings_template_loop_at_a_glance', 20 );
+add_action( 'veekls_before_listings_loop_item_summary', 'veekls_template_loop_at_a_glance', 20 );
 
 /**
  * Add description
  */
-remove_action( 'auto_listings_listings_loop_item', 'auto_listings_template_loop_description', 50 );
+remove_action( 'veekls_listings_loop_item', 'veekls_template_loop_description', 50 );
 
 add_filter( 'comment_form_default_fields', 'veekls_modify_comment_form_default' );
 /**

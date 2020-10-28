@@ -9,7 +9,6 @@
  * The customizer pro class.
  */
 final class Veekls_Customizer_Pro {
-
 	/**
 	 * Theme slug.
 	 *
@@ -60,7 +59,7 @@ final class Veekls_Customizer_Pro {
 				array(
 					'doc_title' => esc_html__( 'Need Some Help?', 'veekls' ),
 					'doc_text'  => esc_html__( 'Need help setting up your site?', 'veekls' ),
-					'doc_url'   => esc_url( "https://wpautolistings.com/docs/{$this->slug}/{$this->utm}" ),
+					'doc_url'   => esc_url( "https://wordpress.veekls.com/docs/{$this->slug}/{$this->utm}" ),
 					'priority'  => 0,
 				)
 			)
