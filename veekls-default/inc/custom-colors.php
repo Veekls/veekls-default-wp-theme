@@ -1,6 +1,6 @@
 <?php
 /**
- * Sample implementation of the Custom colors feature
+ * Implementation of the custom colors feature.
  *
  * @package Veekls_Default
  */
@@ -10,7 +10,6 @@
  */
 function veekls_custom_colors() {
 	?>
-	<!-- Theme custom colors -->
 	<style type="text/css">
 	:root {
 		--color-primary: <?php echo esc_html( get_option( 'veekls_primary_color', '#f01840' ) ); ?>;
