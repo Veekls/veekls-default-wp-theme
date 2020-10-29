@@ -17,7 +17,7 @@ $vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
 
 <div id="container" class="container">
 	<div id="content" class="content" role="main">
-		<div class="<?php is_active_sidebar( 'veekls' ) ? 'has-sidebar' : 'listing-no-sidebar'; ?>">
+		<div class="<?php echo is_active_sidebar( 'veekls' ) ? 'has-sidebar' : 'listing-no-sidebar'; ?>">
 
 		<div class="veekls-view-switcher">
 			<div id="list" class="list"><i class="fa fa-list"></i></div>
@@ -31,7 +31,7 @@ $vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
 
 		<?php foreach ( $vehicles as $vehicle ) : ?>
 			<?php if ( 1 === $count % $cols ) : ?>
-				<ul class="veekls-items">
+				<ul class="veekls-items grid-view">
 			<?php endif; ?>
 
 			<?php
@@ -40,6 +40,7 @@ $vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
 				'Content Listing',
 				array(
 					'vehicle' => $vehicle,
+					'compact' => true,
 				)
 			);
 			?>

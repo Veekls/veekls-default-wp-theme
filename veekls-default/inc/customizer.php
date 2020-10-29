@@ -1,8 +1,8 @@
 <?php
 /**
- * Veekls Theme Customizer
+ * Veekls Theme Customizer.
  *
- * @package Veekls
+ * @package Veekls_Default
  */
 
 /**

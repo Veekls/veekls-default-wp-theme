@@ -111,8 +111,8 @@ add_action( 'after_setup_theme', 'veekls_content_width', 0 );
 function veekls_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'veekls' ),
-			'id'            => 'sidebar-1',
+			'name'          => esc_html__( 'Veekls: Sidebar', 'veekls' ),
+			'id'            => 'veekls',
 			'description'   => esc_html__( 'Add widgets here.', 'veekls' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -123,7 +123,7 @@ function veekls_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Topbar Contact', 'veekls' ),
+			'name'          => esc_html__( 'Veekls: Topbar Contact', 'veekls' ),
 			'id'            => 'topbar-contact',
 			'description'   => esc_html__( 'Add your contact widget here.', 'veekls' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -135,7 +135,7 @@ function veekls_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Topbar Languages', 'veekls' ),
+			'name'          => esc_html__( 'Veekls: Topbar Languages', 'veekls' ),
 			'id'            => 'topbar-languages',
 			'description'   => esc_html__( 'Add your language widget here.', 'veekls' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',

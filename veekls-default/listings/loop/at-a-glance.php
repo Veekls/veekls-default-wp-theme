@@ -15,20 +15,22 @@ if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
+$vehicle = $args['vehicle'];
+
+$gearbox  = apply_filters( 'veekls_gearbox_type', $vehicle );
+$odometer = apply_filters( 'veekls_odometer', $vehicle );
 ?>
 
 <div class="at-a-glance">
 	<ul>
-		<?php if ( function_exists( 'veekls_odometer' ) && veekls_odometer() ) : ?>
-			<li class="odomoter"><i class="icofont icofont-speed-meter"></i> <?php echo esc_html( veekls_odometer() ); ?></li>
-		<?php endif; ?>
-
-		<?php if ( function_exists( 'veekls_transmission' ) && veekls_transmission() ) : ?>
-			<li class="transmission"><i class="icofont icofont-ui-settings"></i> <?php echo esc_html( veekls_transmission() ); ?></li>
-		<?php endif; ?>
-
-		<?php if ( function_exists( 'veekls_body_type' ) && veekls_body_type() ) : ?>
-			<li class="body"><i class="icofont icofont-car-alt-4"></i> <?php echo wp_kses_post( veekls_body_type() ); ?></li>
-		<?php endif; ?>
+		<li class="odometer">
+			<i class="fas fa-road"></i> <?php echo esc_html( $odometer ); ?>
+		</li>
+		<li class="transmission">
+			<i class="fas fa-cogs"></i> <?php echo esc_html( $gearbox ); ?>
+		</li>
+		<li class="year">
+			<i class="fas fa-calendar"></i> <?php echo esc_html( $vehicle->year ); ?>
+		</li>
 	</ul>
 </div>

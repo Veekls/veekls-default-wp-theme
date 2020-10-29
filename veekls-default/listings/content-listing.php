@@ -17,11 +17,12 @@ if ( ! veekls_is_plugin_active() ) {
 
 $front_page_listings_column = get_theme_mod( 'front_page_listings_column', 2 );
 
-$vehicle            = $args['vehicle'];
-$vehicle->title     = apply_filters( 'veekls_title', $vehicle );
-$vehicle->url       = '/vehicle?id=' . $vehicle->_id;
-$vehicle->price     = apply_filters( 'veekls_price', $vehicle );
-$vehicle->thumbnail = apply_filters(
+$compact           = $args['compact'];
+$vehicle           = $args['vehicle'];
+$vehicle_title     = apply_filters( 'veekls_title', $vehicle );
+$vehicle_url       = '/vehicle?id=' . $vehicle->_id;
+$vehicle_price     = apply_filters( 'veekls_price', $vehicle );
+$vehicle_thumbnail = apply_filters(
 	'veekls_picture',
 	$vehicle->pictures[0],
 	array(
@@ -37,38 +38,45 @@ if ( is_front_page() ) {
 
 ?>
 
-<li <?php esc_attr( post_class( 'col-' . $cols ) ); ?>>
+<li class="col-<?php echo esc_attr( $cols ); ?> has-thumbnail">
 	<div class="image">
-		<a href="<?php echo esc_url( $vehicle->url ); ?>" title="<?php echo esc_attr( $vehicle->title ); ?>">
-			<img alt="<?php echo esc_attr( $vehicle->title ); ?>" src="<?php echo esc_url( $vehicle->thumbnail ); ?>"/>
+		<a href="<?php echo esc_url( $vehicle_url ); ?>" title="<?php echo esc_attr( $vehicle_title ); ?>">
+			<img alt="<?php echo esc_attr( $vehicle_title ); ?>" src="<?php echo esc_url( $vehicle_thumbnail ); ?>"/>
 		</a>
 	</div>
 
+	<?php
+	get_template_part(
+		'listings/loop/at-a-glance',
+		'At a Glance',
+		array(
+			'vehicle' => $vehicle,
+		)
+	);
+	?>
+
 	<div class="summary">
 		<h3 class="title">
-			<a href="<?php echo esc_url( $vehicle->url ); ?>" title="<?php echo esc_attr( $vehicle->title ); ?>">
-				<?php echo esc_html( $vehicle->title ); ?>
+			<a href="<?php echo esc_url( $vehicle_url ); ?>" title="<?php echo esc_attr( $vehicle_title ); ?>">
+				<?php echo esc_html( $vehicle_title ); ?>
 			</a>
 		</h3>
 
-		<div class="at-a-glance">
-			<ul>
-				<li class="odometer">
-					<i class="auto-icon-odometer"></i> <?php echo esc_html( $vehicle->odometer ); ?>
-				</li>
-				<li class="transmission">
-					<i class="auto-icon-transmission"></i> <?php echo esc_html( $vehicle->gearbox ); ?>
-				</li>
-				<li class="characteristics">
-					<i class="auto-icon-trunk"></i> <?php echo esc_html( $vehicle->characteristics[0] ); ?>
-				</li>
-			</ul>
-		</div>
+		<?php
+		get_template_part(
+			'listings/loop/at-a-glance',
+			'At a Glance',
+			array(
+				'vehicle' => $vehicle,
+			)
+		);
+		?>
 
 		<div class="price">
-			<?php echo filter_var( $vehicle->price, FILTER_UNSAFE_RAW ); ?>
+			<?php echo filter_var( $vehicle_price, FILTER_UNSAFE_RAW ); ?>
 		</div>
 
+		<?php if ( isset( $compact ) && ! $compact ) : ?>
 			<div class="description">
 				<?php if ( isset( $vehicle->promo ) && ! empty( $vehicle->promo->message ) ) : ?>
 					<?php echo esc_html( $vehicle->promo->message ); ?>
@@ -76,9 +84,10 @@ if ( is_front_page() ) {
 					<?php echo esc_html_e( 'No description.', 'veekls' ); ?>
 				<?php endif; ?>
 			</div>
+		<?php endif; ?>
 
 		<div class="bottom-wrap">
-			<a class="al-button" href="<?php echo esc_url( $vehicle->url ); ?>" title="<?php esc_attr_e( 'View', 'veekls' ); ?> <?php esc_attr( $vehicle->title ); ?>">
+			<a class="veekls-button" href="<?php echo esc_url( $vehicle_url ); ?>" title="<?php esc_attr_e( 'View', 'veekls' ); ?> <?php esc_attr( $vehicle->title ); ?>">
 				<?php echo esc_html_e( 'More Details', 'veekls' ); ?> &nbsp; <i class="fa fa-angle-right"></i>
 			</a>
 		</div>
