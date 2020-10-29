@@ -57,13 +57,12 @@ should fix up some theme issues
 .veekls .price {
   color: var(--color-primary);
 }
-.veekls .al-button,
+.veekls .veekls-button,
 .veekls .contact-form .button-primary,
 .veekls .cmb2-upload-button,
 .veekls #wp-submit {
   background: var(--color-primary) none repeat scroll 0 0;
   border: 2px solid var(--color-primary);
-  border-radius: 0;
   box-shadow: none;
   color: #fff;
   display: inline-block;
@@ -76,7 +75,7 @@ should fix up some theme issues
   text-decoration: none;
   text-transform: uppercase;
 }
-.veekls .al-button:hover,
+.veekls .veekls-button:hover,
 .veekls .contact-form .button-primary:hover,
 .veekls #wp-submit:hover {
   background: #fff;
@@ -108,7 +107,7 @@ should fix up some theme issues
   right: 10px;
   top: 10px;
   z-index: 999;
-  background: red;
+  background: var(--color-primary);
 }
 .veekls span.condition {
   color: #888;
@@ -430,7 +429,7 @@ should fix up some theme issues
   display: inline-block;
   margin: 20px 0 0 0;
 }
-.veekls-items .bottom-wrap a.al-button {
+.veekls-items .bottom-wrap a.veekls-button {
   margin: 0 14px 0 0;
   padding: 5px 12px;
   font-size: 13px;
@@ -444,7 +443,7 @@ should fix up some theme issues
 .has-sidebar .veekls-items .bottom-wrap {
   float: right;
 }
-.has-sidebar .veekls-items .bottom-wrap a.al-button {
+.has-sidebar .veekls-items .bottom-wrap a.veekls-button {
   margin: 0;
 }
 .has-sidebar .veekls-items span.condition {
@@ -504,7 +503,7 @@ should fix up some theme issues
 .has-sidebar .veekls-items.grid-view .bottom-wrap {
   float: unset;
 }
-.has-sidebar .veekls-items.grid-view .bottom-wrap a.al-button {
+.has-sidebar .veekls-items.grid-view .bottom-wrap a.veekls-button {
   display: block;
   float: none;
   line-height: 24px;
@@ -601,50 +600,6 @@ should fix up some theme issues
   font-size: 20px;
   font-weight: 200;
 }
-.veekls-search .area-wrap .field,
-.veekls-search .area-wrap button {
-  display: inline-block;
-}
-.veekls-search .area-wrap .prefix {
-  font-size: 20px;
-  font-weight: 200;
-}
-.veekls-search .area {
-  border: 1px solid #aaa;
-  border-radius: 4px 0 0 4px;
-  height: 40px;
-  line-height: 30px;
-  padding: 5px 15px;
-  width: 300px;
-  margin: -3px -4px 0 0;
-  background: #fff;
-  outline: none;
-  text-transform: none;
-  font-size: 15px;
-  font-weight: 300;
-  color: #444;
-}
-.veekls-search .area-wrap .area::placeholder {
-  text-transform: none;
-  font-size: 15px;
-  font-weight: 300;
-  color: #666;
-}
-.veekls-search .area-wrap .area:focus,
-.veekls-search .area-wrap .area:active {
-  border: none;
-  border-bottom: 2px solid var(--color-primary);
-  border-radius: 0;
-}
-.veekls-search .area-wrap button {
-  border-radius: 0 4px 4px 0;
-  z-index: 9;
-  position: relative;
-}
-.veekls-search .area-wrap button:hover,
-.veekls-search .area-wrap button:focus {
-  border: 2px solid transparent;
-}
 .veekls-search .extras-wrap {
   display: none;
   margin-top: 15px;
@@ -709,20 +664,12 @@ should fix up some theme issues
   width: 100px;
   margin: 0 10px;
 }
-.veekls-search .area-wrap .SumoSelect {
-  margin-right: 15px;
-  width: 140px;
-}
 
 /* ======================================== SEARCH STYLE 2 ========================================
 */
 .veekls-search.s-2 .field {
   color: #fff;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-}
-.veekls-search.s-2 .area-wrap .area {
-  text-shadow: none;
-  border-color: #fff;
 }
 .veekls-search.s-2 .SumoSelect > .CaptionCont {
   border: 2px solid #fff;
@@ -768,21 +715,6 @@ should fix up some theme issues
 .veekls-search.s-4 .price-wrap .SumoSelect > .optWrapper {
   width: 100%;
 }
-.veekls-search.s-4 .area-wrap .within {
-  width: 40%;
-}
-.veekls-search.s-4 .area-wrap .area {
-  border-radius: 4px;
-  margin: 0;
-  width: 55%;
-  float: right;
-}
-.veekls-search.s-4 .area-wrap button {
-  display: block;
-  width: 100%;
-  margin-top: 15px;
-  border-radius: 4px;
-}
 .veekls-search.s-4 a.refine {
   display: inline-block;
   text-align: right;
@@ -798,10 +730,6 @@ should fix up some theme issues
 */
 .veekls-search.standard .field {
   margin: 0 0 10px;
-}
-.veekls-search.standard .area {
-  border-radius: 4px;
-  width: auto;
 }
 
 /* ======================================== LISTINGS COMPACT MODE ========================================
@@ -961,21 +889,6 @@ should fix up some theme issues
   }
   .veekls-search .price-wrap .SumoSelect > .optWrapper {
     width: 100%;
-  }
-  .veekls-search .area-wrap .within {
-    width: 40%;
-  }
-  .veekls-search .area-wrap .area {
-    border-radius: 4px;
-    margin: 0;
-    width: 55%;
-    float: right;
-  }
-  .veekls-search .area-wrap button {
-    display: block;
-    width: 100%;
-    margin-top: 15px;
-    border-radius: 4px;
   }
   .veekls-search a.refine {
     display: inline-block;

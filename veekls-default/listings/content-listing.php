@@ -17,12 +17,16 @@ if ( ! veekls_is_plugin_active() ) {
 
 $front_page_listings_column = get_theme_mod( 'front_page_listings_column', 2 );
 
-$compact           = $args['compact'];
-$vehicle           = $args['vehicle'];
-$vehicle_title     = apply_filters( 'veekls_title', $vehicle );
-$vehicle_url       = '/vehicle?id=' . $vehicle->_id;
-$vehicle_price     = apply_filters( 'veekls_price', $vehicle );
-$vehicle_thumbnail = apply_filters(
+$compact               = $args['compact'];
+$vehicle               = $args['vehicle'];
+$vehicle_title         = apply_filters( 'veekls_title', $vehicle );
+$vehicle_url           = '/vehicle?id=' . $vehicle->_id;
+$vehicle_price         = apply_filters( 'veekls_price', $vehicle );
+$vehicle_promo_starred = isset( $vehicle->promo ) && ! empty( $vehicle->promo->starredAt );
+$vehicle_promo_message = isset( $vehicle->promo ) && ! empty( $vehicle->promo->message ) ?
+	$vehicle->promo->message :
+	null;
+$vehicle_thumbnail     = apply_filters(
 	'veekls_picture',
 	$vehicle->pictures[0],
 	array(
@@ -41,6 +45,19 @@ if ( is_front_page() ) {
 <li class="col-<?php echo esc_attr( $cols ); ?> has-thumbnail">
 	<div class="image">
 		<a href="<?php echo esc_url( $vehicle_url ); ?>" title="<?php echo esc_attr( $vehicle_title ); ?>">
+			<?php if ( ! empty( $vehicle->pictures ) ) : ?>
+				<span class="status">
+					<i class="fas fa-images"></i>
+					<?php echo esc_html( count( $vehicle->pictures ) ); ?>
+				</span>
+			<?php endif; ?>
+
+			<?php if ( $vehicle_promo_starred ) : ?>
+				<span class="highlight-new">
+					<i class="fas fa-star"></i> <?php esc_html_e( 'Starred', 'veekls' ); ?>
+				</span>
+			<?php endif; ?>
+
 			<img alt="<?php echo esc_attr( $vehicle_title ); ?>" src="<?php echo esc_url( $vehicle_thumbnail ); ?>"/>
 		</a>
 	</div>
@@ -72,14 +89,19 @@ if ( is_front_page() ) {
 		);
 		?>
 
+		<div class="address">
+			<i class="fas fa-info-circle"></i>
+			<?php echo esc_html( $vehicle->version ); ?>
+		</div>
+
 		<div class="price">
 			<?php echo filter_var( $vehicle_price, FILTER_UNSAFE_RAW ); ?>
 		</div>
 
 		<?php if ( isset( $compact ) && ! $compact ) : ?>
 			<div class="description">
-				<?php if ( isset( $vehicle->promo ) && ! empty( $vehicle->promo->message ) ) : ?>
-					<?php echo esc_html( $vehicle->promo->message ); ?>
+				<?php if ( ! empty( $vehicle_promo_message ) ) : ?>
+					<?php echo esc_html( $vehicle_promo_message ); ?>
 				<?php else : ?>
 					<?php echo esc_html_e( 'No description.', 'veekls' ); ?>
 				<?php endif; ?>

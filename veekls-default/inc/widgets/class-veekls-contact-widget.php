@@ -58,7 +58,7 @@ class Veekls_Contact_Widget extends WP_Widget {
 		<ul class="contact">
 			<?php if ( '' !== $instance['time'] ) : ?>
 				<li>
-					<i class="fas fa-clock"></i>
+					<i class="fas fa-fw fa-clock"></i>
 					<?php echo esc_html( $instance['time'] ); ?>
 				</li>
 			<?php endif; ?>
@@ -67,7 +67,7 @@ class Veekls_Contact_Widget extends WP_Widget {
 				<?php $email = esc_html( $instance['email'] ); ?>
 				<li>
 					<a href="mailto:<?php echo esc_attr( $email ); ?>">
-						<i class="fas fa-at"></i>
+						<i class="fas fa-fw fa-at"></i>
 						<?php echo esc_html( $email ); ?>
 					</a>
 				</li>
@@ -77,7 +77,7 @@ class Veekls_Contact_Widget extends WP_Widget {
 				<?php $address = esc_html( $instance['address'] ); ?>
 				<li>
 					<a href="https://www.google.com/maps/place/<?php echo rawurlencode( $address ); ?>" target="_blank">
-						<i class="fas fa-map-marker"></i>
+						<i class="fas fa-fw fa-map-marker"></i>
 						<?php echo esc_html( $address ); ?>
 					</a>
 				</li>

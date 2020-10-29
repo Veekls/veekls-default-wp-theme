@@ -4,7 +4,9 @@
  * @package Veekls
  */
 
-window.veekls = {};
+window.veekls = {
+	list_grid_view: 'grid'
+};
 
 // Run when the DOM ready.
 jQuery(function ($) {
@@ -173,7 +175,7 @@ jQuery(function ($) {
 		});
 
 		function switch_view (to) {
-			var from = (to == 'list') ? 'grid' : 'list';
+			var from = (to === 'list') ? 'grid' : 'list';
 			var $switcher = $('.veekls-view-switcher');
 			var $listings = $switcher.nextAll('.veekls-items');
 
