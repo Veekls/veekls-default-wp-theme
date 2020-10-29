@@ -4289,26 +4289,23 @@ ol.children {
   color: var(--color-primary);
 }
 
-.veekls-single .sidebar .address {
+.veekls-single .sidebar .characteristics {
   padding-bottom: 0;
   border-bottom: 0;
   margin-bottom: 0;
   font-weight: 600;
 }
 
-.veekls-single .sidebar .address h3 {
+.veekls-single .sidebar .characteristics h3 {
   margin-bottom: 18px;
 }
 
-.veekls-single .sidebar .address i {
-  font-size: 16px;
-  font-size: 1rem;
+.veekls-single .sidebar .characteristics i {
   color: #555555;
-  margin-right: 3px;
+  margin-right: 1em;
 }
 
-.veekls-single .sidebar .address span {
-  font-size: 13px;
+.veekls-single .sidebar .characteristics span {
   font-size: 0.8125rem;
   color: #555555;
 }
@@ -4397,14 +4394,14 @@ ol.children {
   margin-bottom: 18px;
 }
 
-.veekls-single .sidebar .dealer .address,
+.veekls-single .sidebar .dealer .characteristics,
 .veekls-single .sidebar .dealer .contact {
   padding: 0;
   color: #555555;
   line-height: inherit;
 }
 
-.veekls-single .sidebar .dealer .address,
+.veekls-single .sidebar .dealer .characteristics,
 .veekls-single .sidebar .dealer .contact li {
   margin-bottom: 3px;
 }
@@ -4666,21 +4663,17 @@ ol.children {
   left: 0;
 }
 
-.veekls-items .address {
-  font-size: 13px;
+.veekls-items .characteristics {
   font-size: 0.8125rem;
   color: var(--color-primary);
-  font-weight: 600;
-  position: relative;
+  font-weight: bold;
 }
 
-.veekls-items .address i {
-  font-size: 16px;
-  font-size: 1rem;
+.veekls-items .characteristics i {
+  margin-right: 0.25em;
 }
 
 .veekls-items .price {
-  font-size: 26px;
   font-size: 1.625rem;
   line-height: 1.4;
   color: #3d414e;
@@ -5196,7 +5189,7 @@ ol.children {
 }
 
 .sidebar .veekls-items li.compact .summary .description,
-.sidebar .veekls-items li.compact .summary .address,
+.sidebar .veekls-items li.compact .summary .characteristics,
 .sidebar .veekls-items li.compact .summary .at-a-glance {
   display: none;
 }

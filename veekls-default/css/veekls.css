@@ -313,7 +313,7 @@ should fix up some theme issues
   display: inline-block;
   width: 100%;
 }
-.veekls-single .address {
+.veekls-single .characteristics {
   margin: 0;
   padding: 5px 0;
 }
@@ -777,8 +777,8 @@ should fix up some theme issues
   white-space: nowrap;
   margin-left: 23%;
 }
-.veekls-items li.compact .address,
-.veekls-items.grid-view li.compact .address {
+.veekls-items li.compact .characteristics,
+.veekls-items.grid-view li.compact .characteristics {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -788,8 +788,8 @@ should fix up some theme issues
   font-size: 14px;
   padding: 2px 10px;
 }
-.veekls-items li.compact .address,
-.veekls-items.grid-view li.compact .address {
+.veekls-items li.compact .characteristics,
+.veekls-items.grid-view li.compact .characteristics {
   font-size: 13px;
   font-weight: 300;
   line-height: 13px;
