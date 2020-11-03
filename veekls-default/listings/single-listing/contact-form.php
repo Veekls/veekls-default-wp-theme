@@ -14,7 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! veekls_is_plugin_active() ) {
 	return;
 }
-
 ?>
 
 <div class="contact-form">

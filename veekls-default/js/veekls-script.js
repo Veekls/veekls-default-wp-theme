@@ -252,38 +252,36 @@ jQuery(function ($) {
 	 * Tabs
 	 */
 	function veeklsTabs () {
-		$('body').on('init', '.al-tabs-wrapper, .veekls-tabs', function () {
-			$('.al-tab, .veekls-tabs .panel:not(.panel .panel)').hide();
+		$('.veekls-tabs.veekls-tabs-wrapper').on('init', function () {
+			$('.veekls-tabs-panel').hide();
 
-			var $tabs = $(this).find('.al-tabs, ul.tabs').first();
+			var $tabs = $(this).find('ul.veekls-tabs').first();
 
-			$tabs.find('li:first a').click();
+			$tabs.find('li a').first().click();
+		});
 
-			// show reset password tab
-			if ($('.al-tab').hasClass('resetpass')) {
-				$tabs.find('li:last a').click();
-			}
-		}).on('click', '.al-tabs li a, ul.tabs li a', function (e) {
+		$('ul.veekls-tabs li a').on('click', function (e) {
 			e.preventDefault();
 
 			var $tab = $(this);
-			var $tabs_wrapper = $tab.closest('.al-tabs-wrapper, .veekls-tabs');
-			var $tabs = $tabs_wrapper.find('.al-tabs, ul.tabs');
+			var $tabs_wrapper = $tab.closest('.veekls-tabs.veekls-tabs-wrapper');
+			var $tabs = $tabs_wrapper.find('ul.veekls-tabs');
 
 			$tabs.find('li').removeClass('active');
-			$tabs_wrapper.find('.al-tab, .panel:not(.panel .panel)').hide();
+			$tabs_wrapper.find('.veekls-tabs-panel').hide();
 
 			$tab.closest('li').addClass('active');
 			$tabs_wrapper.find($tab.attr('href')).show();
 		});
 
-		$('.al-tabs-wrapper, .veekls-tabs').trigger('init');
+		$('.veekls-tabs.veekls-tabs-wrapper').trigger('init');
 	}
 
 	scrollToTop();
 	toggleMobileMenu();
 	initMobileNavigation($('.mobile-menu'));
 	moveTagSearchForm();
+	veeklsTabs();
 
 	if ($('body').hasClass('home')) {
 		initFeaturedContentSlider();
@@ -303,6 +301,4 @@ jQuery(function ($) {
 	if ($('.veekls-search').length > 0) {
 		veeklsSearchBox();
 	}
-
-	veeklsTabs();
 });

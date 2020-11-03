@@ -7,7 +7,7 @@
  *
  * This template can be overridden by copying it to yourtheme/listings/content-single-listing.php.
  *
- * @package Veekls_Default
+ * @package Veekls/Default_Theme
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,14 +20,29 @@ if ( ! veekls_is_plugin_active() ) {
 
 $vehicle_id    = ! empty( $_GET['id'] ) ? wp_unslash( $_GET['id'] ) : null;
 $vehicle       = apply_filters( 'veekls_fetch_vehicle', $vehicle_id );
-$vehicle_title = apply_filters( 'veekls_title', $vehicle );
+$vehicle_title = apply_filters( 'veekls_title', $vehicle ) . ' ' . $vehicle->year;
+$vehicle_price = apply_filters( 'veekls_price', $vehicle );
 
+// Set proper document title.
 add_filter(
 	'document_title_parts',
 	function ( $title_parts ) use ( $vehicle_title ) {
 		$title_parts['title'] = $vehicle_title;
 
 		return $title_parts;
+	}
+);
+
+// Set proper page title.
+add_filter(
+	'the_title',
+	function ( $title ) use ( $vehicle_title ) {
+		// Only if it's this page.
+		if ( 'Vehicle' === $title ) {
+			return $vehicle_title;
+		}
+
+		return $title;
 	}
 );
 
@@ -67,7 +82,7 @@ get_header();
 			);
 			?>
 
-			<h4><?php echo filter_var( apply_filters( 'veekls_price', $vehicle ), FILTER_UNSAFE_RAW ); ?></h4>
+			<h4><?php echo filter_var( $vehicle_price, FILTER_UNSAFE_RAW ); ?></h4>
 		</div>
 
 		<div class="content">
@@ -79,7 +94,21 @@ get_header();
 			 * @hooked veekls_template_single_description
 			 * @hooked veekls_output_listing_tabs
 			 */
-			do_action( 'veekls_single_content' );
+			get_template_part(
+				'listings/single-listing/description',
+				'Vehicle Description',
+				array(
+					'vehicle' => $vehicle,
+				)
+			);
+
+			get_template_part(
+				'listings/single-listing/tabs/tabs',
+				'Vehicle Tabs',
+				array(
+					'vehicle' => $vehicle,
+				)
+			);
 			?>
 		</div>
 	</div>
@@ -99,6 +128,8 @@ get_header();
 		?>
 	</div>
 
+	<?php get_sidebar(); ?>
+
 	<div class="full-width lower">
 		<?php do_action( 'veekls_single_lower_full_width' ); ?>
 	</div>
@@ -107,5 +138,4 @@ get_header();
 <?php do_action( 'veekls_after_single_listing' ); ?>
 
 <?php
-get_sidebar();
 get_footer();

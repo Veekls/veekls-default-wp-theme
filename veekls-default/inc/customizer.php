@@ -411,7 +411,7 @@ function veekls_customize_register( $wp_customize ) {
 			'cta_background',
 			array(
 				'sanitize_callback' => 'veekls_sanitize_image',
-				'default'           => get_template_directory_uri() . '/images/cta.png',
+				'default'           => get_template_directory_uri() . '/images/cta.jpg',
 			)
 		)
 	);

@@ -24,7 +24,6 @@ function veekls_breadcrumbs( $args = '' ) {
 	);
 
 	$items = array();
-
 	$title = '';
 
 	// HTML template for each item.

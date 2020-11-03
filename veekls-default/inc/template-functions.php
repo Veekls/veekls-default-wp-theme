@@ -22,10 +22,7 @@ function veekls_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
-	// Adds a class of plugin to front page.
-	if ( is_front_page() ) {
-		$classes[] = 'veekls';
-	}
+	$classes[] = 'veekls';
 
 	return $classes;
 }

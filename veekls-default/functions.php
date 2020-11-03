@@ -7,7 +7,7 @@
  * @package Veekls
  */
 
-if ( ! function_exists( 'veekls_setup' ) ) :
+if ( ! function_exists( 'veekls_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -86,7 +86,7 @@ if ( ! function_exists( 'veekls_setup' ) ) :
 
 		add_post_type_support( 'page', 'excerpt' );
 	}
-endif;
+}
 
 add_action( 'after_setup_theme', 'veekls_setup' );
 
@@ -154,8 +154,9 @@ add_action( 'widgets_init', 'veekls_widgets_init' );
  * Enqueue plugins scripts and styles first.
  */
 function veekls_plugin_scripts() {
+	wp_enqueue_style( 'veekls-css', get_template_directory_uri() . '/css/veekls.css', array(), '1.0.0' );
+
 	if ( is_front_page() ) {
-		wp_enqueue_style( 'veekls-css', get_template_directory_uri() . '/css/veekls.css', array(), '1.0.0' );
 		wp_enqueue_script( 'sumoselect', get_template_directory_uri() . '/js/sumoselect.min.js', array(), '3.0.3', true );
 	}
 }

@@ -1,8 +1,10 @@
 <?php
 /**
- * The template for displaying custom search form
+ * Search Form
  *
- * @package Veekls
+ * The template for displaying custom search form.
+ *
+ * @package Veekls/Default_Theme
  */
 
 ?>

@@ -1,10 +1,10 @@
 <?php
 /**
- * Single listing gallery
+ * Single Vehicle Gallery
  *
- * This template can be overridden by copying it to yourtheme/listings/single-listing/gallery.php.
+ * Display the pictures gallery for the selected vehicle.
  *
- * @package Veekls_Default
+ * @package Veekls/Default_Theme
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,12 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $vehicle = $args['vehicle'];
-$new     = true;
+$starred = ! empty( $vehicle->promo ) && ! empty( $vehicle->promo->starredAt );
 ?>
 
 <div class="gallery-wrap">
-	<?php if ( $new ) : ?>
-		<span style="background:<?php echo esc_attr( $new ); ?>;" class="highlight-new">
+	<?php if ( $starred ) : ?>
+		<span class="highlight-new">
 			<i class="fas fa-star"></i> <?php esc_html_e( 'New Listing', 'veekls' ); ?>
 		</span>
 	<?php endif; ?>

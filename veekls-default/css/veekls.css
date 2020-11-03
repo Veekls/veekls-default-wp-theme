@@ -89,7 +89,6 @@ should fix up some theme issues
   padding: 5px 10px;
 }
 .veekls span.status i:before {
-  display: inline-block;
   float: left;
   font-size: 14px;
   height: auto;
@@ -97,7 +96,7 @@ should fix up some theme issues
   margin: 0 5px -2px 0;
   padding: 0;
 }
-.veekls .highlight-new {
+.veekls .starred {
   border-radius: 4px;
   color: #fff;
   font-size: 11px;
@@ -129,17 +128,21 @@ should fix up some theme issues
 .veekls-single .title {
   display: inline-block;
 }
+
 .veekls-single .upper span.status {
   display: inline;
   margin: 0 0 0 20px;
 }
+
 .veekls-single .image-gallery {
   margin-bottom: 30px;
 }
+
 .veekls-single .image-gallery .lSPager.lSGallery li {
   transition: 0.25s;
   border-bottom: 3px solid transparent;
 }
+
 .veekls-single .image-gallery .lSPager.lSGallery li.active,
 .veekls-single .image-gallery .lSPager.lSGallery li:hover {
   background: #fff none repeat scroll 0 0;
@@ -151,6 +154,7 @@ should fix up some theme issues
   color: #fff;
   font-size: 40px;
 }
+
 .veekls-single .image-gallery .prev {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -158,9 +162,11 @@ should fix up some theme issues
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
+
 .veekls-single .image-gallery .lSSlideWrapper .lightSlider > * {
   z-index: 1;
 }
+
 .veekls-single .image-gallery .active {
   z-index: 2;
 }
@@ -748,8 +754,8 @@ should fix up some theme issues
 }
 .veekls-items li.compact .status,
 .veekls-items.grid-view li.compact .status,
-.veekls-items li.compact .highlight-new,
-.veekls-items.grid-view li.compact .highlight-new {
+.veekls-items li.compact .starred,
+.veekls-items.grid-view li.compact .starred {
   display: none;
 }
 .veekls-items li.compact .summary,
