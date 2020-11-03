@@ -31,7 +31,7 @@ $vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
 
 		<?php foreach ( $vehicles as $vehicle ) : ?>
 			<?php if ( 1 === $count % $cols ) : ?>
-				<ul class="veekls-items">
+				<ul class="veekls-items grid-view">
 			<?php endif; ?>
 
 			<?php

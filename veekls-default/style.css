@@ -3719,8 +3719,6 @@ ol.children {
 .breadcrumbs i {
   margin: 0 8px;
   color: #666;
-  font-size: 14px;
-  font-size: 0.875rem;
 }
 
 .breadcrumbs a {
@@ -3730,12 +3728,10 @@ ol.children {
 }
 
 .breadcrumbs .home:before {
-  content: "\ef47";
+  content: "\f015";
   font-family: "Font Awesome 5 Free";
   display: inline-block;
   line-height: 1;
-  font-size: 14px;
-  font-size: 0.875rem;
   margin-right: 7px;
 }
 
@@ -3948,9 +3944,14 @@ ol.children {
 }
 
 .veekls-single .has-sidebar .image-gallery .lSAction > a {
+  background-image: none;
   width: auto;
   height: auto;
   margin-top: -43px;
+}
+
+.veekls-single .has-sidebar .image-gallery .lSAction > a i {
+  background-color: var(--color-info);
 }
 
 .veekls-single .has-sidebar .image-gallery .lSAction .lSPrev {

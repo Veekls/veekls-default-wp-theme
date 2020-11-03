@@ -1,6 +1,7 @@
 <?php
 /**
- * Template Name: Front-page
+ * Template Name: Front-page Layout
+ * Template Post Type: page
  *
  * @package Veekls
  */

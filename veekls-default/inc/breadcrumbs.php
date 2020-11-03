@@ -18,7 +18,7 @@ function veekls_breadcrumbs( $args = '' ) {
 	$args = wp_parse_args(
 		$args,
 		array(
-			'separator' => '<i class="icofont icofont-rounded-right"></i>',
+			'separator' => '<i class="fas fa-chevron-right"></i>',
 			'taxonomy'  => 'category',
 		)
 	);
@@ -33,6 +33,7 @@ function veekls_breadcrumbs( $args = '' ) {
 			<a href="%s" itemprop="url"><span itemprop="title">%s</span></a>
 		</span>
 	</li>';
+
 	$item_text_tpl = '<li class="breadcrumbs-item">
 		<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 			<span itemprop="title">%s</span>
