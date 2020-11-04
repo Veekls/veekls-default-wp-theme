@@ -98,7 +98,7 @@ if ( is_front_page() ) {
 		</div>
 
 		<div class="price">
-			<?php echo filter_var( $vehicle_price, FILTER_UNSAFE_RAW ); ?>
+			<?php echo wp_kses_post( $vehicle_price ); ?>
 		</div>
 
 		<?php if ( isset( $compact ) && ! $compact ) : ?>

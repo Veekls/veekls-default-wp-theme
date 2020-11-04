@@ -53,7 +53,7 @@ class Veekls_Contact_Widget extends WP_Widget {
 		$instance = wp_parse_args( $instance, $this->defaults() );
 		?>
 
-		<?php echo filter_var( $args['before_widget'], FILTER_UNSAFE_RAW ); ?>
+		<?php echo wp_kses_post( $args['before_widget'] ); ?>
 
 		<ul class="contact">
 			<?php if ( '' !== $instance['time'] ) : ?>
@@ -84,7 +84,7 @@ class Veekls_Contact_Widget extends WP_Widget {
 			<?php endif; ?>
 		</ul>
 
-		<?php echo filter_var( $args['after_widget'], FILTER_UNSAFE_RAW ); ?>
+		<?php echo wp_kses_post( $args['after_widget'] ); ?>
 		<?php
 	}
 
