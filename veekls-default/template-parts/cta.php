@@ -2,7 +2,7 @@
 /**
  * The template part for displaying cta section
  *
- * @package Veekls
+ * @package Veekls/Default_Theme
  */
 
 $cta_title       = get_theme_mod( 'cta_title', __( 'You Want To Have Your Favorite Car?', 'veekls' ) );
@@ -25,5 +25,5 @@ $image_background = get_theme_mod( 'cta_background', get_template_directory_uri(
 				<a href="<?php echo esc_url( $button_url ); ?>"><?php echo esc_html( $button_text ); ?></a>
 			</div>
 		<?php endif; ?>
-</div>
+	</div>
 </section>

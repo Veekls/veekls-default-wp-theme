@@ -17,7 +17,7 @@ if ( ! veekls_is_plugin_active() ) {
 
 $vehicle = $args['vehicle'];
 
-$gearbox  = apply_filters( 'veekls_gearbox_type', $vehicle );
+$gearbox  = apply_filters( 'veekls_gearbox', $vehicle );
 $odometer = apply_filters( 'veekls_odometer', $vehicle );
 ?>
 

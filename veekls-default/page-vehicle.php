@@ -82,7 +82,7 @@ get_header();
 			);
 			?>
 
-			<h4><?php echo filter_var( $vehicle_price, FILTER_UNSAFE_RAW ); ?></h4>
+			<h4><?php echo wp_kses_post( $vehicle_price ); ?></h4>
 		</div>
 
 		<div class="content">
@@ -124,7 +124,29 @@ get_header();
 		 * @hooked veekls_template_single_map
 		 * @hooked veekls_template_single_contact_form
 		 */
-		do_action( 'veekls_single_sidebar' );
+		get_template_part(
+			'listings/single-listing/price',
+			'Vehicle Sidebar Price',
+			array(
+				'vehicle' => $vehicle,
+			)
+		);
+
+		get_template_part(
+			'listings/single-listing/at-a-glance',
+			'Vehicle Sidebar At a Glance',
+			array(
+				'vehicle' => $vehicle,
+			)
+		);
+
+		get_template_part(
+			'listings/single-listing/contact-form',
+			'Vehicle Sidebar Contact',
+			array(
+				'vehicle' => $vehicle,
+			)
+		);
 		?>
 	</div>
 

@@ -18,6 +18,7 @@ if ( ! veekls_is_plugin_active() ) {
 
 <div class="contact-form">
 	<h3><?php esc_html_e( 'Quick Contact', 'veekls' ); ?></h3>
+
 	<div id="veekls-contact">
 		<?php echo do_shortcode( '[veekls_contact_form]' ); ?>
 	</div>

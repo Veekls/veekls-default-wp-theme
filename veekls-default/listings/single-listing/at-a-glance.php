@@ -15,34 +15,41 @@ if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
+$vehicle = $args['vehicle'];
+
+$vehicle_gearbox  = apply_filters( 'veekls_gearbox', $vehicle );
+$vehicle_odometer = apply_filters( 'veekls_odometer', $vehicle );
+$vehicle_fuel     = apply_filters( 'veekls_fuel_type', $vehicle );
+$vehicle_year     = $vehicle->year;
 ?>
 
 <div class="at-a-glance">
 	<h3><?php esc_html_e( 'Features Highlight', 'veekls' ); ?></h3>
+
 	<table>
 		<tbody>
 			<tr>
 				<td>
-					<?php if ( function_exists( 'veekls_odometer' ) && veekls_odometer() ) : ?>
-						<span class="odomoter"><i class="icofont icofont-speed-meter"></i> <?php echo esc_html( veekls_odometer() ); ?></span>
-					<?php endif; ?>
+					<span class="odometer">
+						<i class="fas fa-road"></i> <?php echo esc_html( $vehicle_odometer ); ?>
+					</span>
 				</td>
 				<td>
-					<?php if ( function_exists( 'veekls_transmission' ) && veekls_transmission() ) : ?>
-						<span class="transmission"><i class="icofont icofont-ui-settings"></i> <?php echo esc_html( veekls_transmission() ); ?></span>
-					<?php endif; ?>
+					<span class="transmission">
+						<i class="fas fa-cogs"></i> <?php echo esc_html( $vehicle_gearbox ); ?>
+					</span>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<?php if ( function_exists( 'veekls_body_type' ) && veekls_body_type() ) : ?>
-						<span class="body"><i class="icofont icofont-car-alt-4"></i> <?php echo wp_kses_post( veekls_body_type() ); ?></span>
-					<?php endif; ?>
+					<span class="fuel">
+						<i class="fas fa-fire"></i> <?php echo esc_html( $vehicle_fuel ); ?>
+					</span>
 				</td>
 				<td>
-					<?php if ( function_exists( 'veekls_engine' ) && veekls_engine() ) : ?>
-						<span class="vehicle"><?php echo esc_html( veekls_engine() ); ?></span>
-					<?php endif; ?>
+					<span class="year">
+						<i class="fas fa-calendar"></i> <?php echo esc_html( $vehicle_year ); ?>
+					</span>
 				</td>
 			</tr>
 		</tbody>
