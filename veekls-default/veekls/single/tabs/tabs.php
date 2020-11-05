@@ -53,7 +53,7 @@ if ( empty( $vehicle_tabs ) ) {
 		<div class="veekls-tabs-panel veekls-tabs-panel--<?php echo esc_attr( $key ); ?> panel entry-content veekls-tab" id="tab-<?php echo esc_attr( $key ); ?>" role="tabpanel" aria-labelledby="tab-title-<?php echo esc_attr( $key ); ?>">
 			<?php
 			get_template_part(
-				'listings/single-listing/tabs/' . $key,
+				'veekls/single/tabs/' . $key,
 				'Vehicle Tab ' . $value['title'],
 				array(
 					'vehicle' => $vehicle,

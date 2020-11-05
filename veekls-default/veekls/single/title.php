@@ -2,7 +2,7 @@
 /**
  * Single listing title.
  *
- * This template can be overridden by copying it to yourtheme/listings/single-listing/address.php.
+ * This template can be overridden by copying it to yourtheme/veekls/single/address.php.
  *
  * @package Veekls_Default
  */

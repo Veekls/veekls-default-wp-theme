@@ -1005,11 +1005,11 @@ msgstr ""
 msgid "- Price (High to Low) -"
 msgstr ""
 
-#: listings/single-listing/address.php:31
+#: veekls/single/address.php:31
 msgid "Listing Location:"
 msgstr ""
 
-#: listings/single-listing/contact-form.php:25
+#: veekls/single/contact-form.php:25
 msgid "Quick Contact"
 msgstr ""
 

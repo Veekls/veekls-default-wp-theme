@@ -18,10 +18,9 @@ if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
-$vehicle_id    = ! empty( $_GET['id'] ) ? wp_unslash( $_GET['id'] ) : null;
+$vehicle_id    = isset( $_GET['id'] ) && ! empty( $_GET['id'] ) ? sanitize_text_field( wp_unslash( $_GET['id'] ) ) : null; // phpcs:ignore
 $vehicle       = apply_filters( 'veekls_fetch_vehicle', $vehicle_id );
 $vehicle_title = apply_filters( 'veekls_title', $vehicle ) . ' ' . $vehicle->year;
-$vehicle_price = apply_filters( 'veekls_price', $vehicle );
 
 // Set proper document title.
 add_filter(
@@ -53,111 +52,13 @@ wp_enqueue_style( 'lightgallery', get_template_directory_uri() . '/css/lightgall
 wp_enqueue_script( 'lightgallery', get_template_directory_uri() . '/js/lightgallery-all.min.js', array(), '1.9.1', true );
 
 get_header();
-?>
 
-<?php do_action( 'veekls_before_single_listing' ); ?>
+get_template_part(
+	'veekls/single/content',
+	'Vehicle Page',
+	array(
+		'vehicle' => $vehicle,
+	)
+);
 
-<div id="listing-<?php echo esc_attr( $vehicle_id ); ?>" class="veekls-single listing">
-	<div class="has-sidebar">
-		<div class="image-gallery">
-			<?php
-			get_template_part(
-				'listings/single-listing/gallery',
-				'Vehicle Gallery',
-				array(
-					'vehicle' => $vehicle,
-				)
-			);
-			?>
-		</div>
-
-		<div class="full-width upper">
-			<?php
-			get_template_part(
-				'listings/single-listing/title',
-				'Vehicle Title',
-				array(
-					'vehicle' => $vehicle,
-				)
-			);
-			?>
-
-			<h4><?php echo wp_kses_post( $vehicle_price ); ?></h4>
-		</div>
-
-		<div class="content">
-			<?php
-			/**
-			 * Info single listing
-			 *
-			 * @hooked veekls_template_single_tagline
-			 * @hooked veekls_template_single_description
-			 * @hooked veekls_output_listing_tabs
-			 */
-			get_template_part(
-				'listings/single-listing/description',
-				'Vehicle Description',
-				array(
-					'vehicle' => $vehicle,
-				)
-			);
-
-			get_template_part(
-				'listings/single-listing/tabs/tabs',
-				'Vehicle Tabs',
-				array(
-					'vehicle' => $vehicle,
-				)
-			);
-			?>
-		</div>
-	</div>
-
-	<div class="sidebar">
-		<?php
-		/**
-		 * Sidebar
-		 *
-		 * @hooked veekls_template_single_price
-		 * @hooked veekls_template_single_at_a_glance
-		 * @hooked veekls_template_single_address
-		 * @hooked veekls_template_single_map
-		 * @hooked veekls_template_single_contact_form
-		 */
-		get_template_part(
-			'listings/single-listing/price',
-			'Vehicle Sidebar Price',
-			array(
-				'vehicle' => $vehicle,
-			)
-		);
-
-		get_template_part(
-			'listings/single-listing/at-a-glance',
-			'Vehicle Sidebar At a Glance',
-			array(
-				'vehicle' => $vehicle,
-			)
-		);
-
-		get_template_part(
-			'listings/single-listing/contact-form',
-			'Vehicle Sidebar Contact',
-			array(
-				'vehicle' => $vehicle,
-			)
-		);
-		?>
-	</div>
-
-	<?php get_sidebar(); ?>
-
-	<div class="full-width lower">
-		<?php do_action( 'veekls_single_lower_full_width' ); ?>
-	</div>
-</div>
-
-<?php do_action( 'veekls_after_single_listing' ); ?>
-
-<?php
 get_footer();

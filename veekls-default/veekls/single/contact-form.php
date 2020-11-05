@@ -2,7 +2,7 @@
 /**
  * Single listing contact-form
  *
- * This template can be overridden by copying it to yourtheme/listings/single-listing/contact-form.php.
+ * This template can be overridden by copying it to yourtheme/veekls/single/contact-form.php.
  *
  * @package Veekls
  */

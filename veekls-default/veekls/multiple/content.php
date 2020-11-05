@@ -22,13 +22,9 @@ $vehicle               = $args['vehicle'];
 $vehicle_title         = apply_filters( 'veekls_title', $vehicle );
 $vehicle_url           = '/vehicle?id=' . $vehicle->_id;
 $vehicle_price         = apply_filters( 'veekls_price', $vehicle );
-$vehicle_branch        = isset( $vehicle->branch ) && ! empty( $vehicle->branch->name ) ?
-	$vehicle->branch->name :
-	null;
+$vehicle_branch        = isset( $vehicle->branch ) && ! empty( $vehicle->branch->name ) ? $vehicle->branch->name : null;
+$vehicle_promo_message = isset( $vehicle->promo ) && ! empty( $vehicle->promo->message ) ? $vehicle->promo->message : null;
 $vehicle_promo_starred = isset( $vehicle->promo ) && ! empty( $vehicle->promo->starredAt );
-$vehicle_promo_message = isset( $vehicle->promo ) && ! empty( $vehicle->promo->message ) ?
-	$vehicle->promo->message :
-	null;
 $vehicle_thumbnail     = apply_filters(
 	'veekls_picture',
 	$vehicle->pictures[0],

@@ -19,10 +19,7 @@ $vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
 	<div id="content" class="content" role="main">
 		<div class="<?php echo is_active_sidebar( 'veekls' ) ? 'has-sidebar' : 'listing-no-sidebar'; ?>">
 
-		<div class="veekls-view-switcher">
-			<div id="list" class="list"><i class="fa fa-list"></i></div>
-			<div id="grid" class="grid"><i class="fa fa-th"></i></div>
-		</div>
+		<?php get_template_part( 'template-parts/view-switcher' ); ?>
 
 		<?php
 		$cols  = get_theme_mod( 'front_page_listings_column', 2 );
@@ -36,7 +33,7 @@ $vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
 
 			<?php
 			get_template_part(
-				'listings/content-listing',
+				'veekls/multiple/content',
 				'Content Listing',
 				array(
 					'vehicle' => $vehicle,
