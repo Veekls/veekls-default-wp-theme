@@ -17,20 +17,21 @@ if ( ! veekls_is_plugin_active() ) {
 
 $vehicle = $args['vehicle'];
 
-$gearbox  = apply_filters( 'veekls_gearbox', $vehicle );
-$odometer = apply_filters( 'veekls_odometer', $vehicle );
+$vehicle_gearbox  = apply_filters( 'veekls_gearbox', $vehicle );
+$vehicle_odometer = apply_filters( 'veekls_odometer', $vehicle );
+$vehicle_year     = $vehicle->year;
 ?>
 
 <div class="at-a-glance">
 	<ul>
-		<li class="odometer">
-			<i class="fas fa-road"></i> <?php echo esc_html( $odometer ); ?>
+		<li class="odometer" title="<?php echo esc_html( $vehicle_odometer ); ?>">
+			<i class="fas fa-road"></i> <?php echo esc_html( $vehicle_odometer ); ?>
 		</li>
-		<li class="transmission">
-			<i class="fas fa-cogs"></i> <?php echo esc_html( $gearbox ); ?>
+		<li class="transmission" title="<?php echo esc_html( $vehicle_gearbox ); ?>">
+			<i class="fas fa-cogs"></i> <?php echo esc_html( $vehicle_gearbox ); ?>
 		</li>
-		<li class="year">
-			<i class="fas fa-calendar"></i> <?php echo esc_html( $vehicle->year ); ?>
+		<li class="year" title="<?php echo esc_html( $vehicle_year ); ?>">
+			<i class="fas fa-calendar"></i> <?php echo esc_html( $vehicle_year ); ?>
 		</li>
 	</ul>
 </div>
