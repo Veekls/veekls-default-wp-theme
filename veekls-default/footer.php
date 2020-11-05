@@ -14,6 +14,7 @@
 </div><!-- #content -->
 
 <?php get_template_part( 'template-parts/cta' ); ?>
+<?php get_template_part( 'template-parts/location' ); ?>
 
 <footer id="colophon" class="site-footer">
 	<div class="footer-bottom">

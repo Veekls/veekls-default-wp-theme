@@ -72,6 +72,7 @@ function veekls_customize_register( $wp_customize ) {
 			'slider_speed',
 			array(
 				'sanitize_callback' => 'absint',
+				'type'              => 'option',
 				'default'           => 3000,
 			)
 		)
@@ -102,6 +103,7 @@ function veekls_customize_register( $wp_customize ) {
 			'search_section',
 			array(
 				'sanitize_callback' => 'absint',
+				'type'              => 'option',
 			)
 		)
 	);
@@ -142,6 +144,7 @@ function veekls_customize_register( $wp_customize ) {
 			'front_page_listings_column',
 			array(
 				'sanitize_callback' => 'absint',
+				'type'              => 'option',
 				'default'           => 2,
 			)
 		)
@@ -185,6 +188,7 @@ function veekls_customize_register( $wp_customize ) {
 				'default'           => esc_html__( 'Browse Cars By Brand', 'veekls' ),
 				'sanitize_callback' => 'sanitize_text_field',
 				'transport'         => 'postMessage',
+				'type'              => 'option',
 			)
 		)
 	);
@@ -209,6 +213,7 @@ function veekls_customize_register( $wp_customize ) {
 				'default'           => esc_html__( 'Available in different categories', 'veekls' ),
 				'sanitize_callback' => 'sanitize_text_field',
 				'transport'         => 'postMessage',
+				'type'              => 'option',
 			)
 		)
 	);
@@ -233,6 +238,7 @@ function veekls_customize_register( $wp_customize ) {
 				'default'           => esc_html__( 'See All Cars', 'veekls' ),
 				'sanitize_callback' => 'sanitize_text_field',
 				'transport'         => 'postMessage',
+				'type'              => 'option',
 			)
 		)
 	);
@@ -257,6 +263,7 @@ function veekls_customize_register( $wp_customize ) {
 				'default'           => esc_url( get_post_type_archive_link( 'veekls-listing' ) ),
 				'sanitize_callback' => 'esc_url_raw',
 				'transport'         => 'postMessage',
+				'type'              => 'option',
 			)
 		)
 	);
@@ -278,7 +285,9 @@ function veekls_customize_register( $wp_customize ) {
 			$wp_customize,
 			'allcar_image',
 			array(
+				'default'           => get_template_directory_uri() . '/img/all-cars.png',
 				'sanitize_callback' => 'veekls_sanitize_image',
+				'type'              => 'option',
 			)
 		)
 	);
@@ -313,9 +322,10 @@ function veekls_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cta_title',
 			array(
-				'default'           => wp_kses_post( __( 'You Want To Have Your Favorite Car?', 'veekls' ) ),
+				'default'           => esc_html__( 'Still Looking For You Ideal Car?', 'veekls' ),
 				'sanitize_callback' => 'sanitize_text_field',
 				'transport'         => 'postMessage',
+				'type'              => 'option',
 			)
 		)
 	);
@@ -340,6 +350,7 @@ function veekls_customize_register( $wp_customize ) {
 				'default'           => esc_html__( 'We have a big list of modern & classic cars in both used and new categories.', 'veekls' ),
 				'sanitize_callback' => 'sanitize_text_field',
 				'transport'         => 'postMessage',
+				'type'              => 'option',
 			)
 		)
 	);
@@ -364,6 +375,7 @@ function veekls_customize_register( $wp_customize ) {
 				'default'           => esc_html__( 'go to car listings', 'veekls' ),
 				'sanitize_callback' => 'sanitize_text_field',
 				'transport'         => 'postMessage',
+				'type'              => 'option',
 			)
 		)
 	);
@@ -385,9 +397,10 @@ function veekls_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cta_button_url',
 			array(
-				'default'           => esc_url( 'http://example.com/' ),
+				'default'           => esc_url_raw( 'http://example.com/' ),
 				'sanitize_callback' => 'esc_url_raw',
 				'transport'         => 'postMessage',
+				'type'              => 'option',
 			)
 		)
 	);
@@ -404,14 +417,14 @@ function veekls_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Cta background.
 	$wp_customize->add_setting(
 		new WP_Customize_Setting(
 			$wp_customize,
 			'cta_background',
 			array(
+				'default'           => get_template_directory_uri() . '/img/cta.jpg',
 				'sanitize_callback' => 'veekls_sanitize_image',
-				'default'           => get_template_directory_uri() . '/images/cta.jpg',
+				'type'              => 'option',
 			)
 		)
 	);
@@ -424,6 +437,97 @@ function veekls_customize_register( $wp_customize ) {
 				'label'    => esc_html__( 'Background', 'veekls' ),
 				'section'  => 'cta_section',
 				'settings' => 'cta_background',
+			)
+		)
+	);
+
+	// -- Location.
+
+	$wp_customize->add_section(
+		new WP_Customize_Section(
+			$wp_customize,
+			'location_section',
+			array(
+				'title' => esc_html__( 'Location Section', 'veekls' ),
+				'panel' => 'veekls',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		new WP_Customize_Setting(
+			$wp_customize,
+			'veekls_location_page',
+			array(
+				'type' => 'option',
+			)
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'veekls_location_page',
+			array(
+				'label'       => esc_html__( 'Location Map Embed Page', 'veekls' ),
+				'section'     => 'location_section',
+				'type'        => 'dropdown-pages',
+				'description' => wp_kses_post(
+					__(
+						'The content of this page will be displayed below the Call to Action section.',
+						'veekls'
+					)
+				),
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		new WP_Customize_Setting(
+			$wp_customize,
+			'veekls_location_show_title',
+			array(
+				'sanitize_callback' => 'esc_attr',
+				'type'              => 'option',
+				'default'           => 1,
+			)
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'veekls_location_show_title',
+			array(
+				'label'       => esc_html__( 'Show Title', 'veekls' ),
+				'section'     => 'location_section',
+				'type'        => 'checkbox',
+				'description' => esc_html__( 'Whether to show the page title.', 'veekls' ),
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		new WP_Customize_Setting(
+			$wp_customize,
+			'veekls_location_show_excerpt',
+			array(
+				'sanitize_callback' => 'esc_attr',
+				'type'              => 'option',
+				'default'           => 0,
+			)
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'veekls_location_show_excerpt',
+			array(
+				'label'       => esc_html__( 'Show Excerpt', 'veekls' ),
+				'section'     => 'location_section',
+				'type'        => 'checkbox',
+				'description' => esc_html__( 'Whether to show the page excerpt.', 'veekls' ),
 			)
 		)
 	);
@@ -527,6 +631,7 @@ function veekls_customize_register( $wp_customize ) {
 			'veekls_danger_color',
 			array(
 				'default' => '#8332ac',
+				'type'    => 'option',
 			)
 		)
 	);

@@ -5,7 +5,7 @@
  * @package Veekls
  */
 
-$search_page = get_theme_mod( 'search_section' );
+$search_page = get_option( 'search_section' );
 
 if ( ! $search_page ) {
 	return;
@@ -14,7 +14,6 @@ if ( ! $search_page ) {
 $post = get_post( $search_page ); // phpcs:ignore
 
 setup_postdata( $post );
-
 ?>
 
 <section class="section--search container">

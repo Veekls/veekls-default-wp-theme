@@ -22,7 +22,7 @@ $vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
 		<?php get_template_part( 'template-parts/view-switcher' ); ?>
 
 		<?php
-		$cols  = get_theme_mod( 'front_page_listings_column', 2 );
+		$cols  = get_option( 'front_page_listings_column', 2 );
 		$count = 1;
 		?>
 

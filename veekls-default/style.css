@@ -482,7 +482,7 @@ blockquote p {
 
 blockquote::before {
   content: "";
-  background-image: url(images/quote3.png);
+  background-image: url(img/quote3.png);
   background-repeat: no-repeat;
   display: block;
   width: 81px;
@@ -3668,7 +3668,7 @@ ol.children {
   text-align: center;
   padding: 5.2% 0;
   margin-bottom: 80px;
-  background-image: url(images/page-header.png);
+  background-image: url(img/page-header.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;

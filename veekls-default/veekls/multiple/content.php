@@ -15,7 +15,7 @@ if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
-$front_page_listings_column = get_theme_mod( 'front_page_listings_column', 2 );
+$front_page_listings_column = get_option( 'front_page_listings_column', 2 );
 
 $compact               = $args['compact'];
 $vehicle               = $args['vehicle'];

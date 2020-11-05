@@ -6,12 +6,12 @@
  */
 
 $listings_archive_link = get_post_type_archive_link( 'veekls-listing' );
-$section_title         = get_theme_mod( 'allcar_title', __( 'Browse Cars By Brand', 'veekls' ) );
-$description           = get_theme_mod( 'allcar_description', __( 'Available in different categories', 'veekls' ) );
-$button_url            = get_theme_mod( 'allcar_button_url', esc_url( $listings_archive_link ) );
-$button_text           = get_theme_mod( 'allcar_button_text', __( 'See all cars', 'veekls' ) );
+$section_title         = get_option( 'allcar_title', __( 'Browse Cars By Brand', 'veekls' ) );
+$description           = get_option( 'allcar_description', __( 'Available in different categories', 'veekls' ) );
+$button_url            = get_option( 'allcar_button_url', esc_url( $listings_archive_link ) );
+$button_text           = get_option( 'allcar_button_text', __( 'See all cars', 'veekls' ) );
 
-$image    = get_theme_mod( 'allcar_image' );
+$image    = get_option( 'allcar_image' );
 $image_id = attachment_url_to_postid( $image );
 $alt      = ( ! empty( $image_id ) ) ? get_post_meta( $image_id, '_wp_attachment_image_alt', true ) : '';
 ?>

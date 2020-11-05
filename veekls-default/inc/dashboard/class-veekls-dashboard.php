@@ -104,7 +104,7 @@ class Veekls_Dashboard {
 	public function notice() {
 		global $pagenow;
 
-		if ( is_admin() && isset( $_GET['activated'] ) && 'themes.php' === $pagenow ) {
+		if ( is_admin() && isset( $_GET['activated'] ) && 'themes.php' === $pagenow ) { // phpcs:ignore
 			?>
 
 			<div class="updated notice notice-success is-dismissible">
