@@ -94,7 +94,11 @@ if ( is_front_page() ) {
 
 		<div class="characteristics">
 			<i class="fas fa-list"></i>
-			<?php echo esc_html( apply_filters( 'veekls_short_characteristics', $vehicle ) ); ?>
+			<?php if ( ! isset( $vehicle->characteristics ) || empty( $vehicle->characteristics ) ) : ?>
+				<?php echo esc_html_e( 'None specified', 'veekls' ); ?>
+			<?php else : ?>
+				<?php echo esc_html( apply_filters( 'veekls_short_characteristics', $vehicle ) ); ?>
+			<?php endif; ?>
 		</div>
 
 		<div class="price">
