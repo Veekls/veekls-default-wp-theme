@@ -420,6 +420,9 @@ should fix up some theme issues
   font-size: 15px;
   font-weight: 500;
   line-height: 26px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   margin: 0 20px 0 0;
   width: auto;
 }
@@ -783,11 +786,11 @@ should fix up some theme issues
   white-space: nowrap;
   margin-left: 23%;
 }
-.veekls-items li.compact .characteristics,
-.veekls-items.grid-view li.compact .characteristics {
+.veekls-items li .characteristics,
+.veekls-items.grid-view li .characteristics {
+  text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 .veekls-items li.compact .price,
 .veekls-items.grid-view li.compact .price {
