@@ -11,9 +11,9 @@ $description           = get_option( 'allcar_description', __( 'Available in dif
 $button_url            = get_option( 'allcar_button_url', esc_url( $listings_archive_link ) );
 $button_text           = get_option( 'allcar_button_text', __( 'See all cars', 'veekls' ) );
 
-$image    = get_option( 'allcar_image' );
+$image    = get_option( 'allcar_image', get_template_directory_uri() . '/img/all-cars.png' );
 $image_id = attachment_url_to_postid( $image );
-$alt      = ( ! empty( $image_id ) ) ? get_post_meta( $image_id, '_wp_attachment_image_alt', true ) : '';
+$alt      = ! empty( $image_id ) ? get_post_meta( $image_id, '_wp_attachment_image_alt', true ) : '';
 ?>
 
 <section class="all--car">

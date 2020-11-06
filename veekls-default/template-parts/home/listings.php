@@ -12,7 +12,6 @@ if ( ! veekls_is_plugin_active() ) {
 }
 
 $vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
-
 ?>
 
 <div id="container" class="container">
@@ -34,7 +33,7 @@ $vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
 			<?php
 			get_template_part(
 				'veekls/multiple/content',
-				'Content Listing',
+				'Multiple Content',
 				array(
 					'vehicle' => $vehicle,
 					'compact' => true,

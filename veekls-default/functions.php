@@ -155,10 +155,7 @@ add_action( 'widgets_init', 'veekls_widgets_init' );
  */
 function veekls_plugin_scripts() {
 	wp_enqueue_style( 'veekls-css', get_template_directory_uri() . '/css/veekls.css', array(), '1.0.0' );
-
-	if ( is_front_page() ) {
-		wp_enqueue_script( 'sumoselect', get_template_directory_uri() . '/js/sumoselect.min.js', array(), '3.0.3', true );
-	}
+	wp_enqueue_script( 'sumoselect', get_template_directory_uri() . '/js/sumoselect.min.js', array(), '3.0.3', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'veekls_plugin_scripts', 0 );

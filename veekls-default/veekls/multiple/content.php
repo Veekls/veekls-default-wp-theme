@@ -15,8 +15,6 @@ if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
-$front_page_listings_column = get_option( 'front_page_listings_column', 2 );
-
 $compact               = $args['compact'];
 $vehicle               = $args['vehicle'];
 $vehicle_title         = apply_filters( 'veekls_title', $vehicle );
@@ -34,11 +32,10 @@ $vehicle_thumbnail     = apply_filters(
 );
 
 if ( is_front_page() ) {
-	$cols = $front_page_listings_column;
+	$cols = get_option( 'front_page_listings_column', 2 );
 } else {
 	$cols = 2;
 }
-
 ?>
 
 <li class="col-<?php echo esc_attr( $cols ); ?> has-thumbnail">
