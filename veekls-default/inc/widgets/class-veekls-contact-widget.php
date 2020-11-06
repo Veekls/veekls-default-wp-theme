@@ -15,7 +15,7 @@ class Veekls_Contact_Widget extends WP_Widget {
 	 */
 	public function __construct() {
 		$widget_ops = array(
-			'classname'   => 'veekls-contact-info',
+			'classname'   => 'veekls-contact-info left menu',
 			'description' => __( 'Display your contact information.', 'veekls' ),
 		);
 
@@ -55,34 +55,28 @@ class Veekls_Contact_Widget extends WP_Widget {
 
 		<?php echo wp_kses_post( $args['before_widget'] ); ?>
 
-		<ul class="contact">
-			<?php if ( '' !== $instance['time'] ) : ?>
-				<li>
-					<i class="fas fa-fw fa-clock"></i>
-					<?php echo esc_html( $instance['time'] ); ?>
-				</li>
-			<?php endif; ?>
+		<?php if ( '' !== $instance['time'] ) : ?>
+			<span class="item">
+				<i class="primary clock icon"></i>
+				<?php echo esc_html( $instance['time'] ); ?>
+			</span>
+		<?php endif; ?>
 
-			<?php if ( is_email( trim( $instance['email'] ) ) ) : ?>
-				<?php $email = esc_html( $instance['email'] ); ?>
-				<li>
-					<a href="mailto:<?php echo esc_attr( $email ); ?>">
-						<i class="fas fa-fw fa-at"></i>
-						<?php echo esc_html( $email ); ?>
-					</a>
-				</li>
-			<?php endif; ?>
+		<?php if ( is_email( trim( $instance['email'] ) ) ) : ?>
+			<?php $email = esc_html( $instance['email'] ); ?>
+			<a class="link item" href="mailto:<?php echo esc_attr( $email ); ?>">
+				<i class="primary at icon"></i>
+				<?php echo esc_html( $email ); ?>
+			</a>
+		<?php endif; ?>
 
-			<?php if ( ! empty( trim( $instance['address'] ) ) ) : ?>
-				<?php $address = esc_html( $instance['address'] ); ?>
-				<li>
-					<a href="https://www.google.com/maps/place/<?php echo rawurlencode( $address ); ?>" target="_blank">
-						<i class="fas fa-fw fa-map-marker"></i>
-						<?php echo esc_html( $address ); ?>
-					</a>
-				</li>
-			<?php endif; ?>
-		</ul>
+		<?php if ( ! empty( trim( $instance['address'] ) ) ) : ?>
+			<?php $address = esc_html( $instance['address'] ); ?>
+			<a class="link item" href="https://www.google.com/maps/place/<?php echo rawurlencode( $address ); ?>" target="_blank">
+				<i class="primary map marker icon"></i>
+				<?php echo esc_html( $address ); ?>
+			</a>
+		<?php endif; ?>
 
 		<?php echo wp_kses_post( $args['after_widget'] ); ?>
 		<?php
@@ -114,8 +108,8 @@ class Veekls_Contact_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$instance = wp_parse_args( $instance, $this->defaults() );
-
 		?>
+
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'time' ) ); ?>"><?php esc_html_e( 'Working Time:', 'veekls' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'time' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'time' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['time'] ); ?>">
