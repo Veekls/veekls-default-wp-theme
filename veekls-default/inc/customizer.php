@@ -113,7 +113,7 @@ function veekls_customize_register( $wp_customize ) {
 			$wp_customize,
 			'search_section',
 			array(
-				'label'       => esc_html__( 'Search Page', 'veekls' ),
+				'label'       => esc_html__( 'Search Form Page', 'veekls' ),
 				'section'     => 'homepage',
 				'type'        => 'dropdown-pages',
 				'description' => wp_kses_post(

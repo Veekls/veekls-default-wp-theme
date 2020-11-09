@@ -525,10 +525,13 @@ should fix up some theme issues
 .veekls-ordering {
   float: left;
   margin-bottom: 40px;
+  margin-right: 7px;
 }
+
 .veekls-ordering .SumoSelect > .CaptionCont {
   border: 2px solid #ddd;
 }
+
 .veekls-switcher {
   float: left;
   margin: 0 0 40px 30px;
@@ -538,6 +541,7 @@ should fix up some theme issues
   float: left;
   margin: 4px 10px 0 0;
 }
+
 .veekls-switcher i:before {
   font-size: 26px;
   color: #444;

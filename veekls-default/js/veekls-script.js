@@ -150,6 +150,7 @@ jQuery(function ($) {
 	 */
 	function veeklsOrdering () {
 		$('.veekls-ordering select.orderby').SumoSelect();
+
 		$('.veekls-ordering').on('change', 'select.orderby', function () {
 			$(this).closest('form').submit();
 		});
@@ -280,18 +281,13 @@ jQuery(function ($) {
 	scrollToTop();
 	toggleMobileMenu();
 	initMobileNavigation($('.mobile-menu'));
+	veeklsViewSwitcher();
 	moveTagSearchForm();
+	veeklsOrdering();
 	veeklsTabs();
 
 	if ($('body').hasClass('home')) {
 		initFeaturedContentSlider();
-		veeklsViewSwitcher();
-		veeklsOrdering();
-	}
-
-	if ($('body').hasClass('archive')) {
-		veeklsViewSwitcher();
-		veeklsOrdering();
 	}
 
 	if ($('body').hasClass('page-template-page-vehicle')) {

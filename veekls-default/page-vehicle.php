@@ -3,9 +3,7 @@
  * Template Name: Single Vehicle Layout
  * Template Post Type: page
  *
- * The Template for displaying listing content in the single-listing.php template
- *
- * This template can be overridden by copying it to yourtheme/listings/content-single-listing.php.
+ * The Template for displaying listing content in the veekls/single/content.php template
  *
  * @package Veekls/Default_Theme
  */
@@ -55,7 +53,7 @@ get_header();
 
 get_template_part(
 	'veekls/single/content',
-	'Vehicle Page',
+	'Single Vehicle Content',
 	array(
 		'vehicle' => $vehicle,
 	)

@@ -1,22 +1,35 @@
 <?php
 /**
- * The Template for displaying the listings archive
+ * Template Name: Multiple Vehicles Layout
+ * Template Post Type: page
  *
- * This template can be overridden by copying it to yourtheme/listings/archive-listing.php.
+ * The Template for displaying listing content in the veekls/multiple/content.php template
  *
- * @package Veekls
+ * @package Veekls/Default_Theme
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
-$vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
+get_header();
+
+$vehicles = apply_filters( 'veekls_fetch_vehicles', $_GET );
 ?>
 
 <div id="container" class="container">
-	<div id="content" class="content" role="main">
+	<main id="content" class="content">
+		<div class="full-width upper">
+			<?php the_content(); ?>
+		</div>
+
 		<div class="<?php echo is_active_sidebar( 'veekls' ) ? 'has-sidebar' : 'listing-no-sidebar'; ?>">
+			<?php get_template_part( '/veekls/multiple/orderby' ); ?>
+			<?php get_template_part( '/veekls/multiple/pagination' ); ?>
 			<?php get_template_part( 'template-parts/view-switcher' ); ?>
 
 			<?php
@@ -57,5 +70,8 @@ $vehicles = apply_filters( 'veekls_fetch_vehicles', array() );
 				<?php dynamic_sidebar( 'veekls' ); ?>
 			</div>
 		<?php endif; ?>
-	</div>
+	</main>
 </div>
+
+<?php
+get_footer();

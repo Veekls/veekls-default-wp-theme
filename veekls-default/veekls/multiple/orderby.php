@@ -15,21 +15,17 @@ if ( ! veekls_is_plugin_active() ) {
 	return;
 }
 
-global $wp_query;
-
-if ( 1 === $wp_query->found_posts ) {
-	return;
-}
-
 $by      = filter_input( INPUT_GET, 'orderby', FILTER_SANITIZE_STRING );
-$by      = $by ? $by : 'date';
+$by      = $by ? $by : 'date-new';
 $options = apply_filters(
 	'veekls_listings_orderby',
 	array(
-		'date'       => __( '- Newest Listings -', 'veekls' ),
-		'date-old'   => __( '- Oldest Listings -', 'veekls' ),
-		'price'      => __( '- Price (Low to High) -', 'veekls' ),
-		'price-high' => __( '- Price (High to Low) -', 'veekls' ),
+		'date-new'     => __( 'Newest', 'veekls' ),
+		'date-old'     => __( 'Oldest', 'veekls' ),
+		'mileage-low'  => __( 'Lowest Mileage', 'veekls' ),
+		'mileage-high' => __( 'Highest Mileage', 'veekls' ),
+		'price-low'    => __( 'Lowest Price', 'veekls' ),
+		'price-high'   => __( 'Highest Price', 'veekls' ),
 	)
 );
 
