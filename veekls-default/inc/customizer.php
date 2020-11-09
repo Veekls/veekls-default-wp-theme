@@ -261,7 +261,7 @@ function veekls_customize_register( $wp_customize ) {
 			'allcar_button_url',
 			array(
 				'default'           => esc_url( get_post_type_archive_link( 'veekls-listing' ) ),
-				'sanitize_callback' => 'esc_url_raw',
+				'sanitize_callback' => 'esc_url',
 				'transport'         => 'postMessage',
 				'type'              => 'option',
 			)
@@ -335,9 +335,10 @@ function veekls_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cta_title',
 			array(
-				'label'   => esc_html__( 'Title', 'veekls' ),
-				'section' => 'cta_section',
-				'type'    => 'text',
+				'label'       => esc_html__( 'Title', 'veekls' ),
+				'description' => esc_html__( 'The text to display as the section title.' ),
+				'section'     => 'cta_section',
+				'type'        => 'text',
 			)
 		)
 	);
@@ -347,7 +348,7 @@ function veekls_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cta_description',
 			array(
-				'default'           => esc_html__( 'We have a big list of modern & classic cars in both used and new categories.', 'veekls' ),
+				'default'           => esc_html__( 'We have an extensive selection of vehicles for you to choose from.', 'veekls' ),
 				'sanitize_callback' => 'sanitize_text_field',
 				'transport'         => 'postMessage',
 				'type'              => 'option',
@@ -360,9 +361,10 @@ function veekls_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cta_description',
 			array(
-				'label'   => esc_html__( 'Description', 'veekls' ),
-				'section' => 'cta_section',
-				'type'    => 'text',
+				'label'       => esc_html__( 'Description', 'veekls' ),
+				'description' => esc_html__( 'The text to display under the section title.' ),
+				'section'     => 'cta_section',
+				'type'        => 'text',
 			)
 		)
 	);
@@ -372,7 +374,7 @@ function veekls_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cta_button_text',
 			array(
-				'default'           => esc_html__( 'go to car listings', 'veekls' ),
+				'default'           => esc_html__( 'see all vehicles', 'veekls' ),
 				'sanitize_callback' => 'sanitize_text_field',
 				'transport'         => 'postMessage',
 				'type'              => 'option',
@@ -385,9 +387,10 @@ function veekls_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cta_button_text',
 			array(
-				'label'   => esc_html__( 'Button Text', 'veekls' ),
-				'section' => 'cta_section',
-				'type'    => 'text',
+				'label'       => esc_html__( 'Button Text', 'veekls' ),
+				'description' => esc_html__( 'The text to display on the button.' ),
+				'section'     => 'cta_section',
+				'type'        => 'text',
 			)
 		)
 	);
@@ -397,8 +400,8 @@ function veekls_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cta_button_url',
 			array(
-				'default'           => esc_url_raw( 'http://example.com/' ),
-				'sanitize_callback' => 'esc_url_raw',
+				'default'           => esc_url( '/vehicles' ),
+				'sanitize_callback' => 'esc_url',
 				'transport'         => 'postMessage',
 				'type'              => 'option',
 			)
@@ -410,9 +413,10 @@ function veekls_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cta_button_url',
 			array(
-				'label'   => esc_html__( 'Button URL', 'veekls' ),
-				'section' => 'cta_section',
-				'type'    => 'text',
+				'label'       => esc_html__( 'Button URL', 'veekls' ),
+				'description' => esc_html__( 'The URL for the button. Can be relative or absolute.' ),
+				'section'     => 'cta_section',
+				'type'        => 'text',
 			)
 		)
 	);
